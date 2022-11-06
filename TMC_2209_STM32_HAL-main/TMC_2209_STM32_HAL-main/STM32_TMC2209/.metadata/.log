@@ -1,0 +1,32 @@
+!SESSION 2022-10-20 21:43:26.312 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Framework arguments:  C:\Users\jakub\OneDrive\Pulpit\WSN\maching_box\program\TMC_2209_STM32_HAL-main\TMC_2209_STM32_HAL-main\STM32_TMC2209\.cproject
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\jakub\OneDrive\Pulpit\WSN\maching_box\program\TMC_2209_STM32_HAL-main\TMC_2209_STM32_HAL-main\STM32_TMC2209\.cproject
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-10-20 21:43:57.975
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-10-20 21:43:58.185
+!MESSAGE Log4j initialized with config file C:\Users\jakub\OneDrive\Pulpit\WSN\maching_box\program\TMC_2209_STM32_HAL-main\TMC_2209_STM32_HAL-main\STM32_TMC2209\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-10-20 21:44:04.835
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-10-20 22:22:29.611 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Framework arguments:  C:\Users\jakub\OneDrive\Pulpit\WSN\maching_box\program\TMC_2209_STM32_HAL-main\TMC_2209_STM32_HAL-main\STM32_TMC2209\.cproject
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\jakub\OneDrive\Pulpit\WSN\maching_box\program\TMC_2209_STM32_HAL-main\TMC_2209_STM32_HAL-main\STM32_TMC2209\.cproject
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-10-20 22:22:42.384
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-10-20 22:22:42.565
+!MESSAGE Log4j initialized with config file C:\Users\jakub\OneDrive\Pulpit\WSN\maching_box\program\TMC_2209_STM32_HAL-main\TMC_2209_STM32_HAL-main\STM32_TMC2209\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-10-20 22:22:49.576
+!MESSAGE Started RMI Server, listening on port 41337
