@@ -24,9 +24,7 @@ static TMAG5170_SYSTEM_CONFIG_settings_t SystemConfigSettings;
 
 static TMAG5170_ALERT_CONFIG_settings_t AlertConfigSettings;
 
-
-
-
+float Angle = 0.0;
 
 TMAG5170_return_code_t TMAG5170_dev_conf_settings(TMAG5170_DEVICE_CONFIG_settings_t *new_settings)
 {
@@ -257,9 +255,9 @@ void DisableCRC(void)
   DisCRC[1] = 0x00;
   DisCRC[2] = 0x04;
   DisCRC[3] = 0x07;
-
+  
+  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
   HAL_SPI_Transmit(&hspi1, DisCRC, 4, HAL_MAX_DELAY);
-
   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
 }
 
@@ -333,62 +331,157 @@ void ReadRegister1(void)
   //return RxData;
 }
 
-void GetAngle(void)
+void GetmT(void)
 {
-  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
-
-  uint8_t data[2];
+  // Received data
+  uint8_t RxData[2];
   uint16_t data_reg;
 
   // wartosc pola magnetycznego w mT
-  uint8_t B = 0.0; 
+  float B = 0.0;
+
   // ustawiona czulosc sensora
   uint8_t Br = TMAG5170_X_RANGE_50mT;
-  // uint32_t sum = 0;
+
+  // sum of bits 0-14
+  uint16_t sum;
 
 
-  //wysyłamy adres
+  // Send address
   register_address = TMAG5170_X_CH_RESULT_REG;
   uint8_t FirstFrame = register_address;
   FirstFrame |= 0b1 << 7;
+
+  // CS LOW
+  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+  // Transmit address
   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
+  // Receive data
+  HAL_SPI_Receive(&hspi1, RxData, 2, HAL_MAX_DELAY);
+  // CS HIGH
+  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
 
+  // uint8_t to uint16_t
+  data_reg = RxData[0];
+  data_reg = data_reg << 8;
+  data_reg |= RxData[1];
 
-  HAL_SPI_Receive(&hspi1, data, 2, HAL_MAX_DELAY);
+  // read MSB
+  uint16_t and = data_reg;
+  uint16_t D15 = 0x8000 & and;
 
-
-  data_reg = ((uint16_t)data[0] << 8) | data[1];
-
-  // odczytujemy wartosc MSB
-  uint16_t D15 = data_reg & 0x8000;
-  uint16_t sum;
-
-  uint8_t data_reg_8[2];
-  data_reg_8[0] = data_reg << 8;
-  data_reg_8[1] = data_reg;
-
-  HAL_UART_Transmit(&huart2, data_reg_8, 2, HAL_MAX_DELAY);
-  //HAL_UART_Transmit(&huart2, data[1], 1, HAL_MAX_DELAY);
-
-
+  // counting sum of bits 0-14
   for(int i=0; i<=14; i++)
   {
       sum += data_reg & (0b1 << i);
   }
 
-  B = (((-1*D15)+sum)/65536)*2*abs(Br);
+  // put into the formula
+  B = (((float)D15 + (float)sum)/65536)*2*50;
 
-  uint8_t *array;
-  array = (uint8_t*)(&B);
+  // calculate numbers after dot
+  uint8_t t;
+  t = (B - (int8_t)B)*100;
 
+  char str1[8];
+  char str2[8];
+
+  // converting to char
+  sprintf(str1, "%d", (int8_t)B);
+  sprintf(str2, "%d", t); 
+
+  // sending data to console
+  HAL_UART_Transmit(&huart2, str1, strlen(str1), HAL_MAX_DELAY);
+  HAL_UART_Transmit(&huart2, ".", strlen("."), HAL_MAX_DELAY);
+  HAL_UART_Transmit(&huart2, str2, strlen(str2), HAL_MAX_DELAY);
+  HAL_UART_Transmit(&huart2, " mT", strlen(" mT"), HAL_MAX_DELAY);
+}
+
+float GetAngle(void)
+{
+  uint8_t data[2];
+  uint16_t data_reg;
+  uint16_t data_reg_LSB;
+  uint16_t data_reg_MSB;
+
+  float LSB;
+  float MSB;
+  
+  // Angle
+  // float Angle = 0.0;
+
+  //wysyłamy adres
+  register_address = TMAG5170_ANGLE_RESULT_REG;
+  // register_address = TMAG5170_ANGLE_RESULT_REG;
+  uint8_t FirstFrame = register_address;
+  FirstFrame |= 0b1 << 7;
+
+  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+  HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
+  HAL_SPI_Receive(&hspi1, data, 2, HAL_MAX_DELAY);
   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
 
-  //HAL_UART_Transmit(&huart2, B, 2, HAL_MAX_DELAY);
+    
+  data_reg = data[0];
+  data_reg = data_reg << 8;
+  data_reg |= data[1];
 
-  //HAL_UART_Transmit(&huart2, "\r\n", strlen("\r\n"), HAL_MAX_DELAY);
 
-  HAL_Delay(200);
+  // odczytanie liczby po przecinku
+  // for(int i=0; i<=3; i++)
+  // {
+  //   LSB += data_reg & (0b1 << i);
+  // }
+
+  data_reg_LSB = data_reg;
+  data_reg_LSB = data_reg_LSB & 0x000F;
+  LSB = (float)data_reg_LSB;
+  LSB = LSB/8;
+  
+
+  data_reg_MSB = data_reg & 0x1FF0;
+  data_reg_MSB = data_reg >> 4;
+  MSB = (float)data_reg_MSB;
+
+  Angle = MSB + LSB;
+
+  //A = ((float)data_reg + ((float)LSBsum/8))/10;
+
+  //po przecinku
+  uint8_t t;
+  t = (Angle - (int8_t)Angle)*100;
+
+  // przykład jak zamieniać
+  // uint16_t suma = 123;
+  // B = (float)suma + (float)suma;
+  
+  
+
+  // uint8_t *array;
+  // array = (uint8_t*)(&fl);
+
+  uint8_t uint = 25;
+  
+  char str1[8];
+  sprintf(str1, "%d", data_reg);
+  HAL_UART_Transmit(&huart2, str1, strlen(str1), HAL_MAX_DELAY);
+
+
+
+
+  // // wyświetlanie uint
+  // char str1[8];
+  // char str2[8];
+  // // sprintf(str, "%d", (int8_t)B); 
+  // sprintf(str1, "%d", (int8_t)data_reg);
+  // sprintf(str2, "%d", t); 
+  // HAL_UART_Transmit(&huart2, str1, strlen(str1), HAL_MAX_DELAY);
+  // HAL_UART_Transmit(&huart2, ".", strlen("."), HAL_MAX_DELAY);
+  // HAL_UART_Transmit(&huart2, str2, strlen(str2), HAL_MAX_DELAY);
+  // HAL_UART_Transmit(&huart2, "*", strlen("*"), HAL_MAX_DELAY);
+  return Angle;
 }
+
 
 void GetTemp(void)
 {
@@ -432,4 +525,47 @@ void GetTemp(void)
   // gcvt(temp, 4, buffff);
   // HAL_UART_Transmit(&huart2, (uint8_t)buffff, strlen(buffff), HAL_MAX_DELAY );
 
+}
+
+void GetMagnitude(void)
+{
+  // Received data
+  uint8_t RxData[2];
+  uint16_t data_reg;
+
+  // Magnitude
+  uint16_t M;
+
+
+  // Send address
+  register_address = TMAG5170_MAGNITUDE_RESULT_REG;
+  uint8_t FirstFrame = register_address;
+  FirstFrame |= 0b1 << 7;
+
+  // CS LOW
+  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+  // Transmit address
+  HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
+  // Receive data
+  HAL_SPI_Receive(&hspi1, RxData, 2, HAL_MAX_DELAY);
+  // CS HIGH
+  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+
+  // uint8_t to uint16_t
+  data_reg = RxData[0];
+  data_reg = data_reg << 8;
+  data_reg |= RxData[1];
+
+  // read Magnitude 13 LSB
+  uint16_t and = data_reg;
+  M = and & 0x1FFF;
+
+
+  char str[8];
+
+  // converting to char
+  sprintf(str, "%d", M); 
+
+  // sending data to console
+  HAL_UART_Transmit(&huart2, str, strlen(str), HAL_MAX_DELAY);
 }

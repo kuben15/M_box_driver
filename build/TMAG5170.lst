@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 1
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -55,20 +55,18 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 1
   24:Core/Src/TMAG5170.c **** 
   25:Core/Src/TMAG5170.c **** static TMAG5170_ALERT_CONFIG_settings_t AlertConfigSettings;
   26:Core/Src/TMAG5170.c **** 
-  27:Core/Src/TMAG5170.c **** 
+  27:Core/Src/TMAG5170.c **** float Angle = 0.0;
   28:Core/Src/TMAG5170.c **** 
-  29:Core/Src/TMAG5170.c **** 
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 2
+  29:Core/Src/TMAG5170.c **** TMAG5170_return_code_t TMAG5170_dev_conf_settings(TMAG5170_DEVICE_CONFIG_settings_t *new_settings)
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 2
 
 
-  30:Core/Src/TMAG5170.c **** 
-  31:Core/Src/TMAG5170.c **** TMAG5170_return_code_t TMAG5170_dev_conf_settings(TMAG5170_DEVICE_CONFIG_settings_t *new_settings)
-  32:Core/Src/TMAG5170.c **** {
-  30              		.loc 1 32 1 view -0
+  30:Core/Src/TMAG5170.c **** {
+  30              		.loc 1 30 1 view -0
   31              		.cfi_startproc
   32              		@ args = 0, pretend = 0, frame = 8
   33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34              		.loc 1 32 1 is_stmt 0 view .LVU1
+  34              		.loc 1 30 1 is_stmt 0 view .LVU1
   35 0000 70B5     		push	{r4, r5, r6, lr}
   36              	.LCFI0:
   37              		.cfi_def_cfa_offset 16
@@ -80,180 +78,180 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 1
   43              	.LCFI1:
   44              		.cfi_def_cfa_offset 24
   45 0004 0546     		mov	r5, r0
-  33:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
-  46              		.loc 1 33 3 is_stmt 1 view .LVU2
+  31:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+  46              		.loc 1 31 3 is_stmt 1 view .LVU2
   47 0006 244C     		ldr	r4, .L3
   48 0008 0022     		movs	r2, #0
   49 000a 1021     		movs	r1, #16
   50 000c 2046     		mov	r0, r4
   51              	.LVL1:
-  52              		.loc 1 33 3 is_stmt 0 view .LVU3
+  52              		.loc 1 31 3 is_stmt 0 view .LVU3
   53 000e FFF7FEFF 		bl	HAL_GPIO_WritePin
   54              	.LVL2:
-  34:Core/Src/TMAG5170.c ****   
-  35:Core/Src/TMAG5170.c ****   uint8_t register_address = TMAG5170_DEVICE_CONFIG_REG;
-  55              		.loc 1 35 3 is_stmt 1 view .LVU4
-  36:Core/Src/TMAG5170.c ****   TMAG5170_return_code_t ret = TMAG5170_RET_OK;
-  56              		.loc 1 36 3 view .LVU5
-  37:Core/Src/TMAG5170.c **** 
-  38:Core/Src/TMAG5170.c ****   // copy bytes from settings to new_settings
-  39:Core/Src/TMAG5170.c ****   memcpy(&DeviceConfigSettings, new_settings, sizeof(DeviceConfigSettings));
-  57              		.loc 1 39 3 view .LVU6
+  32:Core/Src/TMAG5170.c ****   
+  33:Core/Src/TMAG5170.c ****   uint8_t register_address = TMAG5170_DEVICE_CONFIG_REG;
+  55              		.loc 1 33 3 is_stmt 1 view .LVU4
+  34:Core/Src/TMAG5170.c ****   TMAG5170_return_code_t ret = TMAG5170_RET_OK;
+  56              		.loc 1 34 3 view .LVU5
+  35:Core/Src/TMAG5170.c **** 
+  36:Core/Src/TMAG5170.c ****   // copy bytes from settings to new_settings
+  37:Core/Src/TMAG5170.c ****   memcpy(&DeviceConfigSettings, new_settings, sizeof(DeviceConfigSettings));
+  57              		.loc 1 37 3 view .LVU6
   58 0012 224A     		ldr	r2, .L3+4
   59 0014 2868     		ldr	r0, [r5]	@ unaligned
   60 0016 1060     		str	r0, [r2]
   61 0018 AB88     		ldrh	r3, [r5, #4]	@ unaligned
   62 001a 9380     		strh	r3, [r2, #4]	@ unaligned
-  40:Core/Src/TMAG5170.c **** 
-  41:Core/Src/TMAG5170.c ****   // saving the bytes to the appropriate places in the variable
-  42:Core/Src/TMAG5170.c ****   uint16_t register_data = ((uint16_t)(DeviceConfigSettings.ConvAvg) << 12u); // tak sie powinno ro
-  63              		.loc 1 42 3 view .LVU7
-  64              		.loc 1 42 60 is_stmt 0 view .LVU8
+  38:Core/Src/TMAG5170.c **** 
+  39:Core/Src/TMAG5170.c ****   // saving the bytes to the appropriate places in the variable
+  40:Core/Src/TMAG5170.c ****   uint16_t register_data = ((uint16_t)(DeviceConfigSettings.ConvAvg) << 12u); // tak sie powinno ro
+  63              		.loc 1 40 3 view .LVU7
+  64              		.loc 1 40 60 is_stmt 0 view .LVU8
   65 001c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  66              		.loc 1 42 12 view .LVU9
+  66              		.loc 1 40 12 view .LVU9
   67 001e 1B03     		lsls	r3, r3, #12
   68 0020 9BB2     		uxth	r3, r3
   69              	.LVL3:
-  43:Core/Src/TMAG5170.c ****   register_data |= ((uint16_t)(DeviceConfigSettings.MagTempCoef) << 8u);
-  70              		.loc 1 43 3 is_stmt 1 view .LVU10
-  71              		.loc 1 43 52 is_stmt 0 view .LVU11
+  41:Core/Src/TMAG5170.c ****   register_data |= ((uint16_t)(DeviceConfigSettings.MagTempCoef) << 8u);
+  70              		.loc 1 41 3 is_stmt 1 view .LVU10
+  71              		.loc 1 41 52 is_stmt 0 view .LVU11
   72 0022 5178     		ldrb	r1, [r2, #1]	@ zero_extendqisi2
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 3
-
-
-  73              		.loc 1 43 17 view .LVU12
+  73              		.loc 1 41 17 view .LVU12
   74 0024 43EA0123 		orr	r3, r3, r1, lsl #8
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 3
+
+
   75              	.LVL4:
-  76              		.loc 1 43 17 view .LVU13
+  76              		.loc 1 41 17 view .LVU13
   77 0028 1BB2     		sxth	r3, r3
   78              	.LVL5:
-  44:Core/Src/TMAG5170.c ****   register_data |= ((uint16_t)(DeviceConfigSettings.OperatingMode) << 4u);
-  79              		.loc 1 44 3 is_stmt 1 view .LVU14
-  80              		.loc 1 44 52 is_stmt 0 view .LVU15
+  42:Core/Src/TMAG5170.c ****   register_data |= ((uint16_t)(DeviceConfigSettings.OperatingMode) << 4u);
+  79              		.loc 1 42 3 is_stmt 1 view .LVU14
+  80              		.loc 1 42 52 is_stmt 0 view .LVU15
   81 002a 9178     		ldrb	r1, [r2, #2]	@ zero_extendqisi2
-  82              		.loc 1 44 17 view .LVU16
+  82              		.loc 1 42 17 view .LVU16
   83 002c 43EA0113 		orr	r3, r3, r1, lsl #4
   84              	.LVL6:
-  45:Core/Src/TMAG5170.c ****   register_data |= ((uint16_t)(DeviceConfigSettings.TempChannelEnabled) << 3u);
-  85              		.loc 1 45 3 is_stmt 1 view .LVU17
-  86              		.loc 1 45 52 is_stmt 0 view .LVU18
+  43:Core/Src/TMAG5170.c ****   register_data |= ((uint16_t)(DeviceConfigSettings.TempChannelEnabled) << 3u);
+  85              		.loc 1 43 3 is_stmt 1 view .LVU17
+  86              		.loc 1 43 52 is_stmt 0 view .LVU18
   87 0030 D178     		ldrb	r1, [r2, #3]	@ zero_extendqisi2
-  88              		.loc 1 45 17 view .LVU19
+  88              		.loc 1 43 17 view .LVU19
   89 0032 43EAC103 		orr	r3, r3, r1, lsl #3
   90              	.LVL7:
-  46:Core/Src/TMAG5170.c ****   register_data |= ((uint16_t)(DeviceConfigSettings.TempRate) << 2u);
-  91              		.loc 1 46 3 is_stmt 1 view .LVU20
-  92              		.loc 1 46 52 is_stmt 0 view .LVU21
+  44:Core/Src/TMAG5170.c ****   register_data |= ((uint16_t)(DeviceConfigSettings.TempRate) << 2u);
+  91              		.loc 1 44 3 is_stmt 1 view .LVU20
+  92              		.loc 1 44 52 is_stmt 0 view .LVU21
   93 0036 1279     		ldrb	r2, [r2, #4]	@ zero_extendqisi2
-  94              		.loc 1 46 17 view .LVU22
+  94              		.loc 1 44 17 view .LVU22
   95 0038 43EA8203 		orr	r3, r3, r2, lsl #2
   96              	.LVL8:
-  47:Core/Src/TMAG5170.c ****   register_data |= ((uint16_t)(DeviceConfigSettings.TempChannelEnabled) << 1u);
-  97              		.loc 1 47 3 is_stmt 1 view .LVU23
-  98              		.loc 1 47 17 is_stmt 0 view .LVU24
+  45:Core/Src/TMAG5170.c ****   register_data |= ((uint16_t)(DeviceConfigSettings.TempChannelEnabled) << 1u);
+  97              		.loc 1 45 3 is_stmt 1 view .LVU23
+  98              		.loc 1 45 17 is_stmt 0 view .LVU24
   99 003c 43EA4103 		orr	r3, r3, r1, lsl #1
  100              	.LVL9:
-  48:Core/Src/TMAG5170.c **** 
-  49:Core/Src/TMAG5170.c ****   uint8_t register_data_8[2];
- 101              		.loc 1 49 3 is_stmt 1 view .LVU25
-  50:Core/Src/TMAG5170.c ****   register_data_8[0] = register_data >> 8;
- 102              		.loc 1 50 3 view .LVU26
- 103              		.loc 1 50 22 is_stmt 0 view .LVU27
+  46:Core/Src/TMAG5170.c **** 
+  47:Core/Src/TMAG5170.c ****   uint8_t register_data_8[2];
+ 101              		.loc 1 47 3 is_stmt 1 view .LVU25
+  48:Core/Src/TMAG5170.c ****   register_data_8[0] = register_data >> 8;
+ 102              		.loc 1 48 3 view .LVU26
+ 103              		.loc 1 48 22 is_stmt 0 view .LVU27
  104 0040 C3F30722 		ubfx	r2, r3, #8, #8
  105 0044 8DF80420 		strb	r2, [sp, #4]
-  51:Core/Src/TMAG5170.c ****   register_data_8[1] = register_data;
- 106              		.loc 1 51 3 is_stmt 1 view .LVU28
- 107              		.loc 1 51 22 is_stmt 0 view .LVU29
+  49:Core/Src/TMAG5170.c ****   register_data_8[1] = register_data;
+ 106              		.loc 1 49 3 is_stmt 1 view .LVU28
+ 107              		.loc 1 49 22 is_stmt 0 view .LVU29
  108 0048 8DF80530 		strb	r3, [sp, #5]
-  52:Core/Src/TMAG5170.c ****   // zapisanie (rejestru, danych)
-  53:Core/Src/TMAG5170.c **** 
-  54:Core/Src/TMAG5170.c ****   // uint32_t data = 0x01;
-  55:Core/Src/TMAG5170.c ****   // data |= (register_address << 1u);
-  56:Core/Src/TMAG5170.c ****   // data |= (register_address << 16u);
-  57:Core/Src/TMAG5170.c **** 
-  58:Core/Src/TMAG5170.c ****   // data |=(register_data << 8u);
-  59:Core/Src/TMAG5170.c ****   //data |= ((uint32_t));
-  60:Core/Src/TMAG5170.c **** 
-  61:Core/Src/TMAG5170.c ****   // first bit 0b1 -- write
-  62:Core/Src/TMAG5170.c ****   // next 7 bits register address
-  63:Core/Src/TMAG5170.c ****   // next 16 bits register data
-  64:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 4
+  50:Core/Src/TMAG5170.c ****   // zapisanie (rejestru, danych)
+  51:Core/Src/TMAG5170.c **** 
+  52:Core/Src/TMAG5170.c ****   // uint32_t data = 0x01;
+  53:Core/Src/TMAG5170.c ****   // data |= (register_address << 1u);
+  54:Core/Src/TMAG5170.c ****   // data |= (register_address << 16u);
+  55:Core/Src/TMAG5170.c **** 
+  56:Core/Src/TMAG5170.c ****   // data |=(register_data << 8u);
+  57:Core/Src/TMAG5170.c ****   //data |= ((uint32_t));
+  58:Core/Src/TMAG5170.c **** 
+  59:Core/Src/TMAG5170.c ****   // first bit 0b1 -- write
+  60:Core/Src/TMAG5170.c ****   // next 7 bits register address
+  61:Core/Src/TMAG5170.c ****   // next 16 bits register data
+  62:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
+ 109              		.loc 1 62 3 is_stmt 1 view .LVU30
+ 110              		.loc 1 62 11 is_stmt 0 view .LVU31
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 4
 
 
- 109              		.loc 1 64 3 is_stmt 1 view .LVU30
- 110              		.loc 1 64 11 is_stmt 0 view .LVU31
  111 004c 0026     		movs	r6, #0
  112 004e 8DF80360 		strb	r6, [sp, #3]
-  65:Core/Src/TMAG5170.c ****   FirstFrame |= 0b0 << 7;
- 113              		.loc 1 65 3 is_stmt 1 view .LVU32
-  66:Core/Src/TMAG5170.c **** 
-  67:Core/Src/TMAG5170.c ****   // last 8 bits:
-  68:Core/Src/TMAG5170.c ****   // 0b12345678
-  69:Core/Src/TMAG5170.c ****   // 3 and 4 bits are cmd status
-  70:Core/Src/TMAG5170.c ****   // 3 bit: CMD1
-  71:Core/Src/TMAG5170.c ****   // CMD1 = 0 --> Display SET_COUNT[2:0] in STAT[2:0] bits at SDO next frame
-  72:Core/Src/TMAG5170.c ****   // CMD1 = 1 --> Display DATA_TYPE[2:0] in STAT[2:0] bits at SDO next frame
-  73:Core/Src/TMAG5170.c ****   // 4 bit: CMD0
-  74:Core/Src/TMAG5170.c ****   // CMD0 = 0 --> no conversion start through command bits
-  75:Core/Src/TMAG5170.c ****   // CMD0 = 1 --> start of conversion at the CS going high
-  76:Core/Src/TMAG5170.c ****   // last 4 bits are CRC
-  77:Core/Src/TMAG5170.c **** 
-  78:Core/Src/TMAG5170.c ****   uint8_t StatusCRC = 0b00111100;
- 114              		.loc 1 78 3 view .LVU33
- 115              		.loc 1 78 11 is_stmt 0 view .LVU34
+  63:Core/Src/TMAG5170.c ****   FirstFrame |= 0b0 << 7;
+ 113              		.loc 1 63 3 is_stmt 1 view .LVU32
+  64:Core/Src/TMAG5170.c **** 
+  65:Core/Src/TMAG5170.c ****   // last 8 bits:
+  66:Core/Src/TMAG5170.c ****   // 0b12345678
+  67:Core/Src/TMAG5170.c ****   // 3 and 4 bits are cmd status
+  68:Core/Src/TMAG5170.c ****   // 3 bit: CMD1
+  69:Core/Src/TMAG5170.c ****   // CMD1 = 0 --> Display SET_COUNT[2:0] in STAT[2:0] bits at SDO next frame
+  70:Core/Src/TMAG5170.c ****   // CMD1 = 1 --> Display DATA_TYPE[2:0] in STAT[2:0] bits at SDO next frame
+  71:Core/Src/TMAG5170.c ****   // 4 bit: CMD0
+  72:Core/Src/TMAG5170.c ****   // CMD0 = 0 --> no conversion start through command bits
+  73:Core/Src/TMAG5170.c ****   // CMD0 = 1 --> start of conversion at the CS going high
+  74:Core/Src/TMAG5170.c ****   // last 4 bits are CRC
+  75:Core/Src/TMAG5170.c **** 
+  76:Core/Src/TMAG5170.c ****   uint8_t StatusCRC = 0b00111100;
+ 114              		.loc 1 76 3 view .LVU33
+ 115              		.loc 1 76 11 is_stmt 0 view .LVU34
  116 0052 3C23     		movs	r3, #60
  117              	.LVL10:
- 118              		.loc 1 78 11 view .LVU35
+ 118              		.loc 1 76 11 view .LVU35
  119 0054 8DF80230 		strb	r3, [sp, #2]
+  77:Core/Src/TMAG5170.c **** 
+  78:Core/Src/TMAG5170.c ****   // wysłanie
   79:Core/Src/TMAG5170.c **** 
-  80:Core/Src/TMAG5170.c ****   // wysłanie
-  81:Core/Src/TMAG5170.c **** 
-  82:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
- 120              		.loc 1 82 3 is_stmt 1 view .LVU36
+  80:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
+ 120              		.loc 1 80 3 is_stmt 1 view .LVU36
  121 0058 114D     		ldr	r5, .L3+8
  122              	.LVL11:
- 123              		.loc 1 82 3 is_stmt 0 view .LVU37
+ 123              		.loc 1 80 3 is_stmt 0 view .LVU37
  124 005a 4FF0FF33 		mov	r3, #-1
  125 005e 0122     		movs	r2, #1
  126 0060 0DF10301 		add	r1, sp, #3
  127              	.LVL12:
- 128              		.loc 1 82 3 view .LVU38
+ 128              		.loc 1 80 3 view .LVU38
  129 0064 2846     		mov	r0, r5
  130 0066 FFF7FEFF 		bl	HAL_SPI_Transmit
  131              	.LVL13:
-  83:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, register_data_8, 2, HAL_MAX_DELAY);
- 132              		.loc 1 83 3 is_stmt 1 view .LVU39
+  81:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, register_data_8, 2, HAL_MAX_DELAY);
+ 132              		.loc 1 81 3 is_stmt 1 view .LVU39
  133 006a 4FF0FF33 		mov	r3, #-1
  134 006e 0222     		movs	r2, #2
  135 0070 01A9     		add	r1, sp, #4
  136 0072 2846     		mov	r0, r5
  137 0074 FFF7FEFF 		bl	HAL_SPI_Transmit
  138              	.LVL14:
-  84:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &StatusCRC, 1, HAL_MAX_DELAY);
- 139              		.loc 1 84 3 view .LVU40
+  82:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &StatusCRC, 1, HAL_MAX_DELAY);
+ 139              		.loc 1 82 3 view .LVU40
  140 0078 4FF0FF33 		mov	r3, #-1
  141 007c 0122     		movs	r2, #1
  142 007e 0DF10201 		add	r1, sp, #2
  143 0082 2846     		mov	r0, r5
  144 0084 FFF7FEFF 		bl	HAL_SPI_Transmit
  145              	.LVL15:
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 5
+  83:Core/Src/TMAG5170.c ****   
+  84:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 5
 
 
-  85:Core/Src/TMAG5170.c ****   
-  86:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
- 146              		.loc 1 86 3 view .LVU41
+ 146              		.loc 1 84 3 view .LVU41
  147 0088 0122     		movs	r2, #1
  148 008a 1021     		movs	r1, #16
  149 008c 2046     		mov	r0, r4
  150 008e FFF7FEFF 		bl	HAL_GPIO_WritePin
  151              	.LVL16:
-  87:Core/Src/TMAG5170.c ****   
-  88:Core/Src/TMAG5170.c ****   return ret;
- 152              		.loc 1 88 3 view .LVU42
-  89:Core/Src/TMAG5170.c **** }
- 153              		.loc 1 89 1 is_stmt 0 view .LVU43
+  85:Core/Src/TMAG5170.c ****   
+  86:Core/Src/TMAG5170.c ****   return ret;
+ 152              		.loc 1 86 3 view .LVU42
+  87:Core/Src/TMAG5170.c **** }
+ 153              		.loc 1 87 1 is_stmt 0 view .LVU43
  154 0092 3046     		mov	r0, r6
  155 0094 02B0     		add	sp, sp, #8
  156              	.LCFI2:
@@ -277,14 +275,14 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 1
  176              	TMAG5170_sens_conf_settings:
  177              	.LVL17:
  178              	.LFB136:
-  90:Core/Src/TMAG5170.c **** 
-  91:Core/Src/TMAG5170.c **** TMAG5170_return_code_t TMAG5170_sens_conf_settings(TMAG5170_SENSOR_CONFIG_settings_t *new_settings)
-  92:Core/Src/TMAG5170.c **** {
- 179              		.loc 1 92 1 is_stmt 1 view -0
+  88:Core/Src/TMAG5170.c **** 
+  89:Core/Src/TMAG5170.c **** TMAG5170_return_code_t TMAG5170_sens_conf_settings(TMAG5170_SENSOR_CONFIG_settings_t *new_settings)
+  90:Core/Src/TMAG5170.c **** {
+ 179              		.loc 1 90 1 is_stmt 1 view -0
  180              		.cfi_startproc
  181              		@ args = 0, pretend = 0, frame = 8
  182              		@ frame_needed = 0, uses_anonymous_args = 0
- 183              		.loc 1 92 1 is_stmt 0 view .LVU45
+ 183              		.loc 1 90 1 is_stmt 0 view .LVU45
  184 0000 70B5     		push	{r4, r5, r6, lr}
  185              	.LCFI3:
  186              		.cfi_def_cfa_offset 16
@@ -296,180 +294,180 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 1
  192              	.LCFI4:
  193              		.cfi_def_cfa_offset 24
  194 0004 0646     		mov	r6, r0
-  93:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
- 195              		.loc 1 93 3 is_stmt 1 view .LVU46
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 6
-
-
+  91:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+ 195              		.loc 1 91 3 is_stmt 1 view .LVU46
  196 0006 254D     		ldr	r5, .L7
  197 0008 0022     		movs	r2, #0
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 6
+
+
  198 000a 1021     		movs	r1, #16
  199 000c 2846     		mov	r0, r5
  200              	.LVL18:
- 201              		.loc 1 93 3 is_stmt 0 view .LVU47
+ 201              		.loc 1 91 3 is_stmt 0 view .LVU47
  202 000e FFF7FEFF 		bl	HAL_GPIO_WritePin
  203              	.LVL19:
-  94:Core/Src/TMAG5170.c ****   
-  95:Core/Src/TMAG5170.c ****   register_address = TMAG5170_SENSOR_CONFIG_REG;
- 204              		.loc 1 95 3 is_stmt 1 view .LVU48
- 205              		.loc 1 95 20 is_stmt 0 view .LVU49
+  92:Core/Src/TMAG5170.c ****   
+  93:Core/Src/TMAG5170.c ****   register_address = TMAG5170_SENSOR_CONFIG_REG;
+ 204              		.loc 1 93 3 is_stmt 1 view .LVU48
+ 205              		.loc 1 93 20 is_stmt 0 view .LVU49
  206 0012 0124     		movs	r4, #1
  207 0014 224B     		ldr	r3, .L7+4
  208 0016 1C70     		strb	r4, [r3]
-  96:Core/Src/TMAG5170.c ****   TMAG5170_return_code_t ret = TMAG5170_RET_OK;
- 209              		.loc 1 96 3 is_stmt 1 view .LVU50
+  94:Core/Src/TMAG5170.c ****   TMAG5170_return_code_t ret = TMAG5170_RET_OK;
+ 209              		.loc 1 94 3 is_stmt 1 view .LVU50
  210              	.LVL20:
-  97:Core/Src/TMAG5170.c **** 
-  98:Core/Src/TMAG5170.c ****   // copy bytes from settings to new_settings
-  99:Core/Src/TMAG5170.c ****   memcpy(&SensorConfigSettings, new_settings, sizeof(SensorConfigSettings));
- 211              		.loc 1 99 3 view .LVU51
+  95:Core/Src/TMAG5170.c **** 
+  96:Core/Src/TMAG5170.c ****   // copy bytes from settings to new_settings
+  97:Core/Src/TMAG5170.c ****   memcpy(&SensorConfigSettings, new_settings, sizeof(SensorConfigSettings));
+ 211              		.loc 1 97 3 view .LVU51
  212 0018 224A     		ldr	r2, .L7+8
  213 001a 3068     		ldr	r0, [r6]	@ unaligned
  214 001c 1060     		str	r0, [r2]
  215 001e B388     		ldrh	r3, [r6, #4]	@ unaligned
  216 0020 9380     		strh	r3, [r2, #4]	@ unaligned
- 100:Core/Src/TMAG5170.c **** 
- 101:Core/Src/TMAG5170.c ****   // saving the bytes to the appropriate places in the variable
- 102:Core/Src/TMAG5170.c ****   uint16_t register_data = (SensorConfigSettings.AngleEnabled << 14);
- 217              		.loc 1 102 3 view .LVU52
- 218              		.loc 1 102 49 is_stmt 0 view .LVU53
+  98:Core/Src/TMAG5170.c **** 
+  99:Core/Src/TMAG5170.c ****   // saving the bytes to the appropriate places in the variable
+ 100:Core/Src/TMAG5170.c ****   uint16_t register_data = (SensorConfigSettings.AngleEnabled << 14);
+ 217              		.loc 1 100 3 view .LVU52
+ 218              		.loc 1 100 49 is_stmt 0 view .LVU53
  219 0022 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 220              		.loc 1 102 12 view .LVU54
+ 220              		.loc 1 100 12 view .LVU54
  221 0024 9B03     		lsls	r3, r3, #14
  222 0026 9BB2     		uxth	r3, r3
  223              	.LVL21:
- 103:Core/Src/TMAG5170.c ****   register_data |= (SensorConfigSettings.SleepTime << 10);
- 224              		.loc 1 103 3 is_stmt 1 view .LVU55
- 225              		.loc 1 103 41 is_stmt 0 view .LVU56
+ 101:Core/Src/TMAG5170.c ****   register_data |= (SensorConfigSettings.SleepTime << 10);
+ 224              		.loc 1 101 3 is_stmt 1 view .LVU55
+ 225              		.loc 1 101 41 is_stmt 0 view .LVU56
  226 0028 5178     		ldrb	r1, [r2, #1]	@ zero_extendqisi2
- 227              		.loc 1 103 17 view .LVU57
+ 227              		.loc 1 101 17 view .LVU57
  228 002a 43EA8123 		orr	r3, r3, r1, lsl #10
  229              	.LVL22:
- 230              		.loc 1 103 17 view .LVU58
+ 230              		.loc 1 101 17 view .LVU58
  231 002e 1BB2     		sxth	r3, r3
  232              	.LVL23:
- 104:Core/Src/TMAG5170.c ****   register_data |= (SensorConfigSettings.MagChannelEnabled << 6);
- 233              		.loc 1 104 3 is_stmt 1 view .LVU59
- 234              		.loc 1 104 41 is_stmt 0 view .LVU60
+ 102:Core/Src/TMAG5170.c ****   register_data |= (SensorConfigSettings.MagChannelEnabled << 6);
+ 233              		.loc 1 102 3 is_stmt 1 view .LVU59
+ 234              		.loc 1 102 41 is_stmt 0 view .LVU60
  235 0030 9178     		ldrb	r1, [r2, #2]	@ zero_extendqisi2
- 236              		.loc 1 104 17 view .LVU61
+ 236              		.loc 1 102 17 view .LVU61
  237 0032 43EA8113 		orr	r3, r3, r1, lsl #6
  238              	.LVL24:
- 105:Core/Src/TMAG5170.c ****   register_data |= (SensorConfigSettings.Zrange << 4);
- 239              		.loc 1 105 3 is_stmt 1 view .LVU62
- 240              		.loc 1 105 41 is_stmt 0 view .LVU63
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 7
-
-
+ 103:Core/Src/TMAG5170.c ****   register_data |= (SensorConfigSettings.Zrange << 4);
+ 239              		.loc 1 103 3 is_stmt 1 view .LVU62
+ 240              		.loc 1 103 41 is_stmt 0 view .LVU63
  241 0036 D178     		ldrb	r1, [r2, #3]	@ zero_extendqisi2
- 242              		.loc 1 105 17 view .LVU64
+ 242              		.loc 1 103 17 view .LVU64
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 7
+
+
  243 0038 43EA0113 		orr	r3, r3, r1, lsl #4
  244              	.LVL25:
- 106:Core/Src/TMAG5170.c ****   register_data |= (SensorConfigSettings.Yrange << 2);
- 245              		.loc 1 106 3 is_stmt 1 view .LVU65
- 246              		.loc 1 106 41 is_stmt 0 view .LVU66
+ 104:Core/Src/TMAG5170.c ****   register_data |= (SensorConfigSettings.Yrange << 2);
+ 245              		.loc 1 104 3 is_stmt 1 view .LVU65
+ 246              		.loc 1 104 41 is_stmt 0 view .LVU66
  247 003c 1179     		ldrb	r1, [r2, #4]	@ zero_extendqisi2
- 248              		.loc 1 106 17 view .LVU67
+ 248              		.loc 1 104 17 view .LVU67
  249 003e 43EA8103 		orr	r3, r3, r1, lsl #2
  250              	.LVL26:
- 251              		.loc 1 106 17 view .LVU68
+ 251              		.loc 1 104 17 view .LVU68
  252 0042 9BB2     		uxth	r3, r3
  253              	.LVL27:
- 107:Core/Src/TMAG5170.c ****   register_data |= (SensorConfigSettings.Xrange << 0);
- 254              		.loc 1 107 3 is_stmt 1 view .LVU69
- 255              		.loc 1 107 41 is_stmt 0 view .LVU70
+ 105:Core/Src/TMAG5170.c ****   register_data |= (SensorConfigSettings.Xrange << 0);
+ 254              		.loc 1 105 3 is_stmt 1 view .LVU69
+ 255              		.loc 1 105 41 is_stmt 0 view .LVU70
  256 0044 5279     		ldrb	r2, [r2, #5]	@ zero_extendqisi2
- 257              		.loc 1 107 17 view .LVU71
+ 257              		.loc 1 105 17 view .LVU71
  258 0046 1A43     		orrs	r2, r2, r3
  259              	.LVL28:
- 108:Core/Src/TMAG5170.c **** 
- 109:Core/Src/TMAG5170.c ****   uint8_t register_data_8[2];
- 260              		.loc 1 109 3 is_stmt 1 view .LVU72
- 110:Core/Src/TMAG5170.c ****   register_data_8[0] = register_data >> 8;
- 261              		.loc 1 110 3 view .LVU73
- 262              		.loc 1 110 22 is_stmt 0 view .LVU74
+ 106:Core/Src/TMAG5170.c **** 
+ 107:Core/Src/TMAG5170.c ****   uint8_t register_data_8[2];
+ 260              		.loc 1 107 3 is_stmt 1 view .LVU72
+ 108:Core/Src/TMAG5170.c ****   register_data_8[0] = register_data >> 8;
+ 261              		.loc 1 108 3 view .LVU73
+ 262              		.loc 1 108 22 is_stmt 0 view .LVU74
  263 0048 1B0A     		lsrs	r3, r3, #8
  264 004a 8DF80430 		strb	r3, [sp, #4]
- 111:Core/Src/TMAG5170.c ****   register_data_8[1] = register_data;
- 265              		.loc 1 111 3 is_stmt 1 view .LVU75
- 266              		.loc 1 111 22 is_stmt 0 view .LVU76
+ 109:Core/Src/TMAG5170.c ****   register_data_8[1] = register_data;
+ 265              		.loc 1 109 3 is_stmt 1 view .LVU75
+ 266              		.loc 1 109 22 is_stmt 0 view .LVU76
  267 004e 8DF80520 		strb	r2, [sp, #5]
- 112:Core/Src/TMAG5170.c ****   
- 113:Core/Src/TMAG5170.c ****   
- 114:Core/Src/TMAG5170.c ****   // zapisanie (rejestru, danych)
- 115:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
- 268              		.loc 1 115 3 is_stmt 1 view .LVU77
- 269              		.loc 1 115 11 is_stmt 0 view .LVU78
+ 110:Core/Src/TMAG5170.c ****   
+ 111:Core/Src/TMAG5170.c ****   
+ 112:Core/Src/TMAG5170.c ****   // zapisanie (rejestru, danych)
+ 113:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
+ 268              		.loc 1 113 3 is_stmt 1 view .LVU77
+ 269              		.loc 1 113 11 is_stmt 0 view .LVU78
  270 0052 8DF80340 		strb	r4, [sp, #3]
- 116:Core/Src/TMAG5170.c ****   FirstFrame |= 0b0 << 7;
- 271              		.loc 1 116 3 is_stmt 1 view .LVU79
- 117:Core/Src/TMAG5170.c **** 
- 118:Core/Src/TMAG5170.c ****   // last 8 bits:
- 119:Core/Src/TMAG5170.c ****   // 0b12345678
- 120:Core/Src/TMAG5170.c ****   // 3 and 4 bits are cmd status
- 121:Core/Src/TMAG5170.c ****   // 3 bit: CMD1
- 122:Core/Src/TMAG5170.c ****   // CMD1 = 0 --> Display SET_COUNT[2:0] in STAT[2:0] bits at SDO next frame
- 123:Core/Src/TMAG5170.c ****   // CMD1 = 1 --> Display DATA_TYPE[2:0] in STAT[2:0] bits at SDO next frame
- 124:Core/Src/TMAG5170.c ****   // 4 bit: CMD0
- 125:Core/Src/TMAG5170.c ****   // CMD0 = 0 --> no conversion start through command bits
- 126:Core/Src/TMAG5170.c ****   // CMD0 = 1 --> start of conversion at the CS going high
- 127:Core/Src/TMAG5170.c ****   // last 4 bits are CRC
- 128:Core/Src/TMAG5170.c **** 
- 129:Core/Src/TMAG5170.c ****   uint8_t StatusCRC = 0b00111100;
- 272              		.loc 1 129 3 view .LVU80
- 273              		.loc 1 129 11 is_stmt 0 view .LVU81
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 8
-
-
+ 114:Core/Src/TMAG5170.c ****   FirstFrame |= 0b0 << 7;
+ 271              		.loc 1 114 3 is_stmt 1 view .LVU79
+ 115:Core/Src/TMAG5170.c **** 
+ 116:Core/Src/TMAG5170.c ****   // last 8 bits:
+ 117:Core/Src/TMAG5170.c ****   // 0b12345678
+ 118:Core/Src/TMAG5170.c ****   // 3 and 4 bits are cmd status
+ 119:Core/Src/TMAG5170.c ****   // 3 bit: CMD1
+ 120:Core/Src/TMAG5170.c ****   // CMD1 = 0 --> Display SET_COUNT[2:0] in STAT[2:0] bits at SDO next frame
+ 121:Core/Src/TMAG5170.c ****   // CMD1 = 1 --> Display DATA_TYPE[2:0] in STAT[2:0] bits at SDO next frame
+ 122:Core/Src/TMAG5170.c ****   // 4 bit: CMD0
+ 123:Core/Src/TMAG5170.c ****   // CMD0 = 0 --> no conversion start through command bits
+ 124:Core/Src/TMAG5170.c ****   // CMD0 = 1 --> start of conversion at the CS going high
+ 125:Core/Src/TMAG5170.c ****   // last 4 bits are CRC
+ 126:Core/Src/TMAG5170.c **** 
+ 127:Core/Src/TMAG5170.c ****   uint8_t StatusCRC = 0b00111100;
+ 272              		.loc 1 127 3 view .LVU80
+ 273              		.loc 1 127 11 is_stmt 0 view .LVU81
  274 0056 3C23     		movs	r3, #60
  275 0058 8DF80230 		strb	r3, [sp, #2]
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 8
+
+
+ 128:Core/Src/TMAG5170.c **** 
+ 129:Core/Src/TMAG5170.c ****   // wysłanie
  130:Core/Src/TMAG5170.c **** 
- 131:Core/Src/TMAG5170.c ****   // wysłanie
- 132:Core/Src/TMAG5170.c **** 
- 133:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
- 276              		.loc 1 133 3 is_stmt 1 view .LVU82
+ 131:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
+ 276              		.loc 1 131 3 is_stmt 1 view .LVU82
  277 005c 124E     		ldr	r6, .L7+12
  278              	.LVL29:
- 279              		.loc 1 133 3 is_stmt 0 view .LVU83
+ 279              		.loc 1 131 3 is_stmt 0 view .LVU83
  280 005e 4FF0FF33 		mov	r3, #-1
  281 0062 2246     		mov	r2, r4
  282              	.LVL30:
- 283              		.loc 1 133 3 view .LVU84
+ 283              		.loc 1 131 3 view .LVU84
  284 0064 0DF10301 		add	r1, sp, #3
  285              	.LVL31:
- 286              		.loc 1 133 3 view .LVU85
+ 286              		.loc 1 131 3 view .LVU85
  287 0068 3046     		mov	r0, r6
  288 006a FFF7FEFF 		bl	HAL_SPI_Transmit
  289              	.LVL32:
- 134:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, register_data_8, 2, HAL_MAX_DELAY);
- 290              		.loc 1 134 3 is_stmt 1 view .LVU86
+ 132:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, register_data_8, 2, HAL_MAX_DELAY);
+ 290              		.loc 1 132 3 is_stmt 1 view .LVU86
  291 006e 4FF0FF33 		mov	r3, #-1
  292 0072 0222     		movs	r2, #2
  293 0074 01A9     		add	r1, sp, #4
  294 0076 3046     		mov	r0, r6
  295 0078 FFF7FEFF 		bl	HAL_SPI_Transmit
  296              	.LVL33:
- 135:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &StatusCRC, 1, HAL_MAX_DELAY);
- 297              		.loc 1 135 3 view .LVU87
+ 133:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &StatusCRC, 1, HAL_MAX_DELAY);
+ 297              		.loc 1 133 3 view .LVU87
  298 007c 4FF0FF33 		mov	r3, #-1
  299 0080 2246     		mov	r2, r4
  300 0082 0DF10201 		add	r1, sp, #2
  301 0086 3046     		mov	r0, r6
  302 0088 FFF7FEFF 		bl	HAL_SPI_Transmit
  303              	.LVL34:
- 136:Core/Src/TMAG5170.c ****   
- 137:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
- 304              		.loc 1 137 3 view .LVU88
+ 134:Core/Src/TMAG5170.c ****   
+ 135:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+ 304              		.loc 1 135 3 view .LVU88
  305 008c 2246     		mov	r2, r4
  306 008e 1021     		movs	r1, #16
  307 0090 2846     		mov	r0, r5
  308 0092 FFF7FEFF 		bl	HAL_GPIO_WritePin
  309              	.LVL35:
- 138:Core/Src/TMAG5170.c ****   
- 139:Core/Src/TMAG5170.c ****   return ret;
- 310              		.loc 1 139 3 view .LVU89
- 140:Core/Src/TMAG5170.c **** }
- 311              		.loc 1 140 1 is_stmt 0 view .LVU90
+ 136:Core/Src/TMAG5170.c ****   
+ 137:Core/Src/TMAG5170.c ****   return ret;
+ 310              		.loc 1 137 3 view .LVU89
+ 138:Core/Src/TMAG5170.c **** }
+ 311              		.loc 1 138 1 is_stmt 0 view .LVU90
  312 0096 0020     		movs	r0, #0
  313 0098 02B0     		add	sp, sp, #8
  314              	.LCFI5:
@@ -478,11 +476,11 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 1
  317 009a 70BD     		pop	{r4, r5, r6, pc}
  318              	.L8:
  319              		.align	2
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 9
-
-
  320              	.L7:
  321 009c 00040048 		.word	1207960576
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 9
+
+
  322 00a0 00000000 		.word	.LANCHOR1
  323 00a4 00000000 		.word	.LANCHOR2
  324 00a8 00000000 		.word	hspi1
@@ -497,14 +495,14 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 1
  335              	TMAG5170_sys_conf_settings:
  336              	.LVL36:
  337              	.LFB137:
- 141:Core/Src/TMAG5170.c **** 
- 142:Core/Src/TMAG5170.c **** TMAG5170_return_code_t TMAG5170_sys_conf_settings(TMAG5170_SYSTEM_CONFIG_settings_t *new_settings)
- 143:Core/Src/TMAG5170.c **** {
- 338              		.loc 1 143 1 is_stmt 1 view -0
+ 139:Core/Src/TMAG5170.c **** 
+ 140:Core/Src/TMAG5170.c **** TMAG5170_return_code_t TMAG5170_sys_conf_settings(TMAG5170_SYSTEM_CONFIG_settings_t *new_settings)
+ 141:Core/Src/TMAG5170.c **** {
+ 338              		.loc 1 141 1 is_stmt 1 view -0
  339              		.cfi_startproc
  340              		@ args = 0, pretend = 0, frame = 8
  341              		@ frame_needed = 0, uses_anonymous_args = 0
- 342              		.loc 1 143 1 is_stmt 0 view .LVU92
+ 342              		.loc 1 141 1 is_stmt 0 view .LVU92
  343 0000 70B5     		push	{r4, r5, r6, lr}
  344              	.LCFI6:
  345              		.cfi_def_cfa_offset 16
@@ -516,33 +514,33 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 1
  351              	.LCFI7:
  352              		.cfi_def_cfa_offset 24
  353 0004 0646     		mov	r6, r0
- 144:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
- 354              		.loc 1 144 3 is_stmt 1 view .LVU93
+ 142:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+ 354              		.loc 1 142 3 is_stmt 1 view .LVU93
  355 0006 284D     		ldr	r5, .L11
  356 0008 0022     		movs	r2, #0
  357 000a 1021     		movs	r1, #16
  358 000c 2846     		mov	r0, r5
  359              	.LVL37:
- 360              		.loc 1 144 3 is_stmt 0 view .LVU94
+ 360              		.loc 1 142 3 is_stmt 0 view .LVU94
  361 000e FFF7FEFF 		bl	HAL_GPIO_WritePin
  362              	.LVL38:
- 145:Core/Src/TMAG5170.c ****   
- 146:Core/Src/TMAG5170.c ****   register_address = TMAG5170_SYSTEM_CONFIG_REG;
- 363              		.loc 1 146 3 is_stmt 1 view .LVU95
- 364              		.loc 1 146 20 is_stmt 0 view .LVU96
+ 143:Core/Src/TMAG5170.c ****   
+ 144:Core/Src/TMAG5170.c ****   register_address = TMAG5170_SYSTEM_CONFIG_REG;
+ 363              		.loc 1 144 3 is_stmt 1 view .LVU95
+ 364              		.loc 1 144 20 is_stmt 0 view .LVU96
  365 0012 0224     		movs	r4, #2
  366 0014 254B     		ldr	r3, .L11+4
  367 0016 1C70     		strb	r4, [r3]
- 147:Core/Src/TMAG5170.c ****   TMAG5170_return_code_t ret = TMAG5170_RET_OK;
- 368              		.loc 1 147 3 is_stmt 1 view .LVU97
+ 145:Core/Src/TMAG5170.c ****   TMAG5170_return_code_t ret = TMAG5170_RET_OK;
+ 368              		.loc 1 145 3 is_stmt 1 view .LVU97
  369              	.LVL39:
- 148:Core/Src/TMAG5170.c **** 
- 149:Core/Src/TMAG5170.c ****   // copy bytes from settings to new_settings
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 10
+ 146:Core/Src/TMAG5170.c **** 
+ 147:Core/Src/TMAG5170.c ****   // copy bytes from settings to new_settings
+ 148:Core/Src/TMAG5170.c ****   memcpy(&SystemConfigSettings, new_settings, sizeof(SystemConfigSettings));
+ 370              		.loc 1 148 3 view .LVU98
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 10
 
 
- 150:Core/Src/TMAG5170.c ****   memcpy(&SystemConfigSettings, new_settings, sizeof(SystemConfigSettings));
- 370              		.loc 1 150 3 view .LVU98
  371 0018 254A     		ldr	r2, .L11+8
  372 001a 3068     		ldr	r0, [r6]	@ unaligned
  373 001c 1060     		str	r0, [r2]
@@ -550,156 +548,156 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 1
  375 0020 B379     		ldrb	r3, [r6, #6]	@ zero_extendqisi2
  376 0022 9180     		strh	r1, [r2, #4]	@ unaligned
  377 0024 9371     		strb	r3, [r2, #6]
- 151:Core/Src/TMAG5170.c **** 
- 152:Core/Src/TMAG5170.c ****   // saving the bytes to the appropriate places in the variable
- 153:Core/Src/TMAG5170.c ****   uint16_t register_data = (SystemConfigSettings.DiagnosticSelect << 12);
- 378              		.loc 1 153 3 view .LVU99
- 379              		.loc 1 153 49 is_stmt 0 view .LVU100
+ 149:Core/Src/TMAG5170.c **** 
+ 150:Core/Src/TMAG5170.c ****   // saving the bytes to the appropriate places in the variable
+ 151:Core/Src/TMAG5170.c ****   uint16_t register_data = (SystemConfigSettings.DiagnosticSelect << 12);
+ 378              		.loc 1 151 3 view .LVU99
+ 379              		.loc 1 151 49 is_stmt 0 view .LVU100
  380 0026 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 381              		.loc 1 153 12 view .LVU101
+ 381              		.loc 1 151 12 view .LVU101
  382 0028 1B03     		lsls	r3, r3, #12
  383 002a 9BB2     		uxth	r3, r3
  384              	.LVL40:
- 154:Core/Src/TMAG5170.c ****   register_data |= (SystemConfigSettings.TriggerMode << 9);
- 385              		.loc 1 154 3 is_stmt 1 view .LVU102
- 386              		.loc 1 154 41 is_stmt 0 view .LVU103
+ 152:Core/Src/TMAG5170.c ****   register_data |= (SystemConfigSettings.TriggerMode << 9);
+ 385              		.loc 1 152 3 is_stmt 1 view .LVU102
+ 386              		.loc 1 152 41 is_stmt 0 view .LVU103
  387 002c 5178     		ldrb	r1, [r2, #1]	@ zero_extendqisi2
- 388              		.loc 1 154 17 view .LVU104
+ 388              		.loc 1 152 17 view .LVU104
  389 002e 43EA4123 		orr	r3, r3, r1, lsl #9
  390              	.LVL41:
- 391              		.loc 1 154 17 view .LVU105
+ 391              		.loc 1 152 17 view .LVU105
  392 0032 1BB2     		sxth	r3, r3
  393              	.LVL42:
- 155:Core/Src/TMAG5170.c ****   register_data |= (SystemConfigSettings.DataType << 6);
- 394              		.loc 1 155 3 is_stmt 1 view .LVU106
- 395              		.loc 1 155 41 is_stmt 0 view .LVU107
+ 153:Core/Src/TMAG5170.c ****   register_data |= (SystemConfigSettings.DataType << 6);
+ 394              		.loc 1 153 3 is_stmt 1 view .LVU106
+ 395              		.loc 1 153 41 is_stmt 0 view .LVU107
  396 0034 9178     		ldrb	r1, [r2, #2]	@ zero_extendqisi2
- 397              		.loc 1 155 17 view .LVU108
+ 397              		.loc 1 153 17 view .LVU108
  398 0036 43EA8113 		orr	r3, r3, r1, lsl #6
  399              	.LVL43:
- 156:Core/Src/TMAG5170.c ****   register_data |= (SystemConfigSettings.DiagnosticEnabled << 5);
- 400              		.loc 1 156 3 is_stmt 1 view .LVU109
- 401              		.loc 1 156 41 is_stmt 0 view .LVU110
+ 154:Core/Src/TMAG5170.c ****   register_data |= (SystemConfigSettings.DiagnosticEnabled << 5);
+ 400              		.loc 1 154 3 is_stmt 1 view .LVU109
+ 401              		.loc 1 154 41 is_stmt 0 view .LVU110
  402 003a D178     		ldrb	r1, [r2, #3]	@ zero_extendqisi2
- 403              		.loc 1 156 17 view .LVU111
+ 403              		.loc 1 154 17 view .LVU111
  404 003c 43EA4113 		orr	r3, r3, r1, lsl #5
  405              	.LVL44:
- 157:Core/Src/TMAG5170.c ****   register_data |= (SystemConfigSettings.ZlimitCheck << 2);
- 406              		.loc 1 157 3 is_stmt 1 view .LVU112
- 407              		.loc 1 157 41 is_stmt 0 view .LVU113
+ 155:Core/Src/TMAG5170.c ****   register_data |= (SystemConfigSettings.ZlimitCheck << 2);
+ 406              		.loc 1 155 3 is_stmt 1 view .LVU112
+ 407              		.loc 1 155 41 is_stmt 0 view .LVU113
  408 0040 1179     		ldrb	r1, [r2, #4]	@ zero_extendqisi2
- 409              		.loc 1 157 17 view .LVU114
+ 409              		.loc 1 155 17 view .LVU114
  410 0042 43EA8103 		orr	r3, r3, r1, lsl #2
  411              	.LVL45:
- 158:Core/Src/TMAG5170.c ****   register_data |= (SystemConfigSettings.YlimitCheck << 1);
- 412              		.loc 1 158 3 is_stmt 1 view .LVU115
- 413              		.loc 1 158 41 is_stmt 0 view .LVU116
+ 156:Core/Src/TMAG5170.c ****   register_data |= (SystemConfigSettings.YlimitCheck << 1);
+ 412              		.loc 1 156 3 is_stmt 1 view .LVU115
+ 413              		.loc 1 156 41 is_stmt 0 view .LVU116
  414 0046 5179     		ldrb	r1, [r2, #5]	@ zero_extendqisi2
- 415              		.loc 1 158 17 view .LVU117
+ 415              		.loc 1 156 17 view .LVU117
  416 0048 43EA4103 		orr	r3, r3, r1, lsl #1
  417              	.LVL46:
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 11
-
-
- 418              		.loc 1 158 17 view .LVU118
+ 418              		.loc 1 156 17 view .LVU118
  419 004c 9BB2     		uxth	r3, r3
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 11
+
+
  420              	.LVL47:
- 159:Core/Src/TMAG5170.c ****   register_data |= (SystemConfigSettings.XlimitCheck << 0);
- 421              		.loc 1 159 3 is_stmt 1 view .LVU119
- 422              		.loc 1 159 41 is_stmt 0 view .LVU120
+ 157:Core/Src/TMAG5170.c ****   register_data |= (SystemConfigSettings.XlimitCheck << 0);
+ 421              		.loc 1 157 3 is_stmt 1 view .LVU119
+ 422              		.loc 1 157 41 is_stmt 0 view .LVU120
  423 004e 9279     		ldrb	r2, [r2, #6]	@ zero_extendqisi2
- 424              		.loc 1 159 17 view .LVU121
+ 424              		.loc 1 157 17 view .LVU121
  425 0050 1A43     		orrs	r2, r2, r3
  426              	.LVL48:
- 160:Core/Src/TMAG5170.c **** 
- 161:Core/Src/TMAG5170.c ****   uint8_t register_data_8[2];
- 427              		.loc 1 161 3 is_stmt 1 view .LVU122
- 162:Core/Src/TMAG5170.c ****   register_data_8[0] = register_data >> 8;
- 428              		.loc 1 162 3 view .LVU123
- 429              		.loc 1 162 22 is_stmt 0 view .LVU124
+ 158:Core/Src/TMAG5170.c **** 
+ 159:Core/Src/TMAG5170.c ****   uint8_t register_data_8[2];
+ 427              		.loc 1 159 3 is_stmt 1 view .LVU122
+ 160:Core/Src/TMAG5170.c ****   register_data_8[0] = register_data >> 8;
+ 428              		.loc 1 160 3 view .LVU123
+ 429              		.loc 1 160 22 is_stmt 0 view .LVU124
  430 0052 1B0A     		lsrs	r3, r3, #8
  431 0054 8DF80430 		strb	r3, [sp, #4]
- 163:Core/Src/TMAG5170.c ****   register_data_8[1] = register_data;
- 432              		.loc 1 163 3 is_stmt 1 view .LVU125
- 433              		.loc 1 163 22 is_stmt 0 view .LVU126
+ 161:Core/Src/TMAG5170.c ****   register_data_8[1] = register_data;
+ 432              		.loc 1 161 3 is_stmt 1 view .LVU125
+ 433              		.loc 1 161 22 is_stmt 0 view .LVU126
  434 0058 8DF80520 		strb	r2, [sp, #5]
+ 162:Core/Src/TMAG5170.c ****   
+ 163:Core/Src/TMAG5170.c ****   
  164:Core/Src/TMAG5170.c ****   
- 165:Core/Src/TMAG5170.c ****   
- 166:Core/Src/TMAG5170.c ****   
- 167:Core/Src/TMAG5170.c ****   // zapisanie (rejestru, danych)
- 168:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
- 435              		.loc 1 168 3 is_stmt 1 view .LVU127
- 436              		.loc 1 168 11 is_stmt 0 view .LVU128
+ 165:Core/Src/TMAG5170.c ****   // zapisanie (rejestru, danych)
+ 166:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
+ 435              		.loc 1 166 3 is_stmt 1 view .LVU127
+ 436              		.loc 1 166 11 is_stmt 0 view .LVU128
  437 005c 8DF80340 		strb	r4, [sp, #3]
- 169:Core/Src/TMAG5170.c ****   FirstFrame |= 0b0 << 7;
- 438              		.loc 1 169 3 is_stmt 1 view .LVU129
- 170:Core/Src/TMAG5170.c **** 
- 171:Core/Src/TMAG5170.c ****   // last 8 bits:
- 172:Core/Src/TMAG5170.c ****   // 0b12345678
- 173:Core/Src/TMAG5170.c ****   // 3 and 4 bits are cmd status
- 174:Core/Src/TMAG5170.c ****   // 3 bit: CMD1
- 175:Core/Src/TMAG5170.c ****   // CMD1 = 0 --> Display SET_COUNT[2:0] in STAT[2:0] bits at SDO next frame
- 176:Core/Src/TMAG5170.c ****   // CMD1 = 1 --> Display DATA_TYPE[2:0] in STAT[2:0] bits at SDO next frame
- 177:Core/Src/TMAG5170.c ****   // 4 bit: CMD0
- 178:Core/Src/TMAG5170.c ****   // CMD0 = 0 --> no conversion start through command bits
- 179:Core/Src/TMAG5170.c ****   // CMD0 = 1 --> start of conversion at the CS going high
- 180:Core/Src/TMAG5170.c ****   // last 4 bits are CRC
- 181:Core/Src/TMAG5170.c **** 
- 182:Core/Src/TMAG5170.c ****   uint8_t StatusCRC = 0b00111100;
- 439              		.loc 1 182 3 view .LVU130
- 440              		.loc 1 182 11 is_stmt 0 view .LVU131
+ 167:Core/Src/TMAG5170.c ****   FirstFrame |= 0b0 << 7;
+ 438              		.loc 1 167 3 is_stmt 1 view .LVU129
+ 168:Core/Src/TMAG5170.c **** 
+ 169:Core/Src/TMAG5170.c ****   // last 8 bits:
+ 170:Core/Src/TMAG5170.c ****   // 0b12345678
+ 171:Core/Src/TMAG5170.c ****   // 3 and 4 bits are cmd status
+ 172:Core/Src/TMAG5170.c ****   // 3 bit: CMD1
+ 173:Core/Src/TMAG5170.c ****   // CMD1 = 0 --> Display SET_COUNT[2:0] in STAT[2:0] bits at SDO next frame
+ 174:Core/Src/TMAG5170.c ****   // CMD1 = 1 --> Display DATA_TYPE[2:0] in STAT[2:0] bits at SDO next frame
+ 175:Core/Src/TMAG5170.c ****   // 4 bit: CMD0
+ 176:Core/Src/TMAG5170.c ****   // CMD0 = 0 --> no conversion start through command bits
+ 177:Core/Src/TMAG5170.c ****   // CMD0 = 1 --> start of conversion at the CS going high
+ 178:Core/Src/TMAG5170.c ****   // last 4 bits are CRC
+ 179:Core/Src/TMAG5170.c **** 
+ 180:Core/Src/TMAG5170.c ****   uint8_t StatusCRC = 0b00111100;
+ 439              		.loc 1 180 3 view .LVU130
+ 440              		.loc 1 180 11 is_stmt 0 view .LVU131
  441 0060 3C23     		movs	r3, #60
  442 0062 8DF80230 		strb	r3, [sp, #2]
+ 181:Core/Src/TMAG5170.c **** 
+ 182:Core/Src/TMAG5170.c ****   // wysłanie
  183:Core/Src/TMAG5170.c **** 
- 184:Core/Src/TMAG5170.c ****   // wysłanie
- 185:Core/Src/TMAG5170.c **** 
- 186:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
- 443              		.loc 1 186 3 is_stmt 1 view .LVU132
+ 184:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
+ 443              		.loc 1 184 3 is_stmt 1 view .LVU132
  444 0066 134E     		ldr	r6, .L11+12
  445              	.LVL49:
- 446              		.loc 1 186 3 is_stmt 0 view .LVU133
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 12
-
-
+ 446              		.loc 1 184 3 is_stmt 0 view .LVU133
  447 0068 4FF0FF33 		mov	r3, #-1
  448 006c 0122     		movs	r2, #1
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 12
+
+
  449              	.LVL50:
- 450              		.loc 1 186 3 view .LVU134
+ 450              		.loc 1 184 3 view .LVU134
  451 006e 0DF10301 		add	r1, sp, #3
  452              	.LVL51:
- 453              		.loc 1 186 3 view .LVU135
+ 453              		.loc 1 184 3 view .LVU135
  454 0072 3046     		mov	r0, r6
  455 0074 FFF7FEFF 		bl	HAL_SPI_Transmit
  456              	.LVL52:
- 187:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, register_data_8, 2, HAL_MAX_DELAY);
- 457              		.loc 1 187 3 is_stmt 1 view .LVU136
+ 185:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, register_data_8, 2, HAL_MAX_DELAY);
+ 457              		.loc 1 185 3 is_stmt 1 view .LVU136
  458 0078 4FF0FF33 		mov	r3, #-1
  459 007c 2246     		mov	r2, r4
  460 007e 01A9     		add	r1, sp, #4
  461 0080 3046     		mov	r0, r6
  462 0082 FFF7FEFF 		bl	HAL_SPI_Transmit
  463              	.LVL53:
- 188:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &StatusCRC, 1, HAL_MAX_DELAY);
- 464              		.loc 1 188 3 view .LVU137
+ 186:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &StatusCRC, 1, HAL_MAX_DELAY);
+ 464              		.loc 1 186 3 view .LVU137
  465 0086 4FF0FF33 		mov	r3, #-1
  466 008a 0122     		movs	r2, #1
  467 008c 0DEB0401 		add	r1, sp, r4
  468 0090 3046     		mov	r0, r6
  469 0092 FFF7FEFF 		bl	HAL_SPI_Transmit
  470              	.LVL54:
- 189:Core/Src/TMAG5170.c ****   
- 190:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
- 471              		.loc 1 190 3 view .LVU138
+ 187:Core/Src/TMAG5170.c ****   
+ 188:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+ 471              		.loc 1 188 3 view .LVU138
  472 0096 0122     		movs	r2, #1
  473 0098 1021     		movs	r1, #16
  474 009a 2846     		mov	r0, r5
  475 009c FFF7FEFF 		bl	HAL_GPIO_WritePin
  476              	.LVL55:
- 191:Core/Src/TMAG5170.c ****   
- 192:Core/Src/TMAG5170.c ****   return ret;
- 477              		.loc 1 192 3 view .LVU139
- 193:Core/Src/TMAG5170.c **** }
- 478              		.loc 1 193 1 is_stmt 0 view .LVU140
+ 189:Core/Src/TMAG5170.c ****   
+ 190:Core/Src/TMAG5170.c ****   return ret;
+ 477              		.loc 1 190 3 view .LVU139
+ 191:Core/Src/TMAG5170.c **** }
+ 478              		.loc 1 191 1 is_stmt 0 view .LVU140
  479 00a0 0020     		movs	r0, #0
  480 00a2 02B0     		add	sp, sp, #8
  481              	.LCFI8:
@@ -718,23 +716,23 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 1
  495              		.section	.text.TMAG5170_al_conf_settings,"ax",%progbits
  496              		.align	1
  497              		.global	TMAG5170_al_conf_settings
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 13
-
-
  498              		.syntax unified
  499              		.thumb
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 13
+
+
  500              		.thumb_func
  502              	TMAG5170_al_conf_settings:
  503              	.LVL56:
  504              	.LFB138:
- 194:Core/Src/TMAG5170.c **** 
- 195:Core/Src/TMAG5170.c **** TMAG5170_return_code_t TMAG5170_al_conf_settings(TMAG5170_ALERT_CONFIG_settings_t *new_settings)
- 196:Core/Src/TMAG5170.c **** {
- 505              		.loc 1 196 1 is_stmt 1 view -0
+ 192:Core/Src/TMAG5170.c **** 
+ 193:Core/Src/TMAG5170.c **** TMAG5170_return_code_t TMAG5170_al_conf_settings(TMAG5170_ALERT_CONFIG_settings_t *new_settings)
+ 194:Core/Src/TMAG5170.c **** {
+ 505              		.loc 1 194 1 is_stmt 1 view -0
  506              		.cfi_startproc
  507              		@ args = 0, pretend = 0, frame = 8
  508              		@ frame_needed = 0, uses_anonymous_args = 0
- 509              		.loc 1 196 1 is_stmt 0 view .LVU142
+ 509              		.loc 1 194 1 is_stmt 0 view .LVU142
  510 0000 70B5     		push	{r4, r5, r6, lr}
  511              	.LCFI9:
  512              		.cfi_def_cfa_offset 16
@@ -746,30 +744,30 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 1
  518              	.LCFI10:
  519              		.cfi_def_cfa_offset 24
  520 0004 0646     		mov	r6, r0
- 197:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
- 521              		.loc 1 197 3 is_stmt 1 view .LVU143
+ 195:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+ 521              		.loc 1 195 3 is_stmt 1 view .LVU143
  522 0006 2C4C     		ldr	r4, .L15
  523 0008 0022     		movs	r2, #0
  524 000a 1021     		movs	r1, #16
  525 000c 2046     		mov	r0, r4
  526              	.LVL57:
- 527              		.loc 1 197 3 is_stmt 0 view .LVU144
+ 527              		.loc 1 195 3 is_stmt 0 view .LVU144
  528 000e FFF7FEFF 		bl	HAL_GPIO_WritePin
  529              	.LVL58:
- 198:Core/Src/TMAG5170.c ****   
- 199:Core/Src/TMAG5170.c ****   register_address = TMAG5170_ALERT_CONFIG_REG;
- 530              		.loc 1 199 3 is_stmt 1 view .LVU145
- 531              		.loc 1 199 20 is_stmt 0 view .LVU146
+ 196:Core/Src/TMAG5170.c ****   
+ 197:Core/Src/TMAG5170.c ****   register_address = TMAG5170_ALERT_CONFIG_REG;
+ 530              		.loc 1 197 3 is_stmt 1 view .LVU145
+ 531              		.loc 1 197 20 is_stmt 0 view .LVU146
  532 0012 0322     		movs	r2, #3
  533 0014 294B     		ldr	r3, .L15+4
  534 0016 1A70     		strb	r2, [r3]
- 200:Core/Src/TMAG5170.c ****   TMAG5170_return_code_t ret = TMAG5170_RET_OK;
- 535              		.loc 1 200 3 is_stmt 1 view .LVU147
+ 198:Core/Src/TMAG5170.c ****   TMAG5170_return_code_t ret = TMAG5170_RET_OK;
+ 535              		.loc 1 198 3 is_stmt 1 view .LVU147
  536              	.LVL59:
- 201:Core/Src/TMAG5170.c **** 
- 202:Core/Src/TMAG5170.c ****   // copy bytes from settings to new_settings
- 203:Core/Src/TMAG5170.c ****   memcpy(&AlertConfigSettings, new_settings, sizeof(AlertConfigSettings));
- 537              		.loc 1 203 3 view .LVU148
+ 199:Core/Src/TMAG5170.c **** 
+ 200:Core/Src/TMAG5170.c ****   // copy bytes from settings to new_settings
+ 201:Core/Src/TMAG5170.c ****   memcpy(&AlertConfigSettings, new_settings, sizeof(AlertConfigSettings));
+ 537              		.loc 1 201 3 view .LVU148
  538 0018 294D     		ldr	r5, .L15+8
  539 001a 2B46     		mov	r3, r5
  540 001c 3068     		ldr	r0, [r6]	@ unaligned
@@ -777,176 +775,176 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 1
  542 0020 03C3     		stmia	r3!, {r0, r1}
  543 0022 317A     		ldrb	r1, [r6, #8]	@ zero_extendqisi2
  544 0024 1970     		strb	r1, [r3]
- 204:Core/Src/TMAG5170.c **** 
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 14
+ 202:Core/Src/TMAG5170.c **** 
+ 203:Core/Src/TMAG5170.c ****   // saving the bytes to the appropriate places in the variable
+ 204:Core/Src/TMAG5170.c ****   uint16_t register_data = (AlertConfigSettings.AlertLatch << 13);
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 14
 
 
- 205:Core/Src/TMAG5170.c ****   // saving the bytes to the appropriate places in the variable
- 206:Core/Src/TMAG5170.c ****   uint16_t register_data = (AlertConfigSettings.AlertLatch << 13);
- 545              		.loc 1 206 3 view .LVU149
- 546              		.loc 1 206 48 is_stmt 0 view .LVU150
+ 545              		.loc 1 204 3 view .LVU149
+ 546              		.loc 1 204 48 is_stmt 0 view .LVU150
  547 0026 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2
- 548              		.loc 1 206 12 view .LVU151
+ 548              		.loc 1 204 12 view .LVU151
  549 0028 5B03     		lsls	r3, r3, #13
  550 002a 9BB2     		uxth	r3, r3
  551              	.LVL60:
- 207:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.AlertMode << 12);
- 552              		.loc 1 207 3 is_stmt 1 view .LVU152
- 553              		.loc 1 207 40 is_stmt 0 view .LVU153
+ 205:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.AlertMode << 12);
+ 552              		.loc 1 205 3 is_stmt 1 view .LVU152
+ 553              		.loc 1 205 40 is_stmt 0 view .LVU153
  554 002c 6978     		ldrb	r1, [r5, #1]	@ zero_extendqisi2
- 555              		.loc 1 207 17 view .LVU154
+ 555              		.loc 1 205 17 view .LVU154
  556 002e 43EA0133 		orr	r3, r3, r1, lsl #12
  557              	.LVL61:
- 558              		.loc 1 207 17 view .LVU155
+ 558              		.loc 1 205 17 view .LVU155
  559 0032 1BB2     		sxth	r3, r3
  560              	.LVL62:
- 208:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.AlertStatus << 11);
- 561              		.loc 1 208 3 is_stmt 1 view .LVU156
- 562              		.loc 1 208 40 is_stmt 0 view .LVU157
+ 206:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.AlertStatus << 11);
+ 561              		.loc 1 206 3 is_stmt 1 view .LVU156
+ 562              		.loc 1 206 40 is_stmt 0 view .LVU157
  563 0034 A978     		ldrb	r1, [r5, #2]	@ zero_extendqisi2
- 564              		.loc 1 208 17 view .LVU158
+ 564              		.loc 1 206 17 view .LVU158
  565 0036 43EAC123 		orr	r3, r3, r1, lsl #11
  566              	.LVL63:
- 567              		.loc 1 208 17 view .LVU159
+ 567              		.loc 1 206 17 view .LVU159
  568 003a 1BB2     		sxth	r3, r3
  569              	.LVL64:
- 209:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.AlertResponse << 8);
- 570              		.loc 1 209 3 is_stmt 1 view .LVU160
- 571              		.loc 1 209 40 is_stmt 0 view .LVU161
+ 207:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.AlertResponse << 8);
+ 570              		.loc 1 207 3 is_stmt 1 view .LVU160
+ 571              		.loc 1 207 40 is_stmt 0 view .LVU161
  572 003c E978     		ldrb	r1, [r5, #3]	@ zero_extendqisi2
- 573              		.loc 1 209 17 view .LVU162
+ 573              		.loc 1 207 17 view .LVU162
  574 003e 43EA0123 		orr	r3, r3, r1, lsl #8
  575              	.LVL65:
- 576              		.loc 1 209 17 view .LVU163
+ 576              		.loc 1 207 17 view .LVU163
  577 0042 1BB2     		sxth	r3, r3
  578              	.LVL66:
- 210:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.ThresholdCount << 4);
- 579              		.loc 1 210 3 is_stmt 1 view .LVU164
- 580              		.loc 1 210 40 is_stmt 0 view .LVU165
+ 208:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.ThresholdCount << 4);
+ 579              		.loc 1 208 3 is_stmt 1 view .LVU164
+ 580              		.loc 1 208 40 is_stmt 0 view .LVU165
  581 0044 2979     		ldrb	r1, [r5, #4]	@ zero_extendqisi2
- 582              		.loc 1 210 17 view .LVU166
+ 582              		.loc 1 208 17 view .LVU166
  583 0046 43EA0113 		orr	r3, r3, r1, lsl #4
  584              	.LVL67:
- 211:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.TempThrAlert << 3);
- 585              		.loc 1 211 3 is_stmt 1 view .LVU167
- 586              		.loc 1 211 40 is_stmt 0 view .LVU168
+ 209:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.TempThrAlert << 3);
+ 585              		.loc 1 209 3 is_stmt 1 view .LVU167
+ 586              		.loc 1 209 40 is_stmt 0 view .LVU168
  587 004a 6979     		ldrb	r1, [r5, #5]	@ zero_extendqisi2
- 588              		.loc 1 211 17 view .LVU169
+ 588              		.loc 1 209 17 view .LVU169
  589 004c 43EAC103 		orr	r3, r3, r1, lsl #3
  590              	.LVL68:
- 212:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.ZthrAlert << 2);
- 591              		.loc 1 212 3 is_stmt 1 view .LVU170
- 592              		.loc 1 212 40 is_stmt 0 view .LVU171
+ 210:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.ZthrAlert << 2);
+ 591              		.loc 1 210 3 is_stmt 1 view .LVU170
+ 592              		.loc 1 210 40 is_stmt 0 view .LVU171
  593 0050 A979     		ldrb	r1, [r5, #6]	@ zero_extendqisi2
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 15
-
-
- 594              		.loc 1 212 17 view .LVU172
+ 594              		.loc 1 210 17 view .LVU172
  595 0052 43EA8103 		orr	r3, r3, r1, lsl #2
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 15
+
+
  596              	.LVL69:
- 213:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.YthrAlert << 1);
- 597              		.loc 1 213 3 is_stmt 1 view .LVU173
- 598              		.loc 1 213 40 is_stmt 0 view .LVU174
+ 211:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.YthrAlert << 1);
+ 597              		.loc 1 211 3 is_stmt 1 view .LVU173
+ 598              		.loc 1 211 40 is_stmt 0 view .LVU174
  599 0056 E979     		ldrb	r1, [r5, #7]	@ zero_extendqisi2
- 600              		.loc 1 213 17 view .LVU175
+ 600              		.loc 1 211 17 view .LVU175
  601 0058 43EA4103 		orr	r3, r3, r1, lsl #1
  602              	.LVL70:
- 603              		.loc 1 213 17 view .LVU176
+ 603              		.loc 1 211 17 view .LVU176
  604 005c 9BB2     		uxth	r3, r3
  605              	.LVL71:
- 214:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.XthrAlert << 0);
- 606              		.loc 1 214 3 is_stmt 1 view .LVU177
- 607              		.loc 1 214 40 is_stmt 0 view .LVU178
+ 212:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.XthrAlert << 0);
+ 606              		.loc 1 212 3 is_stmt 1 view .LVU177
+ 607              		.loc 1 212 40 is_stmt 0 view .LVU178
  608 005e 297A     		ldrb	r1, [r5, #8]	@ zero_extendqisi2
- 609              		.loc 1 214 17 view .LVU179
+ 609              		.loc 1 212 17 view .LVU179
  610 0060 1943     		orrs	r1, r1, r3
  611              	.LVL72:
- 215:Core/Src/TMAG5170.c **** 
- 216:Core/Src/TMAG5170.c ****   
- 217:Core/Src/TMAG5170.c ****   uint8_t register_data_8[2];
- 612              		.loc 1 217 3 is_stmt 1 view .LVU180
- 218:Core/Src/TMAG5170.c ****   register_data_8[0] = register_data >> 8;
- 613              		.loc 1 218 3 view .LVU181
- 614              		.loc 1 218 22 is_stmt 0 view .LVU182
+ 213:Core/Src/TMAG5170.c **** 
+ 214:Core/Src/TMAG5170.c ****   
+ 215:Core/Src/TMAG5170.c ****   uint8_t register_data_8[2];
+ 612              		.loc 1 215 3 is_stmt 1 view .LVU180
+ 216:Core/Src/TMAG5170.c ****   register_data_8[0] = register_data >> 8;
+ 613              		.loc 1 216 3 view .LVU181
+ 614              		.loc 1 216 22 is_stmt 0 view .LVU182
  615 0062 1B0A     		lsrs	r3, r3, #8
  616 0064 8DF80430 		strb	r3, [sp, #4]
- 219:Core/Src/TMAG5170.c ****   register_data_8[1] = register_data;
- 617              		.loc 1 219 3 is_stmt 1 view .LVU183
- 618              		.loc 1 219 22 is_stmt 0 view .LVU184
+ 217:Core/Src/TMAG5170.c ****   register_data_8[1] = register_data;
+ 617              		.loc 1 217 3 is_stmt 1 view .LVU183
+ 618              		.loc 1 217 22 is_stmt 0 view .LVU184
  619 0068 8DF80510 		strb	r1, [sp, #5]
+ 218:Core/Src/TMAG5170.c ****   
+ 219:Core/Src/TMAG5170.c ****   
  220:Core/Src/TMAG5170.c ****   
- 221:Core/Src/TMAG5170.c ****   
- 222:Core/Src/TMAG5170.c ****   
- 223:Core/Src/TMAG5170.c ****   // zapisanie (rejestru, danych)
- 224:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
- 620              		.loc 1 224 3 is_stmt 1 view .LVU185
- 621              		.loc 1 224 11 is_stmt 0 view .LVU186
+ 221:Core/Src/TMAG5170.c ****   // zapisanie (rejestru, danych)
+ 222:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
+ 620              		.loc 1 222 3 is_stmt 1 view .LVU185
+ 621              		.loc 1 222 11 is_stmt 0 view .LVU186
  622 006c 8DF80320 		strb	r2, [sp, #3]
- 225:Core/Src/TMAG5170.c ****   FirstFrame |= 0b0 << 7;
- 623              		.loc 1 225 3 is_stmt 1 view .LVU187
- 226:Core/Src/TMAG5170.c **** 
- 227:Core/Src/TMAG5170.c ****   // last 8 bits:
- 228:Core/Src/TMAG5170.c ****   // 0b12345678
- 229:Core/Src/TMAG5170.c ****   // 3 and 4 bits are cmd status
- 230:Core/Src/TMAG5170.c ****   // 3 bit: CMD1
- 231:Core/Src/TMAG5170.c ****   // CMD1 = 0 --> Display SET_COUNT[2:0] in STAT[2:0] bits at SDO next frame
- 232:Core/Src/TMAG5170.c ****   // CMD1 = 1 --> Display DATA_TYPE[2:0] in STAT[2:0] bits at SDO next frame
- 233:Core/Src/TMAG5170.c ****   // 4 bit: CMD0
- 234:Core/Src/TMAG5170.c ****   // CMD0 = 0 --> no conversion start through command bits
- 235:Core/Src/TMAG5170.c ****   // CMD0 = 1 --> start of conversion at the CS going high
- 236:Core/Src/TMAG5170.c ****   // last 4 bits are CRC
- 237:Core/Src/TMAG5170.c **** 
- 238:Core/Src/TMAG5170.c ****   uint8_t StatusCRC = 0b00111100;
- 624              		.loc 1 238 3 view .LVU188
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 16
-
-
- 625              		.loc 1 238 11 is_stmt 0 view .LVU189
+ 223:Core/Src/TMAG5170.c ****   FirstFrame |= 0b0 << 7;
+ 623              		.loc 1 223 3 is_stmt 1 view .LVU187
+ 224:Core/Src/TMAG5170.c **** 
+ 225:Core/Src/TMAG5170.c ****   // last 8 bits:
+ 226:Core/Src/TMAG5170.c ****   // 0b12345678
+ 227:Core/Src/TMAG5170.c ****   // 3 and 4 bits are cmd status
+ 228:Core/Src/TMAG5170.c ****   // 3 bit: CMD1
+ 229:Core/Src/TMAG5170.c ****   // CMD1 = 0 --> Display SET_COUNT[2:0] in STAT[2:0] bits at SDO next frame
+ 230:Core/Src/TMAG5170.c ****   // CMD1 = 1 --> Display DATA_TYPE[2:0] in STAT[2:0] bits at SDO next frame
+ 231:Core/Src/TMAG5170.c ****   // 4 bit: CMD0
+ 232:Core/Src/TMAG5170.c ****   // CMD0 = 0 --> no conversion start through command bits
+ 233:Core/Src/TMAG5170.c ****   // CMD0 = 1 --> start of conversion at the CS going high
+ 234:Core/Src/TMAG5170.c ****   // last 4 bits are CRC
+ 235:Core/Src/TMAG5170.c **** 
+ 236:Core/Src/TMAG5170.c ****   uint8_t StatusCRC = 0b00111100;
+ 624              		.loc 1 236 3 view .LVU188
+ 625              		.loc 1 236 11 is_stmt 0 view .LVU189
  626 0070 3C23     		movs	r3, #60
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 16
+
+
  627 0072 8DF80230 		strb	r3, [sp, #2]
+ 237:Core/Src/TMAG5170.c **** 
+ 238:Core/Src/TMAG5170.c ****   // wysłanie
  239:Core/Src/TMAG5170.c **** 
- 240:Core/Src/TMAG5170.c ****   // wysłanie
- 241:Core/Src/TMAG5170.c **** 
- 242:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
- 628              		.loc 1 242 3 is_stmt 1 view .LVU190
+ 240:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
+ 628              		.loc 1 240 3 is_stmt 1 view .LVU190
  629 0076 134D     		ldr	r5, .L15+12
  630 0078 4FF0FF33 		mov	r3, #-1
  631 007c 0122     		movs	r2, #1
  632 007e 0DF10301 		add	r1, sp, #3
  633              	.LVL73:
- 634              		.loc 1 242 3 is_stmt 0 view .LVU191
+ 634              		.loc 1 240 3 is_stmt 0 view .LVU191
  635 0082 2846     		mov	r0, r5
  636 0084 FFF7FEFF 		bl	HAL_SPI_Transmit
  637              	.LVL74:
- 243:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, register_data_8, 2, HAL_MAX_DELAY);
- 638              		.loc 1 243 3 is_stmt 1 view .LVU192
+ 241:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, register_data_8, 2, HAL_MAX_DELAY);
+ 638              		.loc 1 241 3 is_stmt 1 view .LVU192
  639 0088 4FF0FF33 		mov	r3, #-1
  640 008c 0222     		movs	r2, #2
  641 008e 01A9     		add	r1, sp, #4
  642 0090 2846     		mov	r0, r5
  643 0092 FFF7FEFF 		bl	HAL_SPI_Transmit
  644              	.LVL75:
- 244:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &StatusCRC, 1, HAL_MAX_DELAY);
- 645              		.loc 1 244 3 view .LVU193
+ 242:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &StatusCRC, 1, HAL_MAX_DELAY);
+ 645              		.loc 1 242 3 view .LVU193
  646 0096 4FF0FF33 		mov	r3, #-1
  647 009a 0122     		movs	r2, #1
  648 009c 0DF10201 		add	r1, sp, #2
  649 00a0 2846     		mov	r0, r5
  650 00a2 FFF7FEFF 		bl	HAL_SPI_Transmit
  651              	.LVL76:
- 245:Core/Src/TMAG5170.c ****   
- 246:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
- 652              		.loc 1 246 3 view .LVU194
+ 243:Core/Src/TMAG5170.c ****   
+ 244:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+ 652              		.loc 1 244 3 view .LVU194
  653 00a6 0122     		movs	r2, #1
  654 00a8 1021     		movs	r1, #16
  655 00aa 2046     		mov	r0, r4
  656 00ac FFF7FEFF 		bl	HAL_GPIO_WritePin
  657              	.LVL77:
- 247:Core/Src/TMAG5170.c ****   
- 248:Core/Src/TMAG5170.c ****   return ret;
- 658              		.loc 1 248 3 view .LVU195
- 249:Core/Src/TMAG5170.c **** }
- 659              		.loc 1 249 1 is_stmt 0 view .LVU196
+ 245:Core/Src/TMAG5170.c ****   
+ 246:Core/Src/TMAG5170.c ****   return ret;
+ 658              		.loc 1 246 3 view .LVU195
+ 247:Core/Src/TMAG5170.c **** }
+ 659              		.loc 1 247 1 is_stmt 0 view .LVU196
  660 00b0 0020     		movs	r0, #0
  661 00b2 02B0     		add	sp, sp, #8
  662              	.LCFI11:
@@ -955,14 +953,14 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 1
  665 00b4 70BD     		pop	{r4, r5, r6, pc}
  666              	.LVL78:
  667              	.L16:
- 668              		.loc 1 249 1 view .LVU197
+ 668              		.loc 1 247 1 view .LVU197
  669 00b6 00BF     		.align	2
  670              	.L15:
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 17
-
-
  671 00b8 00040048 		.word	1207960576
  672 00bc 00000000 		.word	.LANCHOR1
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 17
+
+
  673 00c0 00000000 		.word	.LANCHOR4
  674 00c4 00000000 		.word	hspi1
  675              		.cfi_endproc
@@ -975,778 +973,1351 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 1
  683              		.thumb_func
  685              	DisableCRC:
  686              	.LFB139:
- 250:Core/Src/TMAG5170.c **** 
- 251:Core/Src/TMAG5170.c **** void DisableCRC(void)
- 252:Core/Src/TMAG5170.c **** {
- 687              		.loc 1 252 1 is_stmt 1 view -0
+ 248:Core/Src/TMAG5170.c **** 
+ 249:Core/Src/TMAG5170.c **** void DisableCRC(void)
+ 250:Core/Src/TMAG5170.c **** {
+ 687              		.loc 1 250 1 is_stmt 1 view -0
  688              		.cfi_startproc
  689              		@ args = 0, pretend = 0, frame = 8
  690              		@ frame_needed = 0, uses_anonymous_args = 0
- 691 0000 10B5     		push	{r4, lr}
+ 691 0000 30B5     		push	{r4, r5, lr}
  692              	.LCFI12:
- 693              		.cfi_def_cfa_offset 8
- 694              		.cfi_offset 4, -8
- 695              		.cfi_offset 14, -4
- 696 0002 82B0     		sub	sp, sp, #8
- 697              	.LCFI13:
- 698              		.cfi_def_cfa_offset 16
- 253:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
- 699              		.loc 1 253 3 view .LVU199
- 700 0004 0F4C     		ldr	r4, .L19
- 701 0006 0022     		movs	r2, #0
- 702 0008 1021     		movs	r1, #16
- 703 000a 2046     		mov	r0, r4
- 704 000c FFF7FEFF 		bl	HAL_GPIO_WritePin
- 705              	.LVL79:
- 254:Core/Src/TMAG5170.c **** 
- 255:Core/Src/TMAG5170.c ****   uint8_t DisCRC[4];
- 706              		.loc 1 255 3 view .LVU200
- 256:Core/Src/TMAG5170.c ****   DisCRC[0] = 0x0F;
- 707              		.loc 1 256 3 view .LVU201
- 708              		.loc 1 256 13 is_stmt 0 view .LVU202
- 709 0010 0F23     		movs	r3, #15
- 710 0012 8DF80430 		strb	r3, [sp, #4]
- 257:Core/Src/TMAG5170.c ****   DisCRC[1] = 0x00;
- 711              		.loc 1 257 3 is_stmt 1 view .LVU203
- 712              		.loc 1 257 13 is_stmt 0 view .LVU204
- 713 0016 0023     		movs	r3, #0
- 714 0018 8DF80530 		strb	r3, [sp, #5]
- 258:Core/Src/TMAG5170.c ****   DisCRC[2] = 0x04;
- 715              		.loc 1 258 3 is_stmt 1 view .LVU205
- 716              		.loc 1 258 13 is_stmt 0 view .LVU206
- 717 001c 0422     		movs	r2, #4
- 718 001e 8DF80620 		strb	r2, [sp, #6]
- 259:Core/Src/TMAG5170.c ****   DisCRC[3] = 0x07;
- 719              		.loc 1 259 3 is_stmt 1 view .LVU207
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 18
+ 693              		.cfi_def_cfa_offset 12
+ 694              		.cfi_offset 4, -12
+ 695              		.cfi_offset 5, -8
+ 696              		.cfi_offset 14, -4
+ 697 0002 83B0     		sub	sp, sp, #12
+ 698              	.LCFI13:
+ 699              		.cfi_def_cfa_offset 24
+ 251:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+ 700              		.loc 1 251 3 view .LVU199
+ 701 0004 124C     		ldr	r4, .L19
+ 702 0006 0022     		movs	r2, #0
+ 703 0008 1021     		movs	r1, #16
+ 704 000a 2046     		mov	r0, r4
+ 705 000c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 706              	.LVL79:
+ 252:Core/Src/TMAG5170.c **** 
+ 253:Core/Src/TMAG5170.c ****   uint8_t DisCRC[4];
+ 707              		.loc 1 253 3 view .LVU200
+ 254:Core/Src/TMAG5170.c ****   DisCRC[0] = 0x0F;
+ 708              		.loc 1 254 3 view .LVU201
+ 709              		.loc 1 254 13 is_stmt 0 view .LVU202
+ 710 0010 0F23     		movs	r3, #15
+ 711 0012 8DF80430 		strb	r3, [sp, #4]
+ 255:Core/Src/TMAG5170.c ****   DisCRC[1] = 0x00;
+ 712              		.loc 1 255 3 is_stmt 1 view .LVU203
+ 713              		.loc 1 255 13 is_stmt 0 view .LVU204
+ 714 0016 0022     		movs	r2, #0
+ 715 0018 8DF80520 		strb	r2, [sp, #5]
+ 256:Core/Src/TMAG5170.c ****   DisCRC[2] = 0x04;
+ 716              		.loc 1 256 3 is_stmt 1 view .LVU205
+ 717              		.loc 1 256 13 is_stmt 0 view .LVU206
+ 718 001c 0425     		movs	r5, #4
+ 719 001e 8DF80650 		strb	r5, [sp, #6]
+ 257:Core/Src/TMAG5170.c ****   DisCRC[3] = 0x07;
+ 720              		.loc 1 257 3 is_stmt 1 view .LVU207
+ 721              		.loc 1 257 13 is_stmt 0 view .LVU208
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 18
 
 
- 720              		.loc 1 259 13 is_stmt 0 view .LVU208
- 721 0022 0723     		movs	r3, #7
- 722 0024 8DF80730 		strb	r3, [sp, #7]
- 260:Core/Src/TMAG5170.c **** 
- 261:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, DisCRC, 4, HAL_MAX_DELAY);
- 723              		.loc 1 261 3 is_stmt 1 view .LVU209
- 724 0028 4FF0FF33 		mov	r3, #-1
- 725 002c 0DEB0201 		add	r1, sp, r2
- 726 0030 0548     		ldr	r0, .L19+4
- 727 0032 FFF7FEFF 		bl	HAL_SPI_Transmit
+ 722 0022 0723     		movs	r3, #7
+ 723 0024 8DF80730 		strb	r3, [sp, #7]
+ 258:Core/Src/TMAG5170.c ****   
+ 259:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+ 724              		.loc 1 259 3 is_stmt 1 view .LVU209
+ 725 0028 1021     		movs	r1, #16
+ 726 002a 2046     		mov	r0, r4
+ 727 002c FFF7FEFF 		bl	HAL_GPIO_WritePin
  728              	.LVL80:
- 262:Core/Src/TMAG5170.c **** 
- 263:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
- 729              		.loc 1 263 3 view .LVU210
- 730 0036 0122     		movs	r2, #1
- 731 0038 1021     		movs	r1, #16
- 732 003a 2046     		mov	r0, r4
- 733 003c FFF7FEFF 		bl	HAL_GPIO_WritePin
- 734              	.LVL81:
- 264:Core/Src/TMAG5170.c **** }
- 735              		.loc 1 264 1 is_stmt 0 view .LVU211
- 736 0040 02B0     		add	sp, sp, #8
- 737              	.LCFI14:
- 738              		.cfi_def_cfa_offset 8
- 739              		@ sp needed
- 740 0042 10BD     		pop	{r4, pc}
- 741              	.L20:
- 742              		.align	2
- 743              	.L19:
- 744 0044 00040048 		.word	1207960576
- 745 0048 00000000 		.word	hspi1
- 746              		.cfi_endproc
- 747              	.LFE139:
- 749              		.section	.text.ReadRegister,"ax",%progbits
- 750              		.align	1
- 751              		.global	ReadRegister
- 752              		.syntax unified
- 753              		.thumb
- 754              		.thumb_func
- 756              	ReadRegister:
- 757              	.LFB140:
- 265:Core/Src/TMAG5170.c **** 
- 266:Core/Src/TMAG5170.c **** void ReadRegister(void)
- 267:Core/Src/TMAG5170.c **** {
- 758              		.loc 1 267 1 is_stmt 1 view -0
- 759              		.cfi_startproc
- 760              		@ args = 0, pretend = 0, frame = 8
- 761              		@ frame_needed = 0, uses_anonymous_args = 0
- 762 0000 30B5     		push	{r4, r5, lr}
- 763              	.LCFI15:
- 764              		.cfi_def_cfa_offset 12
- 765              		.cfi_offset 4, -12
- 766              		.cfi_offset 5, -8
- 767              		.cfi_offset 14, -4
- 768 0002 83B0     		sub	sp, sp, #12
- 769              	.LCFI16:
- 770              		.cfi_def_cfa_offset 24
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 19
+ 260:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, DisCRC, 4, HAL_MAX_DELAY);
+ 729              		.loc 1 260 3 view .LVU210
+ 730 0030 4FF0FF33 		mov	r3, #-1
+ 731 0034 2A46     		mov	r2, r5
+ 732 0036 0DEB0501 		add	r1, sp, r5
+ 733 003a 0648     		ldr	r0, .L19+4
+ 734 003c FFF7FEFF 		bl	HAL_SPI_Transmit
+ 735              	.LVL81:
+ 261:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+ 736              		.loc 1 261 3 view .LVU211
+ 737 0040 0122     		movs	r2, #1
+ 738 0042 1021     		movs	r1, #16
+ 739 0044 2046     		mov	r0, r4
+ 740 0046 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 741              	.LVL82:
+ 262:Core/Src/TMAG5170.c **** }
+ 742              		.loc 1 262 1 is_stmt 0 view .LVU212
+ 743 004a 03B0     		add	sp, sp, #12
+ 744              	.LCFI14:
+ 745              		.cfi_def_cfa_offset 12
+ 746              		@ sp needed
+ 747 004c 30BD     		pop	{r4, r5, pc}
+ 748              	.L20:
+ 749 004e 00BF     		.align	2
+ 750              	.L19:
+ 751 0050 00040048 		.word	1207960576
+ 752 0054 00000000 		.word	hspi1
+ 753              		.cfi_endproc
+ 754              	.LFE139:
+ 756              		.section	.text.ReadRegister,"ax",%progbits
+ 757              		.align	1
+ 758              		.global	ReadRegister
+ 759              		.syntax unified
+ 760              		.thumb
+ 761              		.thumb_func
+ 763              	ReadRegister:
+ 764              	.LFB140:
+ 263:Core/Src/TMAG5170.c **** 
+ 264:Core/Src/TMAG5170.c **** void ReadRegister(void)
+ 265:Core/Src/TMAG5170.c **** {
+ 765              		.loc 1 265 1 is_stmt 1 view -0
+ 766              		.cfi_startproc
+ 767              		@ args = 0, pretend = 0, frame = 8
+ 768              		@ frame_needed = 0, uses_anonymous_args = 0
+ 769 0000 30B5     		push	{r4, r5, lr}
+ 770              	.LCFI15:
+ 771              		.cfi_def_cfa_offset 12
+ 772              		.cfi_offset 4, -12
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 19
 
 
- 268:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
- 771              		.loc 1 268 3 view .LVU213
- 772 0004 144C     		ldr	r4, .L23
- 773 0006 0022     		movs	r2, #0
- 774 0008 1021     		movs	r1, #16
- 775 000a 2046     		mov	r0, r4
- 776 000c FFF7FEFF 		bl	HAL_GPIO_WritePin
- 777              	.LVL82:
- 269:Core/Src/TMAG5170.c **** 
- 270:Core/Src/TMAG5170.c **** 
- 271:Core/Src/TMAG5170.c ****   //register_address = TMAG5170_X_CH_RESULT_REG;
- 272:Core/Src/TMAG5170.c ****   // switch (address)
- 273:Core/Src/TMAG5170.c ****   // {
- 274:Core/Src/TMAG5170.c ****   // case 1:
- 275:Core/Src/TMAG5170.c ****   //   register_address = TMAG5170_Z_THRX_CONFIG_REG;
- 276:Core/Src/TMAG5170.c ****   //   break;
- 277:Core/Src/TMAG5170.c ****   // case 2:
- 278:Core/Src/TMAG5170.c ****   //   register_address = TMAG5170_SYS_STATUS_REG;
- 279:Core/Src/TMAG5170.c ****   // default:
- 280:Core/Src/TMAG5170.c ****   //   break;
- 281:Core/Src/TMAG5170.c ****   // }
- 282:Core/Src/TMAG5170.c ****   
- 283:Core/Src/TMAG5170.c ****   register_address = TMAG5170_ANGLE_RESULT_REG;
- 778              		.loc 1 283 3 view .LVU214
- 779              		.loc 1 283 20 is_stmt 0 view .LVU215
- 780 0010 1323     		movs	r3, #19
- 781 0012 124A     		ldr	r2, .L23+4
- 782 0014 1370     		strb	r3, [r2]
- 284:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
- 783              		.loc 1 284 3 is_stmt 1 view .LVU216
- 784              		.loc 1 284 11 is_stmt 0 view .LVU217
- 785 0016 8DF80730 		strb	r3, [sp, #7]
- 285:Core/Src/TMAG5170.c ****   FirstFrame |= 0b1 << 7;
- 786              		.loc 1 285 3 is_stmt 1 view .LVU218
- 787              		.loc 1 285 14 is_stmt 0 view .LVU219
- 788 001a 9323     		movs	r3, #147
- 789 001c 8DF80730 		strb	r3, [sp, #7]
- 286:Core/Src/TMAG5170.c **** 
- 287:Core/Src/TMAG5170.c ****   //uint16_t zeros = 0x0000;
- 288:Core/Src/TMAG5170.c ****   uint8_t crc = 0b00110000;
- 790              		.loc 1 288 3 is_stmt 1 view .LVU220
- 791              		.loc 1 288 11 is_stmt 0 view .LVU221
- 792 0020 3023     		movs	r3, #48
- 793 0022 8DF80630 		strb	r3, [sp, #6]
- 289:Core/Src/TMAG5170.c ****   // wysłanie
- 290:Core/Src/TMAG5170.c **** 
- 291:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 3, HAL_MAX_DELAY);
- 794              		.loc 1 291 3 is_stmt 1 view .LVU222
- 795 0026 0E4D     		ldr	r5, .L23+8
- 796 0028 4FF0FF33 		mov	r3, #-1
- 797 002c 0322     		movs	r2, #3
- 798 002e 0DF10701 		add	r1, sp, #7
- 799 0032 2846     		mov	r0, r5
- 800 0034 FFF7FEFF 		bl	HAL_SPI_Transmit
- 801              	.LVL83:
- 292:Core/Src/TMAG5170.c ****   //HAL_SPI_Transmit(&hspi1, &zeros, 2, HAL_MAX_DELAY);
- 293:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &crc, 1, HAL_MAX_DELAY);
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 20
+ 773              		.cfi_offset 5, -8
+ 774              		.cfi_offset 14, -4
+ 775 0002 83B0     		sub	sp, sp, #12
+ 776              	.LCFI16:
+ 777              		.cfi_def_cfa_offset 24
+ 266:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+ 778              		.loc 1 266 3 view .LVU214
+ 779 0004 144C     		ldr	r4, .L23
+ 780 0006 0022     		movs	r2, #0
+ 781 0008 1021     		movs	r1, #16
+ 782 000a 2046     		mov	r0, r4
+ 783 000c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 784              	.LVL83:
+ 267:Core/Src/TMAG5170.c **** 
+ 268:Core/Src/TMAG5170.c **** 
+ 269:Core/Src/TMAG5170.c ****   //register_address = TMAG5170_X_CH_RESULT_REG;
+ 270:Core/Src/TMAG5170.c ****   // switch (address)
+ 271:Core/Src/TMAG5170.c ****   // {
+ 272:Core/Src/TMAG5170.c ****   // case 1:
+ 273:Core/Src/TMAG5170.c ****   //   register_address = TMAG5170_Z_THRX_CONFIG_REG;
+ 274:Core/Src/TMAG5170.c ****   //   break;
+ 275:Core/Src/TMAG5170.c ****   // case 2:
+ 276:Core/Src/TMAG5170.c ****   //   register_address = TMAG5170_SYS_STATUS_REG;
+ 277:Core/Src/TMAG5170.c ****   // default:
+ 278:Core/Src/TMAG5170.c ****   //   break;
+ 279:Core/Src/TMAG5170.c ****   // }
+ 280:Core/Src/TMAG5170.c ****   
+ 281:Core/Src/TMAG5170.c ****   register_address = TMAG5170_ANGLE_RESULT_REG;
+ 785              		.loc 1 281 3 view .LVU215
+ 786              		.loc 1 281 20 is_stmt 0 view .LVU216
+ 787 0010 1323     		movs	r3, #19
+ 788 0012 124A     		ldr	r2, .L23+4
+ 789 0014 1370     		strb	r3, [r2]
+ 282:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
+ 790              		.loc 1 282 3 is_stmt 1 view .LVU217
+ 791              		.loc 1 282 11 is_stmt 0 view .LVU218
+ 792 0016 8DF80730 		strb	r3, [sp, #7]
+ 283:Core/Src/TMAG5170.c ****   FirstFrame |= 0b1 << 7;
+ 793              		.loc 1 283 3 is_stmt 1 view .LVU219
+ 794              		.loc 1 283 14 is_stmt 0 view .LVU220
+ 795 001a 9323     		movs	r3, #147
+ 796 001c 8DF80730 		strb	r3, [sp, #7]
+ 284:Core/Src/TMAG5170.c **** 
+ 285:Core/Src/TMAG5170.c ****   //uint16_t zeros = 0x0000;
+ 286:Core/Src/TMAG5170.c ****   uint8_t crc = 0b00110000;
+ 797              		.loc 1 286 3 is_stmt 1 view .LVU221
+ 798              		.loc 1 286 11 is_stmt 0 view .LVU222
+ 799 0020 3023     		movs	r3, #48
+ 800 0022 8DF80630 		strb	r3, [sp, #6]
+ 287:Core/Src/TMAG5170.c ****   // wysłanie
+ 288:Core/Src/TMAG5170.c **** 
+ 289:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 3, HAL_MAX_DELAY);
+ 801              		.loc 1 289 3 is_stmt 1 view .LVU223
+ 802 0026 0E4D     		ldr	r5, .L23+8
+ 803 0028 4FF0FF33 		mov	r3, #-1
+ 804 002c 0322     		movs	r2, #3
+ 805 002e 0DF10701 		add	r1, sp, #7
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 20
 
 
- 802              		.loc 1 293 3 view .LVU223
- 803 0038 4FF0FF33 		mov	r3, #-1
- 804 003c 0122     		movs	r2, #1
- 805 003e 0DF10601 		add	r1, sp, #6
- 806 0042 2846     		mov	r0, r5
- 807 0044 FFF7FEFF 		bl	HAL_SPI_Transmit
+ 806 0032 2846     		mov	r0, r5
+ 807 0034 FFF7FEFF 		bl	HAL_SPI_Transmit
  808              	.LVL84:
- 294:Core/Src/TMAG5170.c ****   //HAL_SPI_Receive(&hspi1, &RxData, 2, HAL_MAX_DELAY);
+ 290:Core/Src/TMAG5170.c ****   //HAL_SPI_Transmit(&hspi1, &zeros, 2, HAL_MAX_DELAY);
+ 291:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &crc, 1, HAL_MAX_DELAY);
+ 809              		.loc 1 291 3 view .LVU224
+ 810 0038 4FF0FF33 		mov	r3, #-1
+ 811 003c 0122     		movs	r2, #1
+ 812 003e 0DF10601 		add	r1, sp, #6
+ 813 0042 2846     		mov	r0, r5
+ 814 0044 FFF7FEFF 		bl	HAL_SPI_Transmit
+ 815              	.LVL85:
+ 292:Core/Src/TMAG5170.c ****   //HAL_SPI_Receive(&hspi1, &RxData, 2, HAL_MAX_DELAY);
+ 293:Core/Src/TMAG5170.c **** 
+ 294:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+ 816              		.loc 1 294 3 view .LVU225
+ 817 0048 0122     		movs	r2, #1
+ 818 004a 1021     		movs	r1, #16
+ 819 004c 2046     		mov	r0, r4
+ 820 004e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 821              	.LVL86:
  295:Core/Src/TMAG5170.c **** 
- 296:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
- 809              		.loc 1 296 3 view .LVU224
- 810 0048 0122     		movs	r2, #1
- 811 004a 1021     		movs	r1, #16
- 812 004c 2046     		mov	r0, r4
- 813 004e FFF7FEFF 		bl	HAL_GPIO_WritePin
- 814              	.LVL85:
- 297:Core/Src/TMAG5170.c **** 
- 298:Core/Src/TMAG5170.c ****   //return RxData;
- 299:Core/Src/TMAG5170.c **** }
- 815              		.loc 1 299 1 is_stmt 0 view .LVU225
- 816 0052 03B0     		add	sp, sp, #12
- 817              	.LCFI17:
- 818              		.cfi_def_cfa_offset 12
- 819              		@ sp needed
- 820 0054 30BD     		pop	{r4, r5, pc}
- 821              	.L24:
- 822 0056 00BF     		.align	2
- 823              	.L23:
- 824 0058 00040048 		.word	1207960576
- 825 005c 00000000 		.word	.LANCHOR1
- 826 0060 00000000 		.word	hspi1
- 827              		.cfi_endproc
- 828              	.LFE140:
- 830              		.section	.text.ReadRegister1,"ax",%progbits
- 831              		.align	1
- 832              		.global	ReadRegister1
- 833              		.syntax unified
- 834              		.thumb
- 835              		.thumb_func
- 837              	ReadRegister1:
- 838              	.LFB141:
- 300:Core/Src/TMAG5170.c **** 
- 301:Core/Src/TMAG5170.c **** void ReadRegister1(void)
- 302:Core/Src/TMAG5170.c **** {
- 839              		.loc 1 302 1 is_stmt 1 view -0
- 840              		.cfi_startproc
- 841              		@ args = 0, pretend = 0, frame = 8
- 842              		@ frame_needed = 0, uses_anonymous_args = 0
- 843 0000 30B5     		push	{r4, r5, lr}
- 844              	.LCFI18:
- 845              		.cfi_def_cfa_offset 12
- 846              		.cfi_offset 4, -12
- 847              		.cfi_offset 5, -8
- 848              		.cfi_offset 14, -4
- 849 0002 83B0     		sub	sp, sp, #12
- 850              	.LCFI19:
- 851              		.cfi_def_cfa_offset 24
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 21
+ 296:Core/Src/TMAG5170.c ****   //return RxData;
+ 297:Core/Src/TMAG5170.c **** }
+ 822              		.loc 1 297 1 is_stmt 0 view .LVU226
+ 823 0052 03B0     		add	sp, sp, #12
+ 824              	.LCFI17:
+ 825              		.cfi_def_cfa_offset 12
+ 826              		@ sp needed
+ 827 0054 30BD     		pop	{r4, r5, pc}
+ 828              	.L24:
+ 829 0056 00BF     		.align	2
+ 830              	.L23:
+ 831 0058 00040048 		.word	1207960576
+ 832 005c 00000000 		.word	.LANCHOR1
+ 833 0060 00000000 		.word	hspi1
+ 834              		.cfi_endproc
+ 835              	.LFE140:
+ 837              		.section	.text.ReadRegister1,"ax",%progbits
+ 838              		.align	1
+ 839              		.global	ReadRegister1
+ 840              		.syntax unified
+ 841              		.thumb
+ 842              		.thumb_func
+ 844              	ReadRegister1:
+ 845              	.LFB141:
+ 298:Core/Src/TMAG5170.c **** 
+ 299:Core/Src/TMAG5170.c **** void ReadRegister1(void)
+ 300:Core/Src/TMAG5170.c **** {
+ 846              		.loc 1 300 1 is_stmt 1 view -0
+ 847              		.cfi_startproc
+ 848              		@ args = 0, pretend = 0, frame = 8
+ 849              		@ frame_needed = 0, uses_anonymous_args = 0
+ 850 0000 30B5     		push	{r4, r5, lr}
+ 851              	.LCFI18:
+ 852              		.cfi_def_cfa_offset 12
+ 853              		.cfi_offset 4, -12
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 21
 
 
- 303:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
- 852              		.loc 1 303 3 view .LVU227
- 853 0004 144C     		ldr	r4, .L27
- 854 0006 0022     		movs	r2, #0
- 855 0008 1021     		movs	r1, #16
- 856 000a 2046     		mov	r0, r4
- 857 000c FFF7FEFF 		bl	HAL_GPIO_WritePin
- 858              	.LVL86:
- 304:Core/Src/TMAG5170.c ****   //register_address = TMAG5170_X_CH_RESULT_REG;
- 305:Core/Src/TMAG5170.c ****   // switch (address)
- 306:Core/Src/TMAG5170.c ****   // {
- 307:Core/Src/TMAG5170.c ****   // case 1:
- 308:Core/Src/TMAG5170.c ****   //   register_address = TMAG5170_Z_THRX_CONFIG_REG;
- 309:Core/Src/TMAG5170.c ****   //   break;
- 310:Core/Src/TMAG5170.c ****   // case 2:
- 311:Core/Src/TMAG5170.c ****   //   register_address = TMAG5170_SYS_STATUS_REG;
- 312:Core/Src/TMAG5170.c ****   // default:
- 313:Core/Src/TMAG5170.c ****   //   break;
- 314:Core/Src/TMAG5170.c ****   // }
- 315:Core/Src/TMAG5170.c ****   
- 316:Core/Src/TMAG5170.c ****   //uint16_t RxData;
- 317:Core/Src/TMAG5170.c **** 
- 318:Core/Src/TMAG5170.c ****   register_address = TMAG5170_X_CH_RESULT_REG;
- 859              		.loc 1 318 3 view .LVU228
- 860              		.loc 1 318 20 is_stmt 0 view .LVU229
- 861 0010 0923     		movs	r3, #9
- 862 0012 124A     		ldr	r2, .L27+4
- 863 0014 1370     		strb	r3, [r2]
- 319:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
- 864              		.loc 1 319 3 is_stmt 1 view .LVU230
- 865              		.loc 1 319 11 is_stmt 0 view .LVU231
- 866 0016 8DF80730 		strb	r3, [sp, #7]
- 320:Core/Src/TMAG5170.c ****   FirstFrame |= 0b1 << 7;
- 867              		.loc 1 320 3 is_stmt 1 view .LVU232
- 868              		.loc 1 320 14 is_stmt 0 view .LVU233
- 869 001a 8923     		movs	r3, #137
- 870 001c 8DF80730 		strb	r3, [sp, #7]
- 321:Core/Src/TMAG5170.c **** 
- 322:Core/Src/TMAG5170.c ****   //uint16_t zeros = 0x0000;
- 323:Core/Src/TMAG5170.c ****   uint8_t crc = 0b00110000;
- 871              		.loc 1 323 3 is_stmt 1 view .LVU234
- 872              		.loc 1 323 11 is_stmt 0 view .LVU235
- 873 0020 3023     		movs	r3, #48
- 874 0022 8DF80630 		strb	r3, [sp, #6]
- 324:Core/Src/TMAG5170.c ****   // wysłanie
- 325:Core/Src/TMAG5170.c **** 
- 326:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 3, HAL_MAX_DELAY);
- 875              		.loc 1 326 3 is_stmt 1 view .LVU236
- 876 0026 0E4D     		ldr	r5, .L27+8
- 877 0028 4FF0FF33 		mov	r3, #-1
- 878 002c 0322     		movs	r2, #3
- 879 002e 0DF10701 		add	r1, sp, #7
- 880 0032 2846     		mov	r0, r5
- 881 0034 FFF7FEFF 		bl	HAL_SPI_Transmit
- 882              	.LVL87:
- 327:Core/Src/TMAG5170.c ****   //HAL_SPI_Transmit(&hspi1, &zeros, 2, HAL_MAX_DELAY);
- 328:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &crc, 1, HAL_MAX_DELAY);
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 22
+ 854              		.cfi_offset 5, -8
+ 855              		.cfi_offset 14, -4
+ 856 0002 83B0     		sub	sp, sp, #12
+ 857              	.LCFI19:
+ 858              		.cfi_def_cfa_offset 24
+ 301:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+ 859              		.loc 1 301 3 view .LVU228
+ 860 0004 144C     		ldr	r4, .L27
+ 861 0006 0022     		movs	r2, #0
+ 862 0008 1021     		movs	r1, #16
+ 863 000a 2046     		mov	r0, r4
+ 864 000c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 865              	.LVL87:
+ 302:Core/Src/TMAG5170.c ****   //register_address = TMAG5170_X_CH_RESULT_REG;
+ 303:Core/Src/TMAG5170.c ****   // switch (address)
+ 304:Core/Src/TMAG5170.c ****   // {
+ 305:Core/Src/TMAG5170.c ****   // case 1:
+ 306:Core/Src/TMAG5170.c ****   //   register_address = TMAG5170_Z_THRX_CONFIG_REG;
+ 307:Core/Src/TMAG5170.c ****   //   break;
+ 308:Core/Src/TMAG5170.c ****   // case 2:
+ 309:Core/Src/TMAG5170.c ****   //   register_address = TMAG5170_SYS_STATUS_REG;
+ 310:Core/Src/TMAG5170.c ****   // default:
+ 311:Core/Src/TMAG5170.c ****   //   break;
+ 312:Core/Src/TMAG5170.c ****   // }
+ 313:Core/Src/TMAG5170.c ****   
+ 314:Core/Src/TMAG5170.c ****   //uint16_t RxData;
+ 315:Core/Src/TMAG5170.c **** 
+ 316:Core/Src/TMAG5170.c ****   register_address = TMAG5170_X_CH_RESULT_REG;
+ 866              		.loc 1 316 3 view .LVU229
+ 867              		.loc 1 316 20 is_stmt 0 view .LVU230
+ 868 0010 0923     		movs	r3, #9
+ 869 0012 124A     		ldr	r2, .L27+4
+ 870 0014 1370     		strb	r3, [r2]
+ 317:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
+ 871              		.loc 1 317 3 is_stmt 1 view .LVU231
+ 872              		.loc 1 317 11 is_stmt 0 view .LVU232
+ 873 0016 8DF80730 		strb	r3, [sp, #7]
+ 318:Core/Src/TMAG5170.c ****   FirstFrame |= 0b1 << 7;
+ 874              		.loc 1 318 3 is_stmt 1 view .LVU233
+ 875              		.loc 1 318 14 is_stmt 0 view .LVU234
+ 876 001a 8923     		movs	r3, #137
+ 877 001c 8DF80730 		strb	r3, [sp, #7]
+ 319:Core/Src/TMAG5170.c **** 
+ 320:Core/Src/TMAG5170.c ****   //uint16_t zeros = 0x0000;
+ 321:Core/Src/TMAG5170.c ****   uint8_t crc = 0b00110000;
+ 878              		.loc 1 321 3 is_stmt 1 view .LVU235
+ 879              		.loc 1 321 11 is_stmt 0 view .LVU236
+ 880 0020 3023     		movs	r3, #48
+ 881 0022 8DF80630 		strb	r3, [sp, #6]
+ 322:Core/Src/TMAG5170.c ****   // wysłanie
+ 323:Core/Src/TMAG5170.c **** 
+ 324:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 3, HAL_MAX_DELAY);
+ 882              		.loc 1 324 3 is_stmt 1 view .LVU237
+ 883 0026 0E4D     		ldr	r5, .L27+8
+ 884 0028 4FF0FF33 		mov	r3, #-1
+ 885 002c 0322     		movs	r2, #3
+ 886 002e 0DF10701 		add	r1, sp, #7
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 22
 
 
- 883              		.loc 1 328 3 view .LVU237
- 884 0038 4FF0FF33 		mov	r3, #-1
- 885 003c 0122     		movs	r2, #1
- 886 003e 0DF10601 		add	r1, sp, #6
- 887 0042 2846     		mov	r0, r5
- 888 0044 FFF7FEFF 		bl	HAL_SPI_Transmit
+ 887 0032 2846     		mov	r0, r5
+ 888 0034 FFF7FEFF 		bl	HAL_SPI_Transmit
  889              	.LVL88:
- 329:Core/Src/TMAG5170.c ****   //HAL_SPI_Receive(&hspi1, &RxData, 2, HAL_MAX_DELAY);
- 330:Core/Src/TMAG5170.c **** 
- 331:Core/Src/TMAG5170.c **** 
- 332:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
- 890              		.loc 1 332 3 view .LVU238
- 891 0048 0122     		movs	r2, #1
- 892 004a 1021     		movs	r1, #16
- 893 004c 2046     		mov	r0, r4
- 894 004e FFF7FEFF 		bl	HAL_GPIO_WritePin
- 895              	.LVL89:
- 333:Core/Src/TMAG5170.c ****   //return RxData;
- 334:Core/Src/TMAG5170.c **** }
- 896              		.loc 1 334 1 is_stmt 0 view .LVU239
- 897 0052 03B0     		add	sp, sp, #12
- 898              	.LCFI20:
- 899              		.cfi_def_cfa_offset 12
- 900              		@ sp needed
- 901 0054 30BD     		pop	{r4, r5, pc}
- 902              	.L28:
- 903 0056 00BF     		.align	2
- 904              	.L27:
- 905 0058 00040048 		.word	1207960576
- 906 005c 00000000 		.word	.LANCHOR1
- 907 0060 00000000 		.word	hspi1
- 908              		.cfi_endproc
- 909              	.LFE141:
- 911              		.section	.text.GetAngle,"ax",%progbits
- 912              		.align	1
- 913              		.global	GetAngle
- 914              		.syntax unified
- 915              		.thumb
- 916              		.thumb_func
- 918              	GetAngle:
- 919              	.LFB142:
- 335:Core/Src/TMAG5170.c **** 
- 336:Core/Src/TMAG5170.c **** void GetAngle(void)
- 337:Core/Src/TMAG5170.c **** {
- 920              		.loc 1 337 1 is_stmt 1 view -0
- 921              		.cfi_startproc
- 922              		@ args = 0, pretend = 0, frame = 8
- 923              		@ frame_needed = 0, uses_anonymous_args = 0
- 924 0000 10B5     		push	{r4, lr}
- 925              	.LCFI21:
- 926              		.cfi_def_cfa_offset 8
- 927              		.cfi_offset 4, -8
- 928              		.cfi_offset 14, -4
- 929 0002 82B0     		sub	sp, sp, #8
- 930              	.LCFI22:
- 931              		.cfi_def_cfa_offset 16
- 338:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 23
+ 325:Core/Src/TMAG5170.c ****   //HAL_SPI_Transmit(&hspi1, &zeros, 2, HAL_MAX_DELAY);
+ 326:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &crc, 1, HAL_MAX_DELAY);
+ 890              		.loc 1 326 3 view .LVU238
+ 891 0038 4FF0FF33 		mov	r3, #-1
+ 892 003c 0122     		movs	r2, #1
+ 893 003e 0DF10601 		add	r1, sp, #6
+ 894 0042 2846     		mov	r0, r5
+ 895 0044 FFF7FEFF 		bl	HAL_SPI_Transmit
+ 896              	.LVL89:
+ 327:Core/Src/TMAG5170.c ****   //HAL_SPI_Receive(&hspi1, &RxData, 2, HAL_MAX_DELAY);
+ 328:Core/Src/TMAG5170.c **** 
+ 329:Core/Src/TMAG5170.c **** 
+ 330:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+ 897              		.loc 1 330 3 view .LVU239
+ 898 0048 0122     		movs	r2, #1
+ 899 004a 1021     		movs	r1, #16
+ 900 004c 2046     		mov	r0, r4
+ 901 004e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 902              	.LVL90:
+ 331:Core/Src/TMAG5170.c ****   //return RxData;
+ 332:Core/Src/TMAG5170.c **** }
+ 903              		.loc 1 332 1 is_stmt 0 view .LVU240
+ 904 0052 03B0     		add	sp, sp, #12
+ 905              	.LCFI20:
+ 906              		.cfi_def_cfa_offset 12
+ 907              		@ sp needed
+ 908 0054 30BD     		pop	{r4, r5, pc}
+ 909              	.L28:
+ 910 0056 00BF     		.align	2
+ 911              	.L27:
+ 912 0058 00040048 		.word	1207960576
+ 913 005c 00000000 		.word	.LANCHOR1
+ 914 0060 00000000 		.word	hspi1
+ 915              		.cfi_endproc
+ 916              	.LFE141:
+ 918              		.section	.rodata.GetmT.str1.4,"aMS",%progbits,1
+ 919              		.align	2
+ 920              	.LC0:
+ 921 0000 256400   		.ascii	"%d\000"
+ 922 0003 00       		.align	2
+ 923              	.LC1:
+ 924 0004 2E00     		.ascii	".\000"
+ 925 0006 0000     		.align	2
+ 926              	.LC2:
+ 927 0008 206D5400 		.ascii	" mT\000"
+ 928              		.section	.text.GetmT,"ax",%progbits
+ 929              		.align	1
+ 930              		.global	GetmT
+ 931              		.syntax unified
+ 932              		.thumb
+ 933              		.thumb_func
+ 935              	GetmT:
+ 936              	.LFB142:
+ 333:Core/Src/TMAG5170.c **** 
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 23
 
 
- 932              		.loc 1 338 3 view .LVU241
- 933 0004 0022     		movs	r2, #0
- 934 0006 1021     		movs	r1, #16
- 935 0008 1B48     		ldr	r0, .L33
- 936 000a FFF7FEFF 		bl	HAL_GPIO_WritePin
- 937              	.LVL90:
+ 334:Core/Src/TMAG5170.c **** void GetmT(void)
+ 335:Core/Src/TMAG5170.c **** {
+ 937              		.loc 1 335 1 is_stmt 1 view -0
+ 938              		.cfi_startproc
+ 939              		@ args = 0, pretend = 0, frame = 32
+ 940              		@ frame_needed = 0, uses_anonymous_args = 0
+ 941 0000 70B5     		push	{r4, r5, r6, lr}
+ 942              	.LCFI21:
+ 943              		.cfi_def_cfa_offset 16
+ 944              		.cfi_offset 4, -16
+ 945              		.cfi_offset 5, -12
+ 946              		.cfi_offset 6, -8
+ 947              		.cfi_offset 14, -4
+ 948 0002 88B0     		sub	sp, sp, #32
+ 949              	.LCFI22:
+ 950              		.cfi_def_cfa_offset 48
+ 951 0004 0024     		movs	r4, #0
+ 336:Core/Src/TMAG5170.c ****   // Received data
+ 337:Core/Src/TMAG5170.c ****   uint8_t RxData[2];
+ 952              		.loc 1 337 3 view .LVU242
+ 338:Core/Src/TMAG5170.c ****   uint16_t data_reg;
+ 953              		.loc 1 338 3 view .LVU243
  339:Core/Src/TMAG5170.c **** 
- 340:Core/Src/TMAG5170.c ****   uint8_t data[2];
- 938              		.loc 1 340 3 view .LVU242
- 341:Core/Src/TMAG5170.c ****   uint16_t data_reg;
- 939              		.loc 1 341 3 view .LVU243
+ 340:Core/Src/TMAG5170.c ****   // wartosc pola magnetycznego w mT
+ 341:Core/Src/TMAG5170.c ****   float B = 0.0;
+ 954              		.loc 1 341 3 view .LVU244
+ 955              	.LVL91:
  342:Core/Src/TMAG5170.c **** 
- 343:Core/Src/TMAG5170.c ****   // wartosc pola magnetycznego w mT
- 344:Core/Src/TMAG5170.c ****   uint8_t B = 0.0; 
- 940              		.loc 1 344 3 view .LVU244
- 345:Core/Src/TMAG5170.c ****   // ustawiona czulosc sensora
- 346:Core/Src/TMAG5170.c ****   uint8_t Br = TMAG5170_X_RANGE_50mT;
- 941              		.loc 1 346 3 view .LVU245
- 347:Core/Src/TMAG5170.c ****   // uint32_t sum = 0;
+ 343:Core/Src/TMAG5170.c ****   // ustawiona czulosc sensora
+ 344:Core/Src/TMAG5170.c ****   uint8_t Br = TMAG5170_X_RANGE_50mT;
+ 956              		.loc 1 344 3 view .LVU245
+ 345:Core/Src/TMAG5170.c **** 
+ 346:Core/Src/TMAG5170.c ****   // sum of bits 0-14
+ 347:Core/Src/TMAG5170.c ****   uint16_t sum;
+ 957              		.loc 1 347 3 view .LVU246
  348:Core/Src/TMAG5170.c **** 
  349:Core/Src/TMAG5170.c **** 
- 350:Core/Src/TMAG5170.c ****   //wysyłamy adres
+ 350:Core/Src/TMAG5170.c ****   // Send address
  351:Core/Src/TMAG5170.c ****   register_address = TMAG5170_X_CH_RESULT_REG;
- 942              		.loc 1 351 3 view .LVU246
- 943              		.loc 1 351 20 is_stmt 0 view .LVU247
- 944 000e 0923     		movs	r3, #9
- 945 0010 1A4A     		ldr	r2, .L33+4
- 946 0012 1370     		strb	r3, [r2]
+ 958              		.loc 1 351 3 view .LVU247
+ 959              		.loc 1 351 20 is_stmt 0 view .LVU248
+ 960 0006 0923     		movs	r3, #9
+ 961 0008 464A     		ldr	r2, .L33
+ 962 000a 1370     		strb	r3, [r2]
  352:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
- 947              		.loc 1 352 3 is_stmt 1 view .LVU248
- 948              		.loc 1 352 11 is_stmt 0 view .LVU249
- 949 0014 8DF80330 		strb	r3, [sp, #3]
+ 963              		.loc 1 352 3 is_stmt 1 view .LVU249
+ 964              		.loc 1 352 11 is_stmt 0 view .LVU250
+ 965 000c 8DF81B30 		strb	r3, [sp, #27]
  353:Core/Src/TMAG5170.c ****   FirstFrame |= 0b1 << 7;
- 950              		.loc 1 353 3 is_stmt 1 view .LVU250
- 951              		.loc 1 353 14 is_stmt 0 view .LVU251
- 952 0018 8923     		movs	r3, #137
- 953 001a 8DF80330 		strb	r3, [sp, #3]
- 354:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
- 954              		.loc 1 354 3 is_stmt 1 view .LVU252
- 955 001e 184C     		ldr	r4, .L33+8
- 956 0020 4FF0FF33 		mov	r3, #-1
- 957 0024 0122     		movs	r2, #1
- 958 0026 0DF10301 		add	r1, sp, #3
- 959 002a 2046     		mov	r0, r4
- 960 002c FFF7FEFF 		bl	HAL_SPI_Transmit
- 961              	.LVL91:
- 355:Core/Src/TMAG5170.c **** 
- 356:Core/Src/TMAG5170.c **** 
- 357:Core/Src/TMAG5170.c ****   HAL_SPI_Receive(&hspi1, data, 2, HAL_MAX_DELAY);
- 962              		.loc 1 357 3 view .LVU253
- 963 0030 4FF0FF33 		mov	r3, #-1
- 964 0034 0222     		movs	r2, #2
- 965 0036 01A9     		add	r1, sp, #4
- 966 0038 2046     		mov	r0, r4
- 967 003a FFF7FEFF 		bl	HAL_SPI_Receive
- 968              	.LVL92:
- 358:Core/Src/TMAG5170.c **** 
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 24
+ 966              		.loc 1 353 3 is_stmt 1 view .LVU251
+ 967              		.loc 1 353 14 is_stmt 0 view .LVU252
+ 968 0010 8923     		movs	r3, #137
+ 969 0012 8DF81B30 		strb	r3, [sp, #27]
+ 354:Core/Src/TMAG5170.c **** 
+ 355:Core/Src/TMAG5170.c ****   // CS LOW
+ 356:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+ 970              		.loc 1 356 3 is_stmt 1 view .LVU253
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 24
 
 
- 359:Core/Src/TMAG5170.c **** 
- 360:Core/Src/TMAG5170.c ****   data_reg = ((uint16_t)data[0] << 8) | data[1];
- 969              		.loc 1 360 3 view .LVU254
- 970              		.loc 1 360 45 is_stmt 0 view .LVU255
- 971 003e 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
- 972              	.LVL93:
- 361:Core/Src/TMAG5170.c **** 
- 362:Core/Src/TMAG5170.c ****   // odczytujemy wartosc MSB
- 363:Core/Src/TMAG5170.c ****   uint16_t D15 = data_reg & 0x8000;
- 973              		.loc 1 363 3 is_stmt 1 view .LVU256
- 364:Core/Src/TMAG5170.c ****   uint16_t sum;
- 974              		.loc 1 364 3 view .LVU257
- 365:Core/Src/TMAG5170.c **** 
- 366:Core/Src/TMAG5170.c ****   uint8_t data_reg_8[2];
- 975              		.loc 1 366 3 view .LVU258
- 367:Core/Src/TMAG5170.c ****   data_reg_8[0] = data_reg << 8;
- 976              		.loc 1 367 3 view .LVU259
- 977              		.loc 1 367 17 is_stmt 0 view .LVU260
- 978 0042 0024     		movs	r4, #0
- 979 0044 8DF80040 		strb	r4, [sp]
- 368:Core/Src/TMAG5170.c ****   data_reg_8[1] = data_reg;
- 980              		.loc 1 368 3 is_stmt 1 view .LVU261
- 981              		.loc 1 368 17 is_stmt 0 view .LVU262
- 982 0048 8DF80130 		strb	r3, [sp, #1]
- 369:Core/Src/TMAG5170.c **** 
- 370:Core/Src/TMAG5170.c ****   HAL_UART_Transmit(&huart2, data_reg_8, 2, HAL_MAX_DELAY);
- 983              		.loc 1 370 3 is_stmt 1 view .LVU263
- 984 004c 4FF0FF33 		mov	r3, #-1
- 985 0050 0222     		movs	r2, #2
- 986 0052 6946     		mov	r1, sp
- 987 0054 0B48     		ldr	r0, .L33+12
- 988 0056 FFF7FEFF 		bl	HAL_UART_Transmit
- 989              	.LVL94:
- 371:Core/Src/TMAG5170.c ****   //HAL_UART_Transmit(&huart2, data[1], 1, HAL_MAX_DELAY);
- 372:Core/Src/TMAG5170.c **** 
- 373:Core/Src/TMAG5170.c **** 
- 374:Core/Src/TMAG5170.c ****   for(int i=0; i<=14; i++)
- 990              		.loc 1 374 3 view .LVU264
- 991              	.LBB2:
- 992              		.loc 1 374 7 view .LVU265
- 993              		.loc 1 374 11 is_stmt 0 view .LVU266
- 994 005a 2346     		mov	r3, r4
- 995              		.loc 1 374 3 view .LVU267
- 996 005c 00E0     		b	.L30
+ 971 0016 444D     		ldr	r5, .L33+4
+ 972 0018 2246     		mov	r2, r4
+ 973 001a 1021     		movs	r1, #16
+ 974 001c 2846     		mov	r0, r5
+ 975 001e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 976              	.LVL92:
+ 357:Core/Src/TMAG5170.c ****   // Transmit address
+ 358:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
+ 977              		.loc 1 358 3 view .LVU254
+ 978 0022 424E     		ldr	r6, .L33+8
+ 979 0024 4FF0FF33 		mov	r3, #-1
+ 980 0028 0122     		movs	r2, #1
+ 981 002a 0DF11B01 		add	r1, sp, #27
+ 982 002e 3046     		mov	r0, r6
+ 983 0030 FFF7FEFF 		bl	HAL_SPI_Transmit
+ 984              	.LVL93:
+ 359:Core/Src/TMAG5170.c ****   // Receive data
+ 360:Core/Src/TMAG5170.c ****   HAL_SPI_Receive(&hspi1, RxData, 2, HAL_MAX_DELAY);
+ 985              		.loc 1 360 3 view .LVU255
+ 986 0034 4FF0FF33 		mov	r3, #-1
+ 987 0038 0222     		movs	r2, #2
+ 988 003a 07A9     		add	r1, sp, #28
+ 989 003c 3046     		mov	r0, r6
+ 990 003e FFF7FEFF 		bl	HAL_SPI_Receive
+ 991              	.LVL94:
+ 361:Core/Src/TMAG5170.c ****   // CS HIGH
+ 362:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+ 992              		.loc 1 362 3 view .LVU256
+ 993 0042 0122     		movs	r2, #1
+ 994 0044 1021     		movs	r1, #16
+ 995 0046 2846     		mov	r0, r5
+ 996 0048 FFF7FEFF 		bl	HAL_GPIO_WritePin
  997              	.LVL95:
- 998              	.L31:
+ 363:Core/Src/TMAG5170.c **** 
+ 364:Core/Src/TMAG5170.c ****   // uint8_t to uint16_t
+ 365:Core/Src/TMAG5170.c ****   data_reg = RxData[0];
+ 998              		.loc 1 365 3 view .LVU257
+ 999              		.loc 1 365 12 is_stmt 0 view .LVU258
+ 1000 004c 9DF81C30 		ldrb	r3, [sp, #28]	@ zero_extendqisi2
+ 1001              	.LVL96:
+ 366:Core/Src/TMAG5170.c ****   data_reg = data_reg << 8;
+ 1002              		.loc 1 366 3 is_stmt 1 view .LVU259
+ 367:Core/Src/TMAG5170.c ****   data_reg |= RxData[1];
+ 1003              		.loc 1 367 3 view .LVU260
+ 1004              		.loc 1 367 21 is_stmt 0 view .LVU261
+ 1005 0050 9DF81D10 		ldrb	r1, [sp, #29]	@ zero_extendqisi2
+ 1006              		.loc 1 367 12 view .LVU262
+ 1007 0054 41EA0321 		orr	r1, r1, r3, lsl #8
+ 1008              	.LVL97:
+ 368:Core/Src/TMAG5170.c **** 
+ 369:Core/Src/TMAG5170.c ****   // read MSB
+ 370:Core/Src/TMAG5170.c ****   uint16_t and = data_reg;
+ 1009              		.loc 1 370 3 is_stmt 1 view .LVU263
+ 371:Core/Src/TMAG5170.c ****   uint16_t D15 = 0x8000 & and;
+ 1010              		.loc 1 371 3 view .LVU264
+ 1011              		.loc 1 371 12 is_stmt 0 view .LVU265
+ 1012 0058 01F40043 		and	r3, r1, #32768
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 25
+
+
+ 1013 005c 07EE903A 		vmov	s15, r3	@ int
+ 1014              	.LVL98:
+ 372:Core/Src/TMAG5170.c **** 
+ 373:Core/Src/TMAG5170.c ****   // counting sum of bits 0-14
+ 374:Core/Src/TMAG5170.c ****   for(int i=0; i<=14; i++)
+ 1015              		.loc 1 374 3 is_stmt 1 view .LVU266
+ 1016              	.LBB2:
+ 1017              		.loc 1 374 7 view .LVU267
+ 1018              		.loc 1 374 11 is_stmt 0 view .LVU268
+ 1019 0060 2346     		mov	r3, r4
+ 1020              		.loc 1 374 3 view .LVU269
+ 1021 0062 05E0     		b	.L30
+ 1022              	.LVL99:
+ 1023              	.L31:
  375:Core/Src/TMAG5170.c ****   {
  376:Core/Src/TMAG5170.c ****       sum += data_reg & (0b1 << i);
- 999              		.loc 1 376 7 is_stmt 1 discriminator 3 view .LVU268
+ 1024              		.loc 1 376 7 is_stmt 1 discriminator 3 view .LVU270
+ 1025              		.loc 1 376 30 is_stmt 0 discriminator 3 view .LVU271
+ 1026 0064 0122     		movs	r2, #1
+ 1027 0066 9A40     		lsls	r2, r2, r3
+ 1028              		.loc 1 376 23 discriminator 3 view .LVU272
+ 1029 0068 0A40     		ands	r2, r2, r1
+ 1030              		.loc 1 376 11 discriminator 3 view .LVU273
+ 1031 006a 2244     		add	r2, r2, r4
+ 1032 006c 94B2     		uxth	r4, r2
+ 1033              	.LVL100:
  374:Core/Src/TMAG5170.c ****   {
- 1000              		.loc 1 374 23 discriminator 3 view .LVU269
+ 1034              		.loc 1 374 23 is_stmt 1 discriminator 3 view .LVU274
  374:Core/Src/TMAG5170.c ****   {
- 1001              		.loc 1 374 24 is_stmt 0 discriminator 3 view .LVU270
- 1002 005e 0133     		adds	r3, r3, #1
- 1003              	.LVL96:
- 1004              	.L30:
+ 1035              		.loc 1 374 24 is_stmt 0 discriminator 3 view .LVU275
+ 1036 006e 0133     		adds	r3, r3, #1
+ 1037              	.LVL101:
+ 1038              	.L30:
  374:Core/Src/TMAG5170.c ****   {
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 25
-
-
- 1005              		.loc 1 374 16 is_stmt 1 discriminator 1 view .LVU271
+ 1039              		.loc 1 374 16 is_stmt 1 discriminator 1 view .LVU276
  374:Core/Src/TMAG5170.c ****   {
- 1006              		.loc 1 374 3 is_stmt 0 discriminator 1 view .LVU272
- 1007 0060 0E2B     		cmp	r3, #14
- 1008 0062 FCDD     		ble	.L31
- 1009              	.LBE2:
+ 1040              		.loc 1 374 3 is_stmt 0 discriminator 1 view .LVU277
+ 1041 0070 0E2B     		cmp	r3, #14
+ 1042 0072 F7DD     		ble	.L31
+ 1043              	.LBE2:
  377:Core/Src/TMAG5170.c ****   }
  378:Core/Src/TMAG5170.c **** 
- 379:Core/Src/TMAG5170.c ****   B = (((-1*D15)+sum)/65536)*2*abs(Br);
- 1010              		.loc 1 379 3 is_stmt 1 view .LVU273
- 380:Core/Src/TMAG5170.c **** 
- 381:Core/Src/TMAG5170.c ****   uint8_t *array;
- 1011              		.loc 1 381 3 view .LVU274
- 382:Core/Src/TMAG5170.c ****   array = (uint8_t*)(&B);
- 1012              		.loc 1 382 3 view .LVU275
- 1013              	.LVL97:
- 383:Core/Src/TMAG5170.c **** 
- 384:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
- 1014              		.loc 1 384 3 view .LVU276
- 1015 0064 0122     		movs	r2, #1
- 1016 0066 1021     		movs	r1, #16
- 1017 0068 0348     		ldr	r0, .L33
- 1018 006a FFF7FEFF 		bl	HAL_GPIO_WritePin
- 1019              	.LVL98:
+ 379:Core/Src/TMAG5170.c ****   // put into the formula
+ 380:Core/Src/TMAG5170.c ****   B = (((float)D15 + (float)sum)/65536)*2*50;
+ 1044              		.loc 1 380 3 is_stmt 1 view .LVU278
+ 1045              		.loc 1 380 9 is_stmt 0 view .LVU279
+ 1046 0074 B8EE677A 		vcvt.f32.u32	s14, s15
+ 1047              		.loc 1 380 22 view .LVU280
+ 1048 0078 07EE904A 		vmov	s15, r4	@ int
+ 1049              	.LVL102:
+ 1050              		.loc 1 380 22 view .LVU281
+ 1051 007c F8EE677A 		vcvt.f32.u32	s15, s15
+ 1052              		.loc 1 380 20 view .LVU282
+ 1053 0080 77EE277A 		vadd.f32	s15, s14, s15
+ 1054              		.loc 1 380 33 view .LVU283
+ 1055 0084 9FED2A7A 		vldr.32	s14, .L33+12
+ 1056 0088 67EE877A 		vmul.f32	s15, s15, s14
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 26
+
+
+ 1057              		.loc 1 380 40 view .LVU284
+ 1058 008c 77EEA77A 		vadd.f32	s15, s15, s15
+ 1059              		.loc 1 380 5 view .LVU285
+ 1060 0090 9FED287A 		vldr.32	s14, .L33+16
+ 1061 0094 67EE877A 		vmul.f32	s15, s15, s14
+ 1062              	.LVL103:
+ 381:Core/Src/TMAG5170.c **** 
+ 382:Core/Src/TMAG5170.c ****   // calculate numbers after dot
+ 383:Core/Src/TMAG5170.c ****   uint8_t t;
+ 1063              		.loc 1 383 3 is_stmt 1 view .LVU286
+ 384:Core/Src/TMAG5170.c ****   t = (B - (int8_t)B)*100;
+ 1064              		.loc 1 384 3 view .LVU287
+ 1065              		.loc 1 384 12 is_stmt 0 view .LVU288
+ 1066 0098 BDEEE77A 		vcvt.s32.f32	s14, s15
+ 1067 009c 8DED017A 		vstr.32	s14, [sp, #4]	@ int
+ 1068 00a0 9DF90420 		ldrsb	r2, [sp, #4]
+ 1069              		.loc 1 384 10 view .LVU289
+ 1070 00a4 07EE102A 		vmov	s14, r2	@ int
+ 1071 00a8 B8EEC77A 		vcvt.f32.s32	s14, s14
+ 1072 00ac 77EEC77A 		vsub.f32	s15, s15, s14
+ 1073              	.LVL104:
+ 1074              		.loc 1 384 22 view .LVU290
+ 1075 00b0 9FED217A 		vldr.32	s14, .L33+20
+ 1076 00b4 67EE877A 		vmul.f32	s15, s15, s14
+ 1077              		.loc 1 384 5 view .LVU291
+ 1078 00b8 FCEEE77A 		vcvt.u32.f32	s15, s15
+ 1079 00bc CDED017A 		vstr.32	s15, [sp, #4]	@ int
+ 1080 00c0 9DF80440 		ldrb	r4, [sp, #4]	@ zero_extendqisi2
+ 1081              	.LVL105:
  385:Core/Src/TMAG5170.c **** 
- 386:Core/Src/TMAG5170.c ****   //HAL_UART_Transmit(&huart2, B, 2, HAL_MAX_DELAY);
- 387:Core/Src/TMAG5170.c **** 
- 388:Core/Src/TMAG5170.c ****   //HAL_UART_Transmit(&huart2, "\r\n", strlen("\r\n"), HAL_MAX_DELAY);
- 389:Core/Src/TMAG5170.c **** 
- 390:Core/Src/TMAG5170.c ****   HAL_Delay(200);
- 1020              		.loc 1 390 3 view .LVU277
- 1021 006e C820     		movs	r0, #200
- 1022 0070 FFF7FEFF 		bl	HAL_Delay
- 1023              	.LVL99:
- 391:Core/Src/TMAG5170.c **** }
- 1024              		.loc 1 391 1 is_stmt 0 view .LVU278
- 1025 0074 02B0     		add	sp, sp, #8
- 1026              	.LCFI23:
- 1027              		.cfi_def_cfa_offset 8
- 1028              		@ sp needed
- 1029 0076 10BD     		pop	{r4, pc}
- 1030              	.L34:
- 1031              		.align	2
- 1032              	.L33:
- 1033 0078 00040048 		.word	1207960576
- 1034 007c 00000000 		.word	.LANCHOR1
- 1035 0080 00000000 		.word	hspi1
- 1036 0084 00000000 		.word	huart2
- 1037              		.cfi_endproc
- 1038              	.LFE142:
- 1040              		.section	.text.GetTemp,"ax",%progbits
- 1041              		.align	1
- 1042              		.global	GetTemp
- 1043              		.syntax unified
- 1044              		.thumb
- 1045              		.thumb_func
- 1047              	GetTemp:
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 26
-
-
- 1048              	.LFB143:
+ 386:Core/Src/TMAG5170.c ****   char str1[8];
+ 1082              		.loc 1 386 3 is_stmt 1 view .LVU292
+ 387:Core/Src/TMAG5170.c ****   char str2[8];
+ 1083              		.loc 1 387 3 view .LVU293
+ 388:Core/Src/TMAG5170.c **** 
+ 389:Core/Src/TMAG5170.c ****   // converting to char
+ 390:Core/Src/TMAG5170.c ****   sprintf(str1, "%d", (int8_t)B);
+ 1084              		.loc 1 390 3 view .LVU294
+ 1085 00c4 1D4D     		ldr	r5, .L33+24
+ 1086 00c6 2946     		mov	r1, r5
+ 1087              	.LVL106:
+ 1088              		.loc 1 390 3 is_stmt 0 view .LVU295
+ 1089 00c8 04A8     		add	r0, sp, #16
+ 1090 00ca FFF7FEFF 		bl	sprintf
+ 1091              	.LVL107:
+ 391:Core/Src/TMAG5170.c ****   sprintf(str2, "%d", t); 
+ 1092              		.loc 1 391 3 is_stmt 1 view .LVU296
+ 1093 00ce 2246     		mov	r2, r4
+ 1094 00d0 2946     		mov	r1, r5
+ 1095 00d2 02A8     		add	r0, sp, #8
+ 1096 00d4 FFF7FEFF 		bl	sprintf
+ 1097              	.LVL108:
  392:Core/Src/TMAG5170.c **** 
- 393:Core/Src/TMAG5170.c **** void GetTemp(void)
- 394:Core/Src/TMAG5170.c **** {
- 1049              		.loc 1 394 1 is_stmt 1 view -0
- 1050              		.cfi_startproc
- 1051              		@ args = 0, pretend = 0, frame = 8
- 1052              		@ frame_needed = 0, uses_anonymous_args = 0
- 1053 0000 70B5     		push	{r4, r5, r6, lr}
- 1054              	.LCFI24:
- 1055              		.cfi_def_cfa_offset 16
- 1056              		.cfi_offset 4, -16
- 1057              		.cfi_offset 5, -12
- 1058              		.cfi_offset 6, -8
- 1059              		.cfi_offset 14, -4
- 1060 0002 82B0     		sub	sp, sp, #8
- 1061              	.LCFI25:
- 1062              		.cfi_def_cfa_offset 24
- 395:Core/Src/TMAG5170.c ****   float temp = 0.0;
- 1063              		.loc 1 395 3 view .LVU280
- 1064              	.LVL100:
- 396:Core/Src/TMAG5170.c ****   uint8_t buff[2];
- 1065              		.loc 1 396 3 view .LVU281
- 397:Core/Src/TMAG5170.c ****   uint16_t TADCt;
- 1066              		.loc 1 397 3 view .LVU282
- 398:Core/Src/TMAG5170.c **** 
- 399:Core/Src/TMAG5170.c ****   // float temperature = 0.0;
- 400:Core/Src/TMAG5170.c ****   // uint8_t UART_buff;
- 401:Core/Src/TMAG5170.c ****   // uint16_t UART_buff_length;
- 402:Core/Src/TMAG5170.c **** 
- 403:Core/Src/TMAG5170.c ****   
- 404:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
- 1067              		.loc 1 404 3 view .LVU283
- 1068 0004 1C4E     		ldr	r6, .L37
- 1069 0006 0022     		movs	r2, #0
- 1070 0008 1021     		movs	r1, #16
- 1071 000a 3046     		mov	r0, r6
- 1072 000c FFF7FEFF 		bl	HAL_GPIO_WritePin
- 1073              	.LVL101:
- 405:Core/Src/TMAG5170.c **** 
- 406:Core/Src/TMAG5170.c ****   register_address = TMAG5170_TEMP_RESULT_REG;
- 1074              		.loc 1 406 3 view .LVU284
- 1075              		.loc 1 406 20 is_stmt 0 view .LVU285
- 1076 0010 0C23     		movs	r3, #12
- 1077 0012 1A4A     		ldr	r2, .L37+4
- 1078 0014 1370     		strb	r3, [r2]
- 407:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
- 1079              		.loc 1 407 3 is_stmt 1 view .LVU286
- 1080              		.loc 1 407 11 is_stmt 0 view .LVU287
- 1081 0016 8DF80330 		strb	r3, [sp, #3]
- 408:Core/Src/TMAG5170.c ****   FirstFrame |= 0b1 << 7;
- 1082              		.loc 1 408 3 is_stmt 1 view .LVU288
- 1083              		.loc 1 408 14 is_stmt 0 view .LVU289
- 1084 001a 8C23     		movs	r3, #140
- 1085 001c 8DF80330 		strb	r3, [sp, #3]
- 409:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
- 1086              		.loc 1 409 3 is_stmt 1 view .LVU290
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 27
+ 393:Core/Src/TMAG5170.c ****   // sending data to console
+ 394:Core/Src/TMAG5170.c ****   HAL_UART_Transmit(&huart2, str1, strlen(str1), HAL_MAX_DELAY);
+ 1098              		.loc 1 394 3 view .LVU297
+ 1099              		.loc 1 394 36 is_stmt 0 view .LVU298
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 27
 
 
- 1087 0020 174D     		ldr	r5, .L37+8
- 1088 0022 4FF0FF33 		mov	r3, #-1
- 1089 0026 0122     		movs	r2, #1
- 1090 0028 0DF10301 		add	r1, sp, #3
- 1091 002c 2846     		mov	r0, r5
- 1092 002e FFF7FEFF 		bl	HAL_SPI_Transmit
- 1093              	.LVL102:
- 410:Core/Src/TMAG5170.c **** 
- 411:Core/Src/TMAG5170.c ****   HAL_SPI_Receive(&hspi1, buff[0], 1, HAL_MAX_DELAY);
- 1094              		.loc 1 411 3 view .LVU291
- 1095 0032 4FF0FF33 		mov	r3, #-1
- 1096 0036 0122     		movs	r2, #1
- 1097 0038 9DF80410 		ldrb	r1, [sp, #4]	@ zero_extendqisi2
- 1098 003c 2846     		mov	r0, r5
- 1099 003e FFF7FEFF 		bl	HAL_SPI_Receive
- 1100              	.LVL103:
- 412:Core/Src/TMAG5170.c ****   HAL_SPI_Receive(&hspi1, buff[1], 1, HAL_MAX_DELAY);
- 1101              		.loc 1 412 3 view .LVU292
- 1102              		.loc 1 412 31 is_stmt 0 view .LVU293
- 1103 0042 9DF80540 		ldrb	r4, [sp, #5]	@ zero_extendqisi2
- 1104              		.loc 1 412 3 view .LVU294
- 1105 0046 4FF0FF33 		mov	r3, #-1
- 1106 004a 0122     		movs	r2, #1
- 1107 004c 2146     		mov	r1, r4
- 1108 004e 2846     		mov	r0, r5
- 1109 0050 FFF7FEFF 		bl	HAL_SPI_Receive
- 1110              	.LVL104:
- 413:Core/Src/TMAG5170.c **** 
- 414:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
- 1111              		.loc 1 414 3 is_stmt 1 view .LVU295
- 1112 0054 0122     		movs	r2, #1
- 1113 0056 1021     		movs	r1, #16
- 1114 0058 3046     		mov	r0, r6
- 1115 005a FFF7FEFF 		bl	HAL_GPIO_WritePin
- 1116              	.LVL105:
- 415:Core/Src/TMAG5170.c **** 
- 416:Core/Src/TMAG5170.c ****   HAL_UART_Transmit(&huart2, buff[1], strlen(buff[1]), HAL_MAX_DELAY);
- 1117              		.loc 1 416 3 view .LVU296
- 1118              		.loc 1 416 39 is_stmt 0 view .LVU297
- 1119 005e 2046     		mov	r0, r4
- 1120 0060 FFF7FEFF 		bl	strlen
- 1121              	.LVL106:
- 1122              		.loc 1 416 3 view .LVU298
- 1123 0064 4FF0FF33 		mov	r3, #-1
- 1124 0068 82B2     		uxth	r2, r0
- 1125 006a 2146     		mov	r1, r4
- 1126 006c 0548     		ldr	r0, .L37+12
- 1127 006e FFF7FEFF 		bl	HAL_UART_Transmit
- 1128              	.LVL107:
- 417:Core/Src/TMAG5170.c **** 
+ 1100 00d8 04A8     		add	r0, sp, #16
+ 1101 00da FFF7FEFF 		bl	strlen
+ 1102              	.LVL109:
+ 1103              		.loc 1 394 3 view .LVU299
+ 1104 00de 184C     		ldr	r4, .L33+28
+ 1105              	.LVL110:
+ 1106              		.loc 1 394 3 view .LVU300
+ 1107 00e0 4FF0FF33 		mov	r3, #-1
+ 1108 00e4 82B2     		uxth	r2, r0
+ 1109 00e6 04A9     		add	r1, sp, #16
+ 1110 00e8 2046     		mov	r0, r4
+ 1111 00ea FFF7FEFF 		bl	HAL_UART_Transmit
+ 1112              	.LVL111:
+ 395:Core/Src/TMAG5170.c ****   HAL_UART_Transmit(&huart2, ".", strlen("."), HAL_MAX_DELAY);
+ 1113              		.loc 1 395 3 is_stmt 1 view .LVU301
+ 1114 00ee 4FF0FF33 		mov	r3, #-1
+ 1115 00f2 0122     		movs	r2, #1
+ 1116 00f4 1349     		ldr	r1, .L33+32
+ 1117 00f6 2046     		mov	r0, r4
+ 1118 00f8 FFF7FEFF 		bl	HAL_UART_Transmit
+ 1119              	.LVL112:
+ 396:Core/Src/TMAG5170.c ****   HAL_UART_Transmit(&huart2, str2, strlen(str2), HAL_MAX_DELAY);
+ 1120              		.loc 1 396 3 view .LVU302
+ 1121              		.loc 1 396 36 is_stmt 0 view .LVU303
+ 1122 00fc 02A8     		add	r0, sp, #8
+ 1123 00fe FFF7FEFF 		bl	strlen
+ 1124              	.LVL113:
+ 1125              		.loc 1 396 3 view .LVU304
+ 1126 0102 4FF0FF33 		mov	r3, #-1
+ 1127 0106 82B2     		uxth	r2, r0
+ 1128 0108 02A9     		add	r1, sp, #8
+ 1129 010a 2046     		mov	r0, r4
+ 1130 010c FFF7FEFF 		bl	HAL_UART_Transmit
+ 1131              	.LVL114:
+ 397:Core/Src/TMAG5170.c ****   HAL_UART_Transmit(&huart2, " mT", strlen(" mT"), HAL_MAX_DELAY);
+ 1132              		.loc 1 397 3 is_stmt 1 view .LVU305
+ 1133 0110 4FF0FF33 		mov	r3, #-1
+ 1134 0114 0322     		movs	r2, #3
+ 1135 0116 0C49     		ldr	r1, .L33+36
+ 1136 0118 2046     		mov	r0, r4
+ 1137 011a FFF7FEFF 		bl	HAL_UART_Transmit
+ 1138              	.LVL115:
+ 398:Core/Src/TMAG5170.c **** }
+ 1139              		.loc 1 398 1 is_stmt 0 view .LVU306
+ 1140 011e 08B0     		add	sp, sp, #32
+ 1141              	.LCFI23:
+ 1142              		.cfi_def_cfa_offset 16
+ 1143              		@ sp needed
+ 1144 0120 70BD     		pop	{r4, r5, r6, pc}
+ 1145              	.LVL116:
+ 1146              	.L34:
+ 1147              		.loc 1 398 1 view .LVU307
+ 1148 0122 00BF     		.align	2
+ 1149              	.L33:
+ 1150 0124 00000000 		.word	.LANCHOR1
+ 1151 0128 00040048 		.word	1207960576
+ 1152 012c 00000000 		.word	hspi1
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 28
+
+
+ 1153 0130 00008037 		.word	931135488
+ 1154 0134 00004842 		.word	1112014848
+ 1155 0138 0000C842 		.word	1120403456
+ 1156 013c 00000000 		.word	.LC0
+ 1157 0140 00000000 		.word	huart2
+ 1158 0144 04000000 		.word	.LC1
+ 1159 0148 08000000 		.word	.LC2
+ 1160              		.cfi_endproc
+ 1161              	.LFE142:
+ 1163              		.section	.text.GetAngle,"ax",%progbits
+ 1164              		.align	1
+ 1165              		.global	GetAngle
+ 1166              		.syntax unified
+ 1167              		.thumb
+ 1168              		.thumb_func
+ 1170              	GetAngle:
+ 1171              	.LFB143:
+ 399:Core/Src/TMAG5170.c **** 
+ 400:Core/Src/TMAG5170.c **** float GetAngle(void)
+ 401:Core/Src/TMAG5170.c **** {
+ 1172              		.loc 1 401 1 is_stmt 1 view -0
+ 1173              		.cfi_startproc
+ 1174              		@ args = 0, pretend = 0, frame = 16
+ 1175              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1176 0000 30B5     		push	{r4, r5, lr}
+ 1177              	.LCFI24:
+ 1178              		.cfi_def_cfa_offset 12
+ 1179              		.cfi_offset 4, -12
+ 1180              		.cfi_offset 5, -8
+ 1181              		.cfi_offset 14, -4
+ 1182 0002 85B0     		sub	sp, sp, #20
+ 1183              	.LCFI25:
+ 1184              		.cfi_def_cfa_offset 32
+ 402:Core/Src/TMAG5170.c ****   uint8_t data[2];
+ 1185              		.loc 1 402 3 view .LVU309
+ 403:Core/Src/TMAG5170.c ****   uint16_t data_reg;
+ 1186              		.loc 1 403 3 view .LVU310
+ 404:Core/Src/TMAG5170.c ****   uint16_t data_reg_LSB;
+ 1187              		.loc 1 404 3 view .LVU311
+ 405:Core/Src/TMAG5170.c ****   uint16_t data_reg_MSB;
+ 1188              		.loc 1 405 3 view .LVU312
+ 406:Core/Src/TMAG5170.c **** 
+ 407:Core/Src/TMAG5170.c ****   float LSB;
+ 1189              		.loc 1 407 3 view .LVU313
+ 408:Core/Src/TMAG5170.c ****   float MSB;
+ 1190              		.loc 1 408 3 view .LVU314
+ 409:Core/Src/TMAG5170.c ****   
+ 410:Core/Src/TMAG5170.c ****   // Angle
+ 411:Core/Src/TMAG5170.c ****   // float Angle = 0.0;
+ 412:Core/Src/TMAG5170.c **** 
+ 413:Core/Src/TMAG5170.c ****   //wysyłamy adres
+ 414:Core/Src/TMAG5170.c ****   register_address = TMAG5170_ANGLE_RESULT_REG;
+ 1191              		.loc 1 414 3 view .LVU315
+ 1192              		.loc 1 414 20 is_stmt 0 view .LVU316
+ 1193 0004 1323     		movs	r3, #19
+ 1194 0006 274A     		ldr	r2, .L37
+ 1195 0008 1370     		strb	r3, [r2]
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 29
+
+
+ 415:Core/Src/TMAG5170.c ****   // register_address = TMAG5170_ANGLE_RESULT_REG;
+ 416:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
+ 1196              		.loc 1 416 3 is_stmt 1 view .LVU317
+ 1197              		.loc 1 416 11 is_stmt 0 view .LVU318
+ 1198 000a 8DF80B30 		strb	r3, [sp, #11]
+ 417:Core/Src/TMAG5170.c ****   FirstFrame |= 0b1 << 7;
+ 1199              		.loc 1 417 3 is_stmt 1 view .LVU319
+ 1200              		.loc 1 417 14 is_stmt 0 view .LVU320
+ 1201 000e 9323     		movs	r3, #147
+ 1202 0010 8DF80B30 		strb	r3, [sp, #11]
  418:Core/Src/TMAG5170.c **** 
- 419:Core/Src/TMAG5170.c ****   TADCt = ((uint16_t)buff[0] << 4)|buff[1]>>4;
- 1129              		.loc 1 419 3 is_stmt 1 view .LVU299
- 420:Core/Src/TMAG5170.c **** 
- 421:Core/Src/TMAG5170.c ****   temp = 25.0 + ((TADCt + 17522.0)/60.0);
- 1130              		.loc 1 421 3 view .LVU300
- 422:Core/Src/TMAG5170.c **** 
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 28
-
-
+ 419:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+ 1203              		.loc 1 419 3 is_stmt 1 view .LVU321
+ 1204 0014 244C     		ldr	r4, .L37+4
+ 1205 0016 0022     		movs	r2, #0
+ 1206 0018 1021     		movs	r1, #16
+ 1207 001a 2046     		mov	r0, r4
+ 1208 001c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1209              	.LVL117:
+ 420:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
+ 1210              		.loc 1 420 3 view .LVU322
+ 1211 0020 224D     		ldr	r5, .L37+8
+ 1212 0022 4FF0FF33 		mov	r3, #-1
+ 1213 0026 0122     		movs	r2, #1
+ 1214 0028 0DF10B01 		add	r1, sp, #11
+ 1215 002c 2846     		mov	r0, r5
+ 1216 002e FFF7FEFF 		bl	HAL_SPI_Transmit
+ 1217              	.LVL118:
+ 421:Core/Src/TMAG5170.c ****   HAL_SPI_Receive(&hspi1, data, 2, HAL_MAX_DELAY);
+ 1218              		.loc 1 421 3 view .LVU323
+ 1219 0032 4FF0FF33 		mov	r3, #-1
+ 1220 0036 0222     		movs	r2, #2
+ 1221 0038 03A9     		add	r1, sp, #12
+ 1222 003a 2846     		mov	r0, r5
+ 1223 003c FFF7FEFF 		bl	HAL_SPI_Receive
+ 1224              	.LVL119:
+ 422:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+ 1225              		.loc 1 422 3 view .LVU324
+ 1226 0040 0122     		movs	r2, #1
+ 1227 0042 1021     		movs	r1, #16
+ 1228 0044 2046     		mov	r0, r4
+ 1229 0046 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1230              	.LVL120:
  423:Core/Src/TMAG5170.c **** 
- 424:Core/Src/TMAG5170.c ****   
- 425:Core/Src/TMAG5170.c **** 
- 426:Core/Src/TMAG5170.c ****   //HAL_UART_Transmit(&huart2, TADCt, strlen(TADCt), HAL_MAX_DELAY);
- 427:Core/Src/TMAG5170.c **** 
- 428:Core/Src/TMAG5170.c ****   //UART_buff_length = sprintf(UART_buff, "%f\r\n", temperature);
- 429:Core/Src/TMAG5170.c ****   //HAL_UART_Transmit(&huart2, UART_buff, UART_buff_length, HAL_MAX_DELAY );
- 430:Core/Src/TMAG5170.c **** 
- 431:Core/Src/TMAG5170.c ****   // char buffff[100];
- 432:Core/Src/TMAG5170.c ****   // gcvt(temp, 4, buffff);
- 433:Core/Src/TMAG5170.c ****   // HAL_UART_Transmit(&huart2, (uint8_t)buffff, strlen(buffff), HAL_MAX_DELAY );
- 434:Core/Src/TMAG5170.c **** 
- 435:Core/Src/TMAG5170.c **** }...
- 1131              		.loc 1 435 1 is_stmt 0 view .LVU301
- 1132 0072 02B0     		add	sp, sp, #8
- 1133              	.LCFI26:
- 1134              		.cfi_def_cfa_offset 16
- 1135              		@ sp needed
- 1136 0074 70BD     		pop	{r4, r5, r6, pc}
- 1137              	.LVL108:
- 1138              	.L38:
- 1139              		.loc 1 435 1 view .LVU302
- 1140 0076 00BF     		.align	2
- 1141              	.L37:
- 1142 0078 00040048 		.word	1207960576
- 1143 007c 00000000 		.word	.LANCHOR1
- 1144 0080 00000000 		.word	hspi1
- 1145 0084 00000000 		.word	huart2
- 1146              		.cfi_endproc
- 1147              	.LFE143:
- 1149              		.section	.bss.AlertConfigSettings,"aw",%nobits
- 1150              		.align	2
- 1151              		.set	.LANCHOR4,. + 0
- 1154              	AlertConfigSettings:
- 1155 0000 00000000 		.space	9
- 1155      00000000 
- 1155      00
- 1156              		.section	.bss.DeviceConfigSettings,"aw",%nobits
- 1157              		.align	2
- 1158              		.set	.LANCHOR0,. + 0
- 1161              	DeviceConfigSettings:
- 1162 0000 00000000 		.space	6
- 1162      0000
- 1163              		.section	.bss.SensorConfigSettings,"aw",%nobits
- 1164              		.align	2
- 1165              		.set	.LANCHOR2,. + 0
- 1168              	SensorConfigSettings:
- 1169 0000 00000000 		.space	6
- 1169      0000
- 1170              		.section	.bss.SystemConfigSettings,"aw",%nobits
- 1171              		.align	2
- 1172              		.set	.LANCHOR3,. + 0
- 1175              	SystemConfigSettings:
- 1176 0000 00000000 		.space	7
- 1176      000000
- 1177              		.section	.bss.register_address,"aw",%nobits
- 1178              		.set	.LANCHOR1,. + 0
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 29
+ 424:Core/Src/TMAG5170.c ****     
+ 425:Core/Src/TMAG5170.c ****   data_reg = data[0];
+ 1231              		.loc 1 425 3 view .LVU325
+ 1232              		.loc 1 425 12 is_stmt 0 view .LVU326
+ 1233 004a 9DF80C20 		ldrb	r2, [sp, #12]	@ zero_extendqisi2
+ 1234              	.LVL121:
+ 426:Core/Src/TMAG5170.c ****   data_reg = data_reg << 8;
+ 1235              		.loc 1 426 3 is_stmt 1 view .LVU327
+ 427:Core/Src/TMAG5170.c ****   data_reg |= data[1];
+ 1236              		.loc 1 427 3 view .LVU328
+ 1237              		.loc 1 427 19 is_stmt 0 view .LVU329
+ 1238 004e 9DF80D30 		ldrb	r3, [sp, #13]	@ zero_extendqisi2
+ 1239              		.loc 1 427 12 view .LVU330
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 30
 
 
- 1181              	register_address:
- 1182 0000 00       		.space	1
- 1183              		.text
- 1184              	.Letext0:
- 1185              		.file 2 "Core/Inc/TMAG5170.h"
- 1186              		.file 3 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\
- 1187              		.file 4 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\
- 1188              		.file 5 "Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g491xx.h"
- 1189              		.file 6 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_def.h"
- 1190              		.file 7 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma.h"
- 1191              		.file 8 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_spi.h"
- 1192              		.file 9 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h"
- 1193              		.file 10 "Core/Inc/spi.h"
- 1194              		.file 11 "Core/Inc/usart.h"
- 1195              		.file 12 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h"
- 1196              		.file 13 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\
- 1197              		.file 14 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s 			page 30
+ 1240 0052 43EA0222 		orr	r2, r3, r2, lsl #8
+ 1241              	.LVL122:
+ 428:Core/Src/TMAG5170.c **** 
+ 429:Core/Src/TMAG5170.c **** 
+ 430:Core/Src/TMAG5170.c ****   // odczytanie liczby po przecinku
+ 431:Core/Src/TMAG5170.c ****   // for(int i=0; i<=3; i++)
+ 432:Core/Src/TMAG5170.c ****   // {
+ 433:Core/Src/TMAG5170.c ****   //   LSB += data_reg & (0b1 << i);
+ 434:Core/Src/TMAG5170.c ****   // }
+ 435:Core/Src/TMAG5170.c **** 
+ 436:Core/Src/TMAG5170.c ****   data_reg_LSB = data_reg;
+ 1242              		.loc 1 436 3 is_stmt 1 view .LVU331
+ 437:Core/Src/TMAG5170.c ****   data_reg_LSB = data_reg_LSB & 0x000F;
+ 1243              		.loc 1 437 3 view .LVU332
+ 1244              		.loc 1 437 16 is_stmt 0 view .LVU333
+ 1245 0056 03F00F03 		and	r3, r3, #15
+ 1246 005a 07EE903A 		vmov	s15, r3	@ int
+ 1247              	.LVL123:
+ 438:Core/Src/TMAG5170.c ****   LSB = (float)data_reg_LSB;
+ 1248              		.loc 1 438 3 is_stmt 1 view .LVU334
+ 1249              		.loc 1 438 7 is_stmt 0 view .LVU335
+ 1250 005e F8EE677A 		vcvt.f32.u32	s15, s15
+ 1251              	.LVL124:
+ 439:Core/Src/TMAG5170.c ****   LSB = LSB/8;
+ 1252              		.loc 1 439 3 is_stmt 1 view .LVU336
+ 1253              		.loc 1 439 7 is_stmt 0 view .LVU337
+ 1254 0062 B4EE007A 		vmov.f32	s14, #1.25e-1
+ 1255 0066 27EE877A 		vmul.f32	s14, s15, s14
+ 1256              	.LVL125:
+ 440:Core/Src/TMAG5170.c ****   
+ 441:Core/Src/TMAG5170.c **** 
+ 442:Core/Src/TMAG5170.c ****   data_reg_MSB = data_reg & 0x1FF0;
+ 1257              		.loc 1 442 3 is_stmt 1 view .LVU338
+ 443:Core/Src/TMAG5170.c ****   data_reg_MSB = data_reg >> 4;
+ 1258              		.loc 1 443 3 view .LVU339
+ 1259              		.loc 1 443 16 is_stmt 0 view .LVU340
+ 1260 006a 1309     		lsrs	r3, r2, #4
+ 1261              	.LVL126:
+ 1262              		.loc 1 443 16 view .LVU341
+ 1263 006c 07EE903A 		vmov	s15, r3	@ int
+ 1264              	.LVL127:
+ 444:Core/Src/TMAG5170.c ****   MSB = (float)data_reg_MSB;
+ 1265              		.loc 1 444 3 is_stmt 1 view .LVU342
+ 1266              		.loc 1 444 7 is_stmt 0 view .LVU343
+ 1267 0070 F8EE677A 		vcvt.f32.u32	s15, s15
+ 1268              	.LVL128:
+ 445:Core/Src/TMAG5170.c **** 
+ 446:Core/Src/TMAG5170.c ****   Angle = MSB + LSB;
+ 1269              		.loc 1 446 3 is_stmt 1 view .LVU344
+ 1270              		.loc 1 446 15 is_stmt 0 view .LVU345
+ 1271 0074 77EE277A 		vadd.f32	s15, s14, s15
+ 1272              	.LVL129:
+ 1273              		.loc 1 446 9 view .LVU346
+ 1274 0078 0D4C     		ldr	r4, .L37+12
+ 1275 007a C4ED007A 		vstr.32	s15, [r4]
+ 447:Core/Src/TMAG5170.c **** 
+ 448:Core/Src/TMAG5170.c ****   //A = ((float)data_reg + ((float)LSBsum/8))/10;
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 31
+
+
+ 449:Core/Src/TMAG5170.c **** 
+ 450:Core/Src/TMAG5170.c ****   //po przecinku
+ 451:Core/Src/TMAG5170.c ****   uint8_t t;
+ 1276              		.loc 1 451 3 is_stmt 1 view .LVU347
+ 452:Core/Src/TMAG5170.c ****   t = (Angle - (int8_t)Angle)*100;
+ 1277              		.loc 1 452 3 view .LVU348
+ 1278              	.LVL130:
+ 453:Core/Src/TMAG5170.c **** 
+ 454:Core/Src/TMAG5170.c ****   // przykład jak zamieniać
+ 455:Core/Src/TMAG5170.c ****   // uint16_t suma = 123;
+ 456:Core/Src/TMAG5170.c ****   // B = (float)suma + (float)suma;
+ 457:Core/Src/TMAG5170.c ****   
+ 458:Core/Src/TMAG5170.c ****   
+ 459:Core/Src/TMAG5170.c **** 
+ 460:Core/Src/TMAG5170.c ****   // uint8_t *array;
+ 461:Core/Src/TMAG5170.c ****   // array = (uint8_t*)(&fl);
+ 462:Core/Src/TMAG5170.c **** 
+ 463:Core/Src/TMAG5170.c ****   uint8_t uint = 25;
+ 1279              		.loc 1 463 3 view .LVU349
+ 464:Core/Src/TMAG5170.c ****   
+ 465:Core/Src/TMAG5170.c ****   char str1[8];
+ 1280              		.loc 1 465 3 view .LVU350
+ 466:Core/Src/TMAG5170.c ****   sprintf(str1, "%d", data_reg);
+ 1281              		.loc 1 466 3 view .LVU351
+ 1282 007e 0D49     		ldr	r1, .L37+16
+ 1283 0080 6846     		mov	r0, sp
+ 1284 0082 FFF7FEFF 		bl	sprintf
+ 1285              	.LVL131:
+ 467:Core/Src/TMAG5170.c ****   HAL_UART_Transmit(&huart2, str1, strlen(str1), HAL_MAX_DELAY);
+ 1286              		.loc 1 467 3 view .LVU352
+ 1287              		.loc 1 467 36 is_stmt 0 view .LVU353
+ 1288 0086 6846     		mov	r0, sp
+ 1289 0088 FFF7FEFF 		bl	strlen
+ 1290              	.LVL132:
+ 1291              		.loc 1 467 3 view .LVU354
+ 1292 008c 4FF0FF33 		mov	r3, #-1
+ 1293 0090 82B2     		uxth	r2, r0
+ 1294 0092 6946     		mov	r1, sp
+ 1295 0094 0848     		ldr	r0, .L37+20
+ 1296 0096 FFF7FEFF 		bl	HAL_UART_Transmit
+ 1297              	.LVL133:
+ 468:Core/Src/TMAG5170.c **** 
+ 469:Core/Src/TMAG5170.c **** 
+ 470:Core/Src/TMAG5170.c **** 
+ 471:Core/Src/TMAG5170.c **** 
+ 472:Core/Src/TMAG5170.c ****   // // wyświetlanie uint
+ 473:Core/Src/TMAG5170.c ****   // char str1[8];
+ 474:Core/Src/TMAG5170.c ****   // char str2[8];
+ 475:Core/Src/TMAG5170.c ****   // // sprintf(str, "%d", (int8_t)B); 
+ 476:Core/Src/TMAG5170.c ****   // sprintf(str1, "%d", (int8_t)data_reg);
+ 477:Core/Src/TMAG5170.c ****   // sprintf(str2, "%d", t); 
+ 478:Core/Src/TMAG5170.c ****   // HAL_UART_Transmit(&huart2, str1, strlen(str1), HAL_MAX_DELAY);
+ 479:Core/Src/TMAG5170.c ****   // HAL_UART_Transmit(&huart2, ".", strlen("."), HAL_MAX_DELAY);
+ 480:Core/Src/TMAG5170.c ****   // HAL_UART_Transmit(&huart2, str2, strlen(str2), HAL_MAX_DELAY);
+ 481:Core/Src/TMAG5170.c ****   // HAL_UART_Transmit(&huart2, "*", strlen("*"), HAL_MAX_DELAY);
+ 482:Core/Src/TMAG5170.c ****   return Angle;
+ 1298              		.loc 1 482 3 is_stmt 1 view .LVU355
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 32
+
+
+ 483:Core/Src/TMAG5170.c **** }
+ 1299              		.loc 1 483 1 is_stmt 0 view .LVU356
+ 1300 009a 94ED000A 		vldr.32	s0, [r4]
+ 1301 009e 05B0     		add	sp, sp, #20
+ 1302              	.LCFI26:
+ 1303              		.cfi_def_cfa_offset 12
+ 1304              		@ sp needed
+ 1305 00a0 30BD     		pop	{r4, r5, pc}
+ 1306              	.L38:
+ 1307 00a2 00BF     		.align	2
+ 1308              	.L37:
+ 1309 00a4 00000000 		.word	.LANCHOR1
+ 1310 00a8 00040048 		.word	1207960576
+ 1311 00ac 00000000 		.word	hspi1
+ 1312 00b0 00000000 		.word	.LANCHOR5
+ 1313 00b4 00000000 		.word	.LC0
+ 1314 00b8 00000000 		.word	huart2
+ 1315              		.cfi_endproc
+ 1316              	.LFE143:
+ 1318              		.section	.text.GetTemp,"ax",%progbits
+ 1319              		.align	1
+ 1320              		.global	GetTemp
+ 1321              		.syntax unified
+ 1322              		.thumb
+ 1323              		.thumb_func
+ 1325              	GetTemp:
+ 1326              	.LFB144:
+ 484:Core/Src/TMAG5170.c **** 
+ 485:Core/Src/TMAG5170.c **** 
+ 486:Core/Src/TMAG5170.c **** void GetTemp(void)
+ 487:Core/Src/TMAG5170.c **** {
+ 1327              		.loc 1 487 1 is_stmt 1 view -0
+ 1328              		.cfi_startproc
+ 1329              		@ args = 0, pretend = 0, frame = 8
+ 1330              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1331 0000 70B5     		push	{r4, r5, r6, lr}
+ 1332              	.LCFI27:
+ 1333              		.cfi_def_cfa_offset 16
+ 1334              		.cfi_offset 4, -16
+ 1335              		.cfi_offset 5, -12
+ 1336              		.cfi_offset 6, -8
+ 1337              		.cfi_offset 14, -4
+ 1338 0002 82B0     		sub	sp, sp, #8
+ 1339              	.LCFI28:
+ 1340              		.cfi_def_cfa_offset 24
+ 488:Core/Src/TMAG5170.c ****   float temp = 0.0;
+ 1341              		.loc 1 488 3 view .LVU358
+ 1342              	.LVL134:
+ 489:Core/Src/TMAG5170.c ****   uint8_t buff[2];
+ 1343              		.loc 1 489 3 view .LVU359
+ 490:Core/Src/TMAG5170.c ****   uint16_t TADCt;
+ 1344              		.loc 1 490 3 view .LVU360
+ 491:Core/Src/TMAG5170.c **** 
+ 492:Core/Src/TMAG5170.c ****   // float temperature = 0.0;
+ 493:Core/Src/TMAG5170.c ****   // uint8_t UART_buff;
+ 494:Core/Src/TMAG5170.c ****   // uint16_t UART_buff_length;
+ 495:Core/Src/TMAG5170.c **** 
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 33
+
+
+ 496:Core/Src/TMAG5170.c ****   
+ 497:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+ 1345              		.loc 1 497 3 view .LVU361
+ 1346 0004 1C4E     		ldr	r6, .L41
+ 1347 0006 0022     		movs	r2, #0
+ 1348 0008 1021     		movs	r1, #16
+ 1349 000a 3046     		mov	r0, r6
+ 1350 000c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1351              	.LVL135:
+ 498:Core/Src/TMAG5170.c **** 
+ 499:Core/Src/TMAG5170.c ****   register_address = TMAG5170_TEMP_RESULT_REG;
+ 1352              		.loc 1 499 3 view .LVU362
+ 1353              		.loc 1 499 20 is_stmt 0 view .LVU363
+ 1354 0010 0C23     		movs	r3, #12
+ 1355 0012 1A4A     		ldr	r2, .L41+4
+ 1356 0014 1370     		strb	r3, [r2]
+ 500:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
+ 1357              		.loc 1 500 3 is_stmt 1 view .LVU364
+ 1358              		.loc 1 500 11 is_stmt 0 view .LVU365
+ 1359 0016 8DF80330 		strb	r3, [sp, #3]
+ 501:Core/Src/TMAG5170.c ****   FirstFrame |= 0b1 << 7;
+ 1360              		.loc 1 501 3 is_stmt 1 view .LVU366
+ 1361              		.loc 1 501 14 is_stmt 0 view .LVU367
+ 1362 001a 8C23     		movs	r3, #140
+ 1363 001c 8DF80330 		strb	r3, [sp, #3]
+ 502:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
+ 1364              		.loc 1 502 3 is_stmt 1 view .LVU368
+ 1365 0020 174D     		ldr	r5, .L41+8
+ 1366 0022 4FF0FF33 		mov	r3, #-1
+ 1367 0026 0122     		movs	r2, #1
+ 1368 0028 0DF10301 		add	r1, sp, #3
+ 1369 002c 2846     		mov	r0, r5
+ 1370 002e FFF7FEFF 		bl	HAL_SPI_Transmit
+ 1371              	.LVL136:
+ 503:Core/Src/TMAG5170.c **** 
+ 504:Core/Src/TMAG5170.c ****   HAL_SPI_Receive(&hspi1, buff[0], 1, HAL_MAX_DELAY);
+ 1372              		.loc 1 504 3 view .LVU369
+ 1373 0032 4FF0FF33 		mov	r3, #-1
+ 1374 0036 0122     		movs	r2, #1
+ 1375 0038 9DF80410 		ldrb	r1, [sp, #4]	@ zero_extendqisi2
+ 1376 003c 2846     		mov	r0, r5
+ 1377 003e FFF7FEFF 		bl	HAL_SPI_Receive
+ 1378              	.LVL137:
+ 505:Core/Src/TMAG5170.c ****   HAL_SPI_Receive(&hspi1, buff[1], 1, HAL_MAX_DELAY);
+ 1379              		.loc 1 505 3 view .LVU370
+ 1380              		.loc 1 505 31 is_stmt 0 view .LVU371
+ 1381 0042 9DF80540 		ldrb	r4, [sp, #5]	@ zero_extendqisi2
+ 1382              		.loc 1 505 3 view .LVU372
+ 1383 0046 4FF0FF33 		mov	r3, #-1
+ 1384 004a 0122     		movs	r2, #1
+ 1385 004c 2146     		mov	r1, r4
+ 1386 004e 2846     		mov	r0, r5
+ 1387 0050 FFF7FEFF 		bl	HAL_SPI_Receive
+ 1388              	.LVL138:
+ 506:Core/Src/TMAG5170.c **** 
+ 507:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+ 1389              		.loc 1 507 3 is_stmt 1 view .LVU373
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 34
+
+
+ 1390 0054 0122     		movs	r2, #1
+ 1391 0056 1021     		movs	r1, #16
+ 1392 0058 3046     		mov	r0, r6
+ 1393 005a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1394              	.LVL139:
+ 508:Core/Src/TMAG5170.c **** 
+ 509:Core/Src/TMAG5170.c ****   HAL_UART_Transmit(&huart2, buff[1], strlen(buff[1]), HAL_MAX_DELAY);
+ 1395              		.loc 1 509 3 view .LVU374
+ 1396              		.loc 1 509 39 is_stmt 0 view .LVU375
+ 1397 005e 2046     		mov	r0, r4
+ 1398 0060 FFF7FEFF 		bl	strlen
+ 1399              	.LVL140:
+ 1400              		.loc 1 509 3 view .LVU376
+ 1401 0064 4FF0FF33 		mov	r3, #-1
+ 1402 0068 82B2     		uxth	r2, r0
+ 1403 006a 2146     		mov	r1, r4
+ 1404 006c 0548     		ldr	r0, .L41+12
+ 1405 006e FFF7FEFF 		bl	HAL_UART_Transmit
+ 1406              	.LVL141:
+ 510:Core/Src/TMAG5170.c **** 
+ 511:Core/Src/TMAG5170.c **** 
+ 512:Core/Src/TMAG5170.c ****   TADCt = ((uint16_t)buff[0] << 4)|buff[1]>>4;
+ 1407              		.loc 1 512 3 is_stmt 1 view .LVU377
+ 513:Core/Src/TMAG5170.c **** 
+ 514:Core/Src/TMAG5170.c ****   temp = 25.0 + ((TADCt + 17522.0)/60.0);
+ 1408              		.loc 1 514 3 view .LVU378
+ 515:Core/Src/TMAG5170.c **** 
+ 516:Core/Src/TMAG5170.c **** 
+ 517:Core/Src/TMAG5170.c ****   
+ 518:Core/Src/TMAG5170.c **** 
+ 519:Core/Src/TMAG5170.c ****   //HAL_UART_Transmit(&huart2, TADCt, strlen(TADCt), HAL_MAX_DELAY);
+ 520:Core/Src/TMAG5170.c **** 
+ 521:Core/Src/TMAG5170.c ****   //UART_buff_length = sprintf(UART_buff, "%f\r\n", temperature);
+ 522:Core/Src/TMAG5170.c ****   //HAL_UART_Transmit(&huart2, UART_buff, UART_buff_length, HAL_MAX_DELAY );
+ 523:Core/Src/TMAG5170.c **** 
+ 524:Core/Src/TMAG5170.c ****   // char buffff[100];
+ 525:Core/Src/TMAG5170.c ****   // gcvt(temp, 4, buffff);
+ 526:Core/Src/TMAG5170.c ****   // HAL_UART_Transmit(&huart2, (uint8_t)buffff, strlen(buffff), HAL_MAX_DELAY );
+ 527:Core/Src/TMAG5170.c **** 
+ 528:Core/Src/TMAG5170.c **** }
+ 1409              		.loc 1 528 1 is_stmt 0 view .LVU379
+ 1410 0072 02B0     		add	sp, sp, #8
+ 1411              	.LCFI29:
+ 1412              		.cfi_def_cfa_offset 16
+ 1413              		@ sp needed
+ 1414 0074 70BD     		pop	{r4, r5, r6, pc}
+ 1415              	.LVL142:
+ 1416              	.L42:
+ 1417              		.loc 1 528 1 view .LVU380
+ 1418 0076 00BF     		.align	2
+ 1419              	.L41:
+ 1420 0078 00040048 		.word	1207960576
+ 1421 007c 00000000 		.word	.LANCHOR1
+ 1422 0080 00000000 		.word	hspi1
+ 1423 0084 00000000 		.word	huart2
+ 1424              		.cfi_endproc
+ 1425              	.LFE144:
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 35
+
+
+ 1427              		.section	.text.GetMagnitude,"ax",%progbits
+ 1428              		.align	1
+ 1429              		.global	GetMagnitude
+ 1430              		.syntax unified
+ 1431              		.thumb
+ 1432              		.thumb_func
+ 1434              	GetMagnitude:
+ 1435              	.LFB145:
+ 529:Core/Src/TMAG5170.c **** 
+ 530:Core/Src/TMAG5170.c **** void GetMagnitude(void)
+ 531:Core/Src/TMAG5170.c **** {
+ 1436              		.loc 1 531 1 is_stmt 1 view -0
+ 1437              		.cfi_startproc
+ 1438              		@ args = 0, pretend = 0, frame = 16
+ 1439              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1440 0000 30B5     		push	{r4, r5, lr}
+ 1441              	.LCFI30:
+ 1442              		.cfi_def_cfa_offset 12
+ 1443              		.cfi_offset 4, -12
+ 1444              		.cfi_offset 5, -8
+ 1445              		.cfi_offset 14, -4
+ 1446 0002 85B0     		sub	sp, sp, #20
+ 1447              	.LCFI31:
+ 1448              		.cfi_def_cfa_offset 32
+ 532:Core/Src/TMAG5170.c ****   // Received data
+ 533:Core/Src/TMAG5170.c ****   uint8_t RxData[2];
+ 1449              		.loc 1 533 3 view .LVU382
+ 534:Core/Src/TMAG5170.c ****   uint16_t data_reg;
+ 1450              		.loc 1 534 3 view .LVU383
+ 535:Core/Src/TMAG5170.c **** 
+ 536:Core/Src/TMAG5170.c ****   // Magnitude
+ 537:Core/Src/TMAG5170.c ****   uint16_t M;
+ 1451              		.loc 1 537 3 view .LVU384
+ 538:Core/Src/TMAG5170.c **** 
+ 539:Core/Src/TMAG5170.c **** 
+ 540:Core/Src/TMAG5170.c ****   // Send address
+ 541:Core/Src/TMAG5170.c ****   register_address = TMAG5170_MAGNITUDE_RESULT_REG;
+ 1452              		.loc 1 541 3 view .LVU385
+ 1453              		.loc 1 541 20 is_stmt 0 view .LVU386
+ 1454 0004 1423     		movs	r3, #20
+ 1455 0006 1D4A     		ldr	r2, .L45
+ 1456 0008 1370     		strb	r3, [r2]
+ 542:Core/Src/TMAG5170.c ****   uint8_t FirstFrame = register_address;
+ 1457              		.loc 1 542 3 is_stmt 1 view .LVU387
+ 1458              		.loc 1 542 11 is_stmt 0 view .LVU388
+ 1459 000a 8DF80B30 		strb	r3, [sp, #11]
+ 543:Core/Src/TMAG5170.c ****   FirstFrame |= 0b1 << 7;
+ 1460              		.loc 1 543 3 is_stmt 1 view .LVU389
+ 1461              		.loc 1 543 14 is_stmt 0 view .LVU390
+ 1462 000e 9423     		movs	r3, #148
+ 1463 0010 8DF80B30 		strb	r3, [sp, #11]
+ 544:Core/Src/TMAG5170.c **** 
+ 545:Core/Src/TMAG5170.c ****   // CS LOW
+ 546:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+ 1464              		.loc 1 546 3 is_stmt 1 view .LVU391
+ 1465 0014 1A4C     		ldr	r4, .L45+4
+ 1466 0016 0022     		movs	r2, #0
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 36
+
+
+ 1467 0018 1021     		movs	r1, #16
+ 1468 001a 2046     		mov	r0, r4
+ 1469 001c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1470              	.LVL143:
+ 547:Core/Src/TMAG5170.c ****   // Transmit address
+ 548:Core/Src/TMAG5170.c ****   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
+ 1471              		.loc 1 548 3 view .LVU392
+ 1472 0020 184D     		ldr	r5, .L45+8
+ 1473 0022 4FF0FF33 		mov	r3, #-1
+ 1474 0026 0122     		movs	r2, #1
+ 1475 0028 0DF10B01 		add	r1, sp, #11
+ 1476 002c 2846     		mov	r0, r5
+ 1477 002e FFF7FEFF 		bl	HAL_SPI_Transmit
+ 1478              	.LVL144:
+ 549:Core/Src/TMAG5170.c ****   // Receive data
+ 550:Core/Src/TMAG5170.c ****   HAL_SPI_Receive(&hspi1, RxData, 2, HAL_MAX_DELAY);
+ 1479              		.loc 1 550 3 view .LVU393
+ 1480 0032 4FF0FF33 		mov	r3, #-1
+ 1481 0036 0222     		movs	r2, #2
+ 1482 0038 03A9     		add	r1, sp, #12
+ 1483 003a 2846     		mov	r0, r5
+ 1484 003c FFF7FEFF 		bl	HAL_SPI_Receive
+ 1485              	.LVL145:
+ 551:Core/Src/TMAG5170.c ****   // CS HIGH
+ 552:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+ 1486              		.loc 1 552 3 view .LVU394
+ 1487 0040 0122     		movs	r2, #1
+ 1488 0042 1021     		movs	r1, #16
+ 1489 0044 2046     		mov	r0, r4
+ 1490 0046 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1491              	.LVL146:
+ 553:Core/Src/TMAG5170.c **** 
+ 554:Core/Src/TMAG5170.c ****   // uint8_t to uint16_t
+ 555:Core/Src/TMAG5170.c ****   data_reg = RxData[0];
+ 1492              		.loc 1 555 3 view .LVU395
+ 1493              		.loc 1 555 12 is_stmt 0 view .LVU396
+ 1494 004a 9DF80C30 		ldrb	r3, [sp, #12]	@ zero_extendqisi2
+ 1495              	.LVL147:
+ 556:Core/Src/TMAG5170.c ****   data_reg = data_reg << 8;
+ 1496              		.loc 1 556 3 is_stmt 1 view .LVU397
+ 557:Core/Src/TMAG5170.c ****   data_reg |= RxData[1];
+ 1497              		.loc 1 557 3 view .LVU398
+ 1498              		.loc 1 557 21 is_stmt 0 view .LVU399
+ 1499 004e 9DF80D20 		ldrb	r2, [sp, #13]	@ zero_extendqisi2
+ 1500              		.loc 1 557 12 view .LVU400
+ 1501 0052 42EA0322 		orr	r2, r2, r3, lsl #8
+ 1502              	.LVL148:
+ 558:Core/Src/TMAG5170.c **** 
+ 559:Core/Src/TMAG5170.c ****   // read Magnitude 13 LSB
+ 560:Core/Src/TMAG5170.c ****   uint16_t and = data_reg;
+ 1503              		.loc 1 560 3 is_stmt 1 view .LVU401
+ 561:Core/Src/TMAG5170.c ****   M = and & 0x1FFF;
+ 1504              		.loc 1 561 3 view .LVU402
+ 562:Core/Src/TMAG5170.c **** 
+ 563:Core/Src/TMAG5170.c **** 
+ 564:Core/Src/TMAG5170.c ****   char str[8];
+ 1505              		.loc 1 564 3 view .LVU403
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 37
+
+
+ 565:Core/Src/TMAG5170.c **** 
+ 566:Core/Src/TMAG5170.c ****   // converting to char
+ 567:Core/Src/TMAG5170.c ****   sprintf(str, "%d", M); 
+ 1506              		.loc 1 567 3 view .LVU404
+ 1507 0056 C2F30C02 		ubfx	r2, r2, #0, #13
+ 1508              	.LVL149:
+ 1509              		.loc 1 567 3 is_stmt 0 view .LVU405
+ 1510 005a 0B49     		ldr	r1, .L45+12
+ 1511 005c 6846     		mov	r0, sp
+ 1512 005e FFF7FEFF 		bl	sprintf
+ 1513              	.LVL150:
+ 568:Core/Src/TMAG5170.c **** 
+ 569:Core/Src/TMAG5170.c ****   // sending data to console
+ 570:Core/Src/TMAG5170.c ****   HAL_UART_Transmit(&huart2, str, strlen(str), HAL_MAX_DELAY);
+ 1514              		.loc 1 570 3 is_stmt 1 view .LVU406
+ 1515              		.loc 1 570 35 is_stmt 0 view .LVU407
+ 1516 0062 6846     		mov	r0, sp
+ 1517 0064 FFF7FEFF 		bl	strlen
+ 1518              	.LVL151:
+ 1519              		.loc 1 570 3 view .LVU408
+ 1520 0068 4FF0FF33 		mov	r3, #-1
+ 1521 006c 82B2     		uxth	r2, r0
+ 1522 006e 6946     		mov	r1, sp
+ 1523 0070 0648     		ldr	r0, .L45+16
+ 1524 0072 FFF7FEFF 		bl	HAL_UART_Transmit
+ 1525              	.LVL152:
+ 571:Core/Src/TMAG5170.c **** }...
+ 1526              		.loc 1 571 1 view .LVU409
+ 1527 0076 05B0     		add	sp, sp, #20
+ 1528              	.LCFI32:
+ 1529              		.cfi_def_cfa_offset 12
+ 1530              		@ sp needed
+ 1531 0078 30BD     		pop	{r4, r5, pc}
+ 1532              	.L46:
+ 1533 007a 00BF     		.align	2
+ 1534              	.L45:
+ 1535 007c 00000000 		.word	.LANCHOR1
+ 1536 0080 00040048 		.word	1207960576
+ 1537 0084 00000000 		.word	hspi1
+ 1538 0088 00000000 		.word	.LC0
+ 1539 008c 00000000 		.word	huart2
+ 1540              		.cfi_endproc
+ 1541              	.LFE145:
+ 1543              		.global	Angle
+ 1544              		.section	.bss.AlertConfigSettings,"aw",%nobits
+ 1545              		.align	2
+ 1546              		.set	.LANCHOR4,. + 0
+ 1549              	AlertConfigSettings:
+ 1550 0000 00000000 		.space	9
+ 1550      00000000 
+ 1550      00
+ 1551              		.section	.bss.Angle,"aw",%nobits
+ 1552              		.align	2
+ 1553              		.set	.LANCHOR5,. + 0
+ 1556              	Angle:
+ 1557 0000 00000000 		.space	4
+ 1558              		.section	.bss.DeviceConfigSettings,"aw",%nobits
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 38
+
+
+ 1559              		.align	2
+ 1560              		.set	.LANCHOR0,. + 0
+ 1563              	DeviceConfigSettings:
+ 1564 0000 00000000 		.space	6
+ 1564      0000
+ 1565              		.section	.bss.SensorConfigSettings,"aw",%nobits
+ 1566              		.align	2
+ 1567              		.set	.LANCHOR2,. + 0
+ 1570              	SensorConfigSettings:
+ 1571 0000 00000000 		.space	6
+ 1571      0000
+ 1572              		.section	.bss.SystemConfigSettings,"aw",%nobits
+ 1573              		.align	2
+ 1574              		.set	.LANCHOR3,. + 0
+ 1577              	SystemConfigSettings:
+ 1578 0000 00000000 		.space	7
+ 1578      000000
+ 1579              		.section	.bss.register_address,"aw",%nobits
+ 1580              		.set	.LANCHOR1,. + 0
+ 1583              	register_address:
+ 1584 0000 00       		.space	1
+ 1585              		.text
+ 1586              	.Letext0:
+ 1587              		.file 2 "Core/Inc/TMAG5170.h"
+ 1588              		.file 3 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\
+ 1589              		.file 4 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\
+ 1590              		.file 5 "Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g491xx.h"
+ 1591              		.file 6 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_def.h"
+ 1592              		.file 7 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_dma.h"
+ 1593              		.file 8 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_spi.h"
+ 1594              		.file 9 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h"
+ 1595              		.file 10 "Core/Inc/spi.h"
+ 1596              		.file 11 "Core/Inc/usart.h"
+ 1597              		.file 12 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_gpio.h"
+ 1598              		.file 13 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\
+ 1599              		.file 14 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 39
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 TMAG5170.c
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:20     .text.TMAG5170_dev_conf_settings:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:26     .text.TMAG5170_dev_conf_settings:00000000 TMAG5170_dev_conf_settings
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:163    .text.TMAG5170_dev_conf_settings:00000098 $d
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:170    .text.TMAG5170_sens_conf_settings:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:176    .text.TMAG5170_sens_conf_settings:00000000 TMAG5170_sens_conf_settings
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:321    .text.TMAG5170_sens_conf_settings:0000009c $d
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:329    .text.TMAG5170_sys_conf_settings:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:335    .text.TMAG5170_sys_conf_settings:00000000 TMAG5170_sys_conf_settings
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:488    .text.TMAG5170_sys_conf_settings:000000a8 $d
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:496    .text.TMAG5170_al_conf_settings:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:502    .text.TMAG5170_al_conf_settings:00000000 TMAG5170_al_conf_settings
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:671    .text.TMAG5170_al_conf_settings:000000b8 $d
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:679    .text.DisableCRC:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:685    .text.DisableCRC:00000000 DisableCRC
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:744    .text.DisableCRC:00000044 $d
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:750    .text.ReadRegister:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:756    .text.ReadRegister:00000000 ReadRegister
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:824    .text.ReadRegister:00000058 $d
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:831    .text.ReadRegister1:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:837    .text.ReadRegister1:00000000 ReadRegister1
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:905    .text.ReadRegister1:00000058 $d
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:912    .text.GetAngle:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:918    .text.GetAngle:00000000 GetAngle
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:1033   .text.GetAngle:00000078 $d
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:1041   .text.GetTemp:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:1047   .text.GetTemp:00000000 GetTemp
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:1142   .text.GetTemp:00000078 $d
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:1150   .bss.AlertConfigSettings:00000000 $d
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:1154   .bss.AlertConfigSettings:00000000 AlertConfigSettings
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:1157   .bss.DeviceConfigSettings:00000000 $d
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:1161   .bss.DeviceConfigSettings:00000000 DeviceConfigSettings
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:1164   .bss.SensorConfigSettings:00000000 $d
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:1168   .bss.SensorConfigSettings:00000000 SensorConfigSettings
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:1171   .bss.SystemConfigSettings:00000000 $d
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:1175   .bss.SystemConfigSettings:00000000 SystemConfigSettings
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:1181   .bss.register_address:00000000 register_address
-C:\Users\jakub\AppData\Local\Temp\ccOZWfvb.s:1182   .bss.register_address:00000000 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:20     .text.TMAG5170_dev_conf_settings:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:26     .text.TMAG5170_dev_conf_settings:00000000 TMAG5170_dev_conf_settings
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:163    .text.TMAG5170_dev_conf_settings:00000098 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:170    .text.TMAG5170_sens_conf_settings:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:176    .text.TMAG5170_sens_conf_settings:00000000 TMAG5170_sens_conf_settings
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:321    .text.TMAG5170_sens_conf_settings:0000009c $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:329    .text.TMAG5170_sys_conf_settings:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:335    .text.TMAG5170_sys_conf_settings:00000000 TMAG5170_sys_conf_settings
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:488    .text.TMAG5170_sys_conf_settings:000000a8 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:496    .text.TMAG5170_al_conf_settings:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:502    .text.TMAG5170_al_conf_settings:00000000 TMAG5170_al_conf_settings
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:671    .text.TMAG5170_al_conf_settings:000000b8 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:679    .text.DisableCRC:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:685    .text.DisableCRC:00000000 DisableCRC
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:751    .text.DisableCRC:00000050 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:757    .text.ReadRegister:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:763    .text.ReadRegister:00000000 ReadRegister
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:831    .text.ReadRegister:00000058 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:838    .text.ReadRegister1:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:844    .text.ReadRegister1:00000000 ReadRegister1
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:912    .text.ReadRegister1:00000058 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:919    .rodata.GetmT.str1.4:00000000 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:929    .text.GetmT:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:935    .text.GetmT:00000000 GetmT
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1150   .text.GetmT:00000124 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1164   .text.GetAngle:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1170   .text.GetAngle:00000000 GetAngle
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1309   .text.GetAngle:000000a4 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1319   .text.GetTemp:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1325   .text.GetTemp:00000000 GetTemp
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1420   .text.GetTemp:00000078 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1428   .text.GetMagnitude:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1434   .text.GetMagnitude:00000000 GetMagnitude
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1535   .text.GetMagnitude:0000007c $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1556   .bss.Angle:00000000 Angle
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1545   .bss.AlertConfigSettings:00000000 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1549   .bss.AlertConfigSettings:00000000 AlertConfigSettings
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1552   .bss.Angle:00000000 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1559   .bss.DeviceConfigSettings:00000000 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1563   .bss.DeviceConfigSettings:00000000 DeviceConfigSettings
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1566   .bss.SensorConfigSettings:00000000 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1570   .bss.SensorConfigSettings:00000000 SensorConfigSettings
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1573   .bss.SystemConfigSettings:00000000 $d
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1577   .bss.SystemConfigSettings:00000000 SystemConfigSettings
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1583   .bss.register_address:00000000 register_address
+C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s:1584   .bss.register_address:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin
 HAL_SPI_Transmit
 hspi1
 HAL_SPI_Receive
-HAL_UART_Transmit
-HAL_Delay
-huart2
+sprintf
 strlen
+HAL_UART_Transmit
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cc03e5Qw.s 			page 40
+
+
+huart2

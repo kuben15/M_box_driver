@@ -64,13 +64,47 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
   if(data == 49)
   {
+    htim1.Init.Period = 5000;
     HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, 1);
+    HAL_GPIO_WritePin(DIR_TMC1_GPIO_Port, DIR_TMC1_Pin, 0);
     __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2500);
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+
+    for(int i = 0; i <= 100; i++)
+      {
+        for(int i = 0; i <= 6553; i++)
+          {}
+      }
+    HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
+    HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, 0);
+  }
+  else if(data == 50)
+  {
+    htim1.Init.Period = 5000;
+    HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, 1);
+    HAL_GPIO_WritePin(DIR_TMC1_GPIO_Port, DIR_TMC1_Pin, 1);
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2500);
+    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+    for(int i = 0; i <= 100; i++)
+      {
+        for(int i = 0; i <= 6553; i++)
+          {}
+      }
+    HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
+    HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, 0);
+  }
+  else if(data == 51)
+  {
+    htim1.Init.Period = 5000;
+    HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, 1);
+    HAL_GPIO_WritePin(DIR_TMC1_GPIO_Port, DIR_TMC1_Pin, 1);
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 500);
+    HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+    HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, 0);
   }
   else
   {
-    HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, 0);
+    __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2500);
     HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
   }
   HAL_UART_Receive_IT(&huart2, &data, 1);
@@ -126,6 +160,7 @@ int main(void)
   DisableCRC();
   //uint8_t RxData;
 
+  
   //TMAG5170_return_code_t ret = TMAG5170_RET_OK;
 
 
@@ -170,8 +205,7 @@ int main(void)
   // TMAG5170_al_conf_settings(&AlertSettings);
 
   //uint8_t bity = 0x01;
-  char kupa[7] = "kupa: ";
-  // float temperature = 0.0;
+  float Angle = 0.0;
   // uint8_t UART_buff;
   // uint16_t UART_buff_length;
   HAL_UART_Receive_IT(&huart2, &data, 1);
@@ -190,28 +224,20 @@ int main(void)
     TMAG5170_sens_conf_settings(&SensSettings);
     TMAG5170_sys_conf_settings(&SystemSettings);
     TMAG5170_al_conf_settings(&AlertSettings);
-    //ReadRegister();
-    //ReadRegister1();
-    
-    //GetTemp();
 
-    //HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
 
-    GetAngle();
-    // temperature = GetTemp();
-    // UART_buff_length = sprintf(UART_buff, "%f\r\n", temperature);
-    // HAL_UART_Transmit(&huart2, UART_buff, UART_buff_length, HAL_MAX_DELAY );
-    
-    //HAL_UART_Transmit(&huart2, &asdkna, strlen(asdkna), HAL_MAX_DELAY);
-    //HAL_UART_Transmit(&huart2, &Xvalue, strlen(Xvalue), HAL_MAX_DELAY);
-    //HAL_UART_Transmit(&huart2, (uint8_t*)kupa, strlen(kupa), HAL_MAX_DELAY);
+    //GetMagnitude();
+    Angle = GetAngle();
+    if (Angle < 180)
+    {
+      HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, 1);
+    }
+    else
+    {
+      HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, 0);
+    }
 
-    //GetAngle();
-    //HAL_UART_Transmit(&huart2, bit, strlen(bit), HAL_MAX_DELAY);
-    //HAL_UART_Transmit(&huart2, (uint8_t*)"\r\n", strlen("\r\n"), HAL_MAX_DELAY);
-    
-    HAL_UART_Transmit(&huart2, (uint8_t*)" hal transmit\r\n", strlen(" hal transmit\r\n"), HAL_MAX_DELAY);
-    HAL_Delay(1000);
+    HAL_UART_Transmit(&huart2, (uint8_t*)" \r\n", strlen(" \r\n"), HAL_MAX_DELAY);
 
     //HAL_UART_Transmit(&huart2, "\r\n", strlen("\r\n"), HAL_MAX_DELAY);
     

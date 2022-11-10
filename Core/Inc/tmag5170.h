@@ -468,5 +468,7 @@ void GetTemp(void);
 void DisableCRC(void);
 void ReadRegister(void);
 void ReadRegister1(void);
-void GetAngle(void);
+void GetmT(void);
+void GetMagnitude(void);
+float GetAngle();
 #endif 
