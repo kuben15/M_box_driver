@@ -427,12 +427,6 @@ float GetAngle(void)
   data_reg |= data[1];
 
 
-  // odczytanie liczby po przecinku
-  // for(int i=0; i<=3; i++)
-  // {
-  //   LSB += data_reg & (0b1 << i);
-  // }
-
   data_reg_LSB = data_reg;
   data_reg_LSB = data_reg_LSB & 0x000F;
   LSB = (float)data_reg_LSB;
@@ -445,40 +439,15 @@ float GetAngle(void)
 
   Angle = MSB + LSB;
 
-  //A = ((float)data_reg + ((float)LSBsum/8))/10;
-
-  //po przecinku
-  uint8_t t;
-  t = (Angle - (int8_t)Angle)*100;
-
-  // przykład jak zamieniać
-  // uint16_t suma = 123;
-  // B = (float)suma + (float)suma;
-  
-  
-
-  // uint8_t *array;
-  // array = (uint8_t*)(&fl);
-
-  uint8_t uint = 25;
-  
+  HAL_UART_Transmit(&huart2, "Angle: ", strlen("Angle: "), HAL_MAX_DELAY);
   char str1[8];
-  sprintf(str1, "%d", data_reg);
+  sprintf(str1, "%d", data_reg_MSB);
   HAL_UART_Transmit(&huart2, str1, strlen(str1), HAL_MAX_DELAY);
+  HAL_UART_Transmit(&huart2, ".", strlen("."), HAL_MAX_DELAY);
+  char str2[8];
+  sprintf(str2, "%d", data_reg_LSB);
+  HAL_UART_Transmit(&huart2, str2, strlen(str2), HAL_MAX_DELAY);
 
-
-
-
-  // // wyświetlanie uint
-  // char str1[8];
-  // char str2[8];
-  // // sprintf(str, "%d", (int8_t)B); 
-  // sprintf(str1, "%d", (int8_t)data_reg);
-  // sprintf(str2, "%d", t); 
-  // HAL_UART_Transmit(&huart2, str1, strlen(str1), HAL_MAX_DELAY);
-  // HAL_UART_Transmit(&huart2, ".", strlen("."), HAL_MAX_DELAY);
-  // HAL_UART_Transmit(&huart2, str2, strlen(str2), HAL_MAX_DELAY);
-  // HAL_UART_Transmit(&huart2, "*", strlen("*"), HAL_MAX_DELAY);
   return Angle;
 }
 
