@@ -46,7 +46,6 @@
 #define ENCODER_CS ((uint8_t) 0x00)
 #define ENCODER_CP ((uint8_t) 0x01)
 
-
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -66,6 +65,11 @@ char silnik_CS[2] = {'C', 'S'};
 char silnik_CP[2] = {'C', 'P'};
 
 
+float AbsoluteAngleCS = 0;
+float AbsoluteAngleCP = 0;
+
+
+
 bool czy_przerwanie = false;
 bool old_czy_przerwanie = false;
 
@@ -74,11 +78,13 @@ char kat_obrotu[3];
 
 char silnik[2];
 
-uint16_t FirstAngle = 0;
-uint16_t SecondAngle = 0;
-uint16_t AngleDifference = 0;
+float FirstAngle = 0.0;
+float SecondAngle = 0.0;
+float AngleDifference = 0.0;
 
 uint8_t WhichRotation = 0;
+
+uint8_t IsInRange = 0;
 
 
 
@@ -88,23 +94,13 @@ uint8_t WhichRotation = 0;
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 
-// void delay(uint8_t time_ms)
-// {
-  
-//   uint16_t start_time = HAL_GetTick();
-
-//   uint16_t stop_time = start_time + (time_ms/HAL_GetTickFreq());
-  
-//   while (1)
-//   {
-//     if(HAL_GetTick() == stop_time)
-//     break;
-//   }
-// }
-
-
 void PWM_steering_period(float kroki_funkcja)
 {
+  //================================================DISCLAIMER================================================
+  // tą funkcje bym przerobił w taki sposob, zeby nie mierzyla czasu tylko liczyla konkretne okresy PWM
+  // i po wykonaniu okreslonej wartosci okresow zatrzymuje timer
+  //==========================================================================================================
+  
   float okres = 0.0;
   float czas_delay = 0.0;
   //T = (PRS + 1)(ARR +1) / f        PRS- preskaler, ARR- period
@@ -119,9 +115,16 @@ void PWM_steering_period(float kroki_funkcja)
 
 float kat_to_steps(uint16_t kat)
 { 
-  float steps = 0;
+    float steps = 0;
+ 
+  // TMC2209 is set to 8 microsteps
+  // motor has 1.8 degree for 1 step
+  // for 360 degree:
+  // (360/1.8)*8 = 1600 steps
+  // 360/1600 = 0,225
+  // each microstep is 0,225 degree
 
-  steps = kat * 160/(float)36;
+  steps = (float)kat/0.225;
 
   return steps;
 } 
@@ -181,9 +184,9 @@ void krecenie_silnikiem(char ktory_silnik[2], uint8_t kierunek, uint16_t kat)
   
 }
 
-uint16_t CheckAngle(uint16_t FirstAngle, uint16_t SecondAngle, uint16_t Angle, uint8_t Direction)
+float CheckAngle(float FirstAngle, float SecondAngle, uint16_t Angle, uint8_t Direction)
 {
-  uint16_t angle_difference = 0;
+  float angle_difference = 0;
   if (Direction == 0)
   {
     angle_difference = SecondAngle - FirstAngle;
@@ -198,8 +201,6 @@ uint16_t CheckAngle(uint16_t FirstAngle, uint16_t SecondAngle, uint16_t Angle, u
 
 }
 
-
-
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
   uint8_t Data[40];
@@ -210,7 +211,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
   // dalsze nasluchiwanie UART
   HAL_UART_Receive_IT(&huart2, data, 6);
 }
-
 
 void HallSensorSettings(void)
 {
@@ -280,6 +280,64 @@ void DisplayAngle(void)
   HAL_UART_Transmit(&huart2, (uint8_t*)"\r\n", strlen("\r\n"), HAL_MAX_DELAY);
 
 }
+
+void CheckAbsoluteAngle(uint16_t Angle, uint8_t Direction, char ktory_silnik[2])
+{
+  uint16_t NewAngleCS = 0;
+  uint16_t NewAngleCP = 0;
+  
+  
+  // at the beginning absolute angle is set to 0 degree
+  if(strncmp(ktory_silnik, silnik_CS, 2) == 0)
+  {
+    if(Direction == 0)
+    {
+      if(AbsoluteAngleCS + Angle < 3600)
+      {
+        AbsoluteAngleCS = AbsoluteAngleCS + Angle;
+        IsInRange = 1;
+      }
+      else
+      IsInRange = 0;
+    }
+    else
+    {
+      if(AbsoluteAngleCS - Angle > 0)
+      {
+        AbsoluteAngleCS = AbsoluteAngleCS - Angle;
+        IsInRange = 1;
+      }
+      else
+      IsInRange = 0;
+    }
+  }
+  else if(strncmp(ktory_silnik, silnik_CP, 2) == 0)
+  {
+    
+    if(Direction == 0)
+    {
+      if(AbsoluteAngleCP + Angle < 3600)
+      {
+        AbsoluteAngleCP = AbsoluteAngleCP + Angle;
+        IsInRange = 1;
+      }
+      else
+      IsInRange = 0;
+    }
+    else
+    {
+      if(AbsoluteAngleCP - Angle > 0)
+      {
+        AbsoluteAngleCP = AbsoluteAngleCP - Angle;
+        IsInRange = 1;
+      }
+      else
+        IsInRange = 0;
+    }
+  }
+}
+
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -343,31 +401,40 @@ int main(void)
   if(czy_przerwanie != old_czy_przerwanie)
   {
 
+    
     old_czy_przerwanie = !old_czy_przerwanie;
     odczyt_kierunku(data);
 
+    
+    // save to "silnik" from data 'CS' or 'CP'
     strncpy(silnik, data, 2);
+    // save to "kat_obrotu" from data 
     strncpy(kat_obrotu, data + 3, 3);
     uint16_t kat_obrotu_zmienna = (uint16_t)atoi(kat_obrotu);
 
-    // Angle = GetAngle();
-    // FirstAngle = Angle;
-    // Angle = 0;
+    CheckAbsoluteAngle(kat_obrotu_zmienna, kierunek_obrotu, silnik);
 
-    HAL_Delay(50);
-    krecenie_silnikiem(silnik, kierunek_obrotu, (uint16_t)kat_obrotu_zmienna);
-    HAL_Delay(100);
+    if(IsInRange == 1)
+      krecenie_silnikiem(silnik, kierunek_obrotu, (uint16_t)kat_obrotu_zmienna);
+    else
+      HAL_UART_Transmit(&huart2, (uint8_t*)"wrong angle\r\nrange has been exceeded\r\n", strlen("wrong angle\r\nrange has been exceeded\r\n"), 200);
+    
+    
+    
+    // AngleDifference = CheckAngle(FirstAngle, SecondAngle, kat_obrotu_zmienna, kierunek_obrotu);
 
-    // Angle = GetAngle();
-    // SecondAngle = Angle;
-    // Angle = 0;
-    AngleDifference = CheckAngle(FirstAngle, SecondAngle, kat_obrotu_zmienna, kierunek_obrotu);
+    // uint16_t kat_dupa = 0;
+    // kat_dupa = (uint16_t)AngleDifference;
+    
+    // char str1[8];
+    // sprintf(str1, "%d", kat_dupa);
+    // HAL_UART_Transmit(&huart2, str1, strlen(str1), HAL_MAX_DELAY);
 
 
   }
 
-    DisplayAngle();
-    HAL_Delay(1000);
+    //DisplayAngle();
+    //HAL_Delay(1000);
 
 
   }
