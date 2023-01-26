@@ -1,0 +1,139 @@
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccI014Yw.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"delay.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.SysTick_Handler,"ax",%progbits
+  20              		.align	1
+  21              		.global	SysTick_Handler
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	SysTick_Handler:
+  27              	.LFB0:
+  28              		.file 1 "Core/Src/delay.c"
+   1:Core/Src/delay.c **** //#include "stm32g4xx_hal_conf.h"
+   2:Core/Src/delay.c **** #include "delay.h" 
+   3:Core/Src/delay.c **** 
+   4:Core/Src/delay.c **** static unsigned int volatile time_SysTICK_ms;
+   5:Core/Src/delay.c **** 
+   6:Core/Src/delay.c **** void SysTick_Handler()
+   7:Core/Src/delay.c **** {
+  29              		.loc 1 7 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+   8:Core/Src/delay.c ****    time_SysTICK_ms++;
+  34              		.loc 1 8 4 view .LVU1
+  35              		.loc 1 8 19 is_stmt 0 view .LVU2
+  36 0000 024A     		ldr	r2, .L2
+  37 0002 1368     		ldr	r3, [r2]
+  38 0004 0133     		adds	r3, r3, #1
+  39 0006 1360     		str	r3, [r2]
+   9:Core/Src/delay.c **** }
+  40              		.loc 1 9 1 view .LVU3
+  41 0008 7047     		bx	lr
+  42              	.L3:
+  43 000a 00BF     		.align	2
+  44              	.L2:
+  45 000c 00000000 		.word	.LANCHOR0
+  46              		.cfi_endproc
+  47              	.LFE0:
+  49              		.section	.text.delay,"ax",%progbits
+  50              		.align	1
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccI014Yw.s 			page 2
+
+
+  51              		.global	delay
+  52              		.syntax unified
+  53              		.thumb
+  54              		.thumb_func
+  56              	delay:
+  57              	.LVL0:
+  58              	.LFB1:
+  10:Core/Src/delay.c **** 
+  11:Core/Src/delay.c **** void delay(unsigned int msDelay)
+  12:Core/Src/delay.c **** {
+  59              		.loc 1 12 1 is_stmt 1 view -0
+  60              		.cfi_startproc
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+  63              		@ link register save eliminated.
+  13:Core/Src/delay.c ****     unsigned int start_Value=time_SysTICK_ms;
+  64              		.loc 1 13 5 view .LVU5
+  65              		.loc 1 13 18 is_stmt 0 view .LVU6
+  66 0000 034B     		ldr	r3, .L6
+  67 0002 1968     		ldr	r1, [r3]
+  68              	.LVL1:
+  14:Core/Src/delay.c ****     
+  15:Core/Src/delay.c ****     while(time_SysTICK_ms < msDelay+start_Value) 
+  69              		.loc 1 15 5 is_stmt 1 view .LVU7
+  70              	.L5:
+  16:Core/Src/delay.c **** 		{  
+  17:Core/Src/delay.c ****         
+  18:Core/Src/delay.c ****     }
+  71              		.loc 1 18 5 discriminator 1 view .LVU8
+  15:Core/Src/delay.c **** 		{  
+  72              		.loc 1 15 10 discriminator 1 view .LVU9
+  15:Core/Src/delay.c **** 		{  
+  73              		.loc 1 15 36 is_stmt 0 discriminator 1 view .LVU10
+  74 0004 0B18     		adds	r3, r1, r0
+  15:Core/Src/delay.c **** 		{  
+  75              		.loc 1 15 27 discriminator 1 view .LVU11
+  76 0006 024A     		ldr	r2, .L6
+  77 0008 1268     		ldr	r2, [r2]
+  15:Core/Src/delay.c **** 		{  
+  78              		.loc 1 15 10 discriminator 1 view .LVU12
+  79 000a 9342     		cmp	r3, r2
+  80 000c FAD8     		bhi	.L5
+  19:Core/Src/delay.c **** }
+  81              		.loc 1 19 1 view .LVU13
+  82 000e 7047     		bx	lr
+  83              	.L7:
+  84              		.align	2
+  85              	.L6:
+  86 0010 00000000 		.word	.LANCHOR0
+  87              		.cfi_endproc
+  88              	.LFE1:
+  90              		.section	.bss.time_SysTICK_ms,"aw",%nobits
+  91              		.align	2
+  92              		.set	.LANCHOR0,. + 0
+  95              	time_SysTICK_ms:
+  96 0000 00000000 		.space	4
+  97              		.text
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccI014Yw.s 			page 3
+
+
+  98              	.Letext0:
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccI014Yw.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 delay.c
+C:\Users\jakub\AppData\Local\Temp\ccI014Yw.s:20     .text.SysTick_Handler:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccI014Yw.s:26     .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\jakub\AppData\Local\Temp\ccI014Yw.s:45     .text.SysTick_Handler:0000000c $d
+C:\Users\jakub\AppData\Local\Temp\ccI014Yw.s:50     .text.delay:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccI014Yw.s:56     .text.delay:00000000 delay
+C:\Users\jakub\AppData\Local\Temp\ccI014Yw.s:86     .text.delay:00000010 $d
+C:\Users\jakub\AppData\Local\Temp\ccI014Yw.s:91     .bss.time_SysTICK_ms:00000000 $d
+C:\Users\jakub\AppData\Local\Temp\ccI014Yw.s:95     .bss.time_SysTICK_ms:00000000 time_SysTICK_ms
+
+NO UNDEFINED SYMBOLS

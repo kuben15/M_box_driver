@@ -75,6 +75,8 @@ void Error_Handler(void);
 #define SWD_TX_GPIO_Port GPIOC
 #define SWD_RX_Pin GPIO_PIN_5
 #define SWD_RX_GPIO_Port GPIOC
+#define DIR_TMC2_Pin GPIO_PIN_1
+#define DIR_TMC2_GPIO_Port GPIOB
 #define TX_TMC2_Pin GPIO_PIN_10
 #define TX_TMC2_GPIO_Port GPIOB
 #define RX_TMC2_Pin GPIO_PIN_11
@@ -87,8 +89,6 @@ void Error_Handler(void);
 #define CS2_GPIO_Port GPIOC
 #define DIR_TMC1_Pin GPIO_PIN_8
 #define DIR_TMC1_GPIO_Port GPIOA
-#define STEP_TMC1_Pin GPIO_PIN_9
-#define STEP_TMC1_GPIO_Port GPIOA
 #define SWDIO_Pin GPIO_PIN_13
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14

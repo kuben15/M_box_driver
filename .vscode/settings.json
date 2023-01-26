@@ -2,6 +2,7 @@
     "makefile.extensionOutputFolder": "./.vscode",
     "files.associations": {
         "stdint.h": "c",
-        "tmag5170.h": "c"
+        "tmag5170.h": "c",
+        "stm32g4xx_hal_conf.h": "c"
     }
 }

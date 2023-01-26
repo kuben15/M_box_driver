@@ -1,28 +1,29 @@
 
 
 
-Breakpoint=C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/program/Core/Src/main.c:64, State=BP_STATE_ON
-Breakpoint=C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/program/Core/Src/TMAG5170.c:420, State=BP_STATE_ON
-OpenDocument="stm32g4xx_hal_spi.c", FilePath="C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/program/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_spi.c", Line=1313
-OpenDocument="TMAG5170.c", FilePath="C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/program/Core/Src/TMAG5170.c", Line=407
-OpenDocument="stm32g4xx_hal.c", FilePath="C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/program/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c", Line=322
-OpenDocument="main.c", FilePath="C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/program/Core/Src/main.c", Line=224
-OpenDocument="startup_stm32g491xx.s", FilePath="C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/program/startup_stm32g491xx.s", Line=48
-OpenDocument="stm32g4xx_it.c", FilePath="C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/program/Core/Src/stm32g4xx_it.c", Line=167
-OpenDocument="stm32g4xx_hal_uart.c", FilePath="C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/program/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c", Line=3357
+Breakpoint=C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/M_box_driver/Core/Src/main.c:258:3, State=BP_STATE_DISABLED
+Breakpoint=C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/M_box_driver/Core/Src/main.c:328:3, State=BP_STATE_DISABLED
+Breakpoint=C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/M_box_driver/Core/Src/main.c:342:5, State=BP_STATE_DISABLED
+OpenDocument="stm32g4xx_hal_uart.c", FilePath="C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/M_box_driver/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_uart.c", Line=2515
+OpenDocument="main.c", FilePath="C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/M_box_driver/Core/Src/main.c", Line=255
+OpenDocument="stm32g4xx_hal_spi.c", FilePath="C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/M_box_driver/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_spi.c", Line=1456
+OpenDocument="stm32g4xx_hal.c", FilePath="C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/M_box_driver/Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c", Line=321
+OpenDocument="stm32g4xx_it.c", FilePath="C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/M_box_driver/Core/Src/stm32g4xx_it.c", Line=81
+OpenDocument="TMAG5170.c", FilePath="C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/M_box_driver/Core/Src/TMAG5170.c", Line=396
+OpenDocument="startup_stm32g491xx.s", FilePath="C:/Users/jakub/OneDrive/Pulpit/WSN/maching_box/M_box_driver/startup_stm32g491xx.s", Line=48
 OpenToolbar="Debug", Floating=0, x=0, y=0
-OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=2, w=671, h=155, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
-OpenWindow="Source Files", DockArea=LEFT, x=0, y=1, w=300, h=559, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Memory 1", DockArea=BOTTOM, x=2, y=0, w=843, h=295, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, EditorAddress=0x8003DC8
-OpenWindow="Global Data", DockArea=RIGHT, x=0, y=1, w=671, h=286, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Local Data", DockArea=RIGHT, x=0, y=0, w=671, h=332, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Functions", DockArea=LEFT, x=0, y=0, w=300, h=215, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=2, w=671, h=182, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
+OpenWindow="Source Files", DockArea=LEFT, x=0, y=1, w=300, h=531, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Memory 1", DockArea=BOTTOM, x=2, y=0, w=843, h=295, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, EditorAddress=0x8000522
+OpenWindow="Global Data", DockArea=RIGHT, x=0, y=1, w=671, h=292, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Local Data", DockArea=RIGHT, x=0, y=0, w=671, h=299, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Functions", DockArea=LEFT, x=0, y=0, w=300, h=243, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
 OpenWindow="Terminal", DockArea=BOTTOM, x=1, y=0, w=584, h=295, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
 OpenWindow="Console", DockArea=BOTTOM, x=0, y=0, w=491, h=295, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-TableHeader="Global Data", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Location";"Size";"Type";"Scope"], ColWidths=[207;311;100;100;220;314]
-TableHeader="Local Data", SortCol="Name", SortOrder="DESCENDING", VisibleCols=["Name";"Value";"Location";"Size";"Type";"Scope"], ColWidths=[100;208;100;100;135;134]
+TableHeader="Global Data", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Location";"Size";"Type";"Scope"], ColWidths=[207;311;100;100;220;100]
+TableHeader="Local Data", SortCol="Name", SortOrder="DESCENDING", VisibleCols=["Name";"Value";"Location";"Size";"Type";"Scope"], ColWidths=[140;359;100;100;135;100]
 TableHeader="Functions", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Address";"Size";"#Insts";"Source"], ColWidths=[248;100;100;100;194]
-TableHeader="Source Files", SortCol="File", SortOrder="ASCENDING", VisibleCols=["File";"Status";"Size";"#Insts";"Path"], ColWidths=[210;100;100;100;704]
+TableHeader="Source Files", SortCol="File", SortOrder="ASCENDING", VisibleCols=["File";"Status";"Size";"#Insts";"Path"], ColWidths=[210;100;100;100;734]
 TableHeader="Power Sampling", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
 TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[155;105;394]
 TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]

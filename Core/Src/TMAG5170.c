@@ -6,7 +6,7 @@
  *
  */
 
-#include "TMAG5170.h"
+#include "tmag5170.h"
 #include <inttypes.h>
 #include <string.h>
 #include <spi.h>
@@ -24,11 +24,35 @@ static TMAG5170_SYSTEM_CONFIG_settings_t SystemConfigSettings;
 
 static TMAG5170_ALERT_CONFIG_settings_t AlertConfigSettings;
 
-float Angle = 0.0;
+
+
+
+
+
+void TransmitData(uint8_t address, uint8_t dataTx[2], uint8_t crc)
+{
+  // zapisanie '0' na pierwszym miejscu aby dane były zapisane w sensorze
+  address |= 0b0 << 7;
+  
+  // zmiana stanu pinow CS na 0 w celu zainicjiowania urzadzen, do obu sensorow sa wprowadzane te same dane
+  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+  //HAL_GPIO_WritePin(CS2_GPIO_Port, CS2_Pin, 0);
+
+  // rozpoczynamy transmisje od adresu, nastepnie 2 bajty danych oraz crc
+  HAL_SPI_Transmit(&hspi1, &address, 1, HAL_MAX_DELAY);
+  HAL_SPI_Transmit(&hspi1, dataTx, 2, HAL_MAX_DELAY);
+  HAL_SPI_Transmit(&hspi1, &crc, 1, HAL_MAX_DELAY);
+  
+  // konczymy inicjalizacje po przez zmiane stanow pinow CS na 1
+  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+  //HAL_GPIO_WritePin(CS2_GPIO_Port, CS2_Pin, 1);
+
+}
+
+
 
 TMAG5170_return_code_t TMAG5170_dev_conf_settings(TMAG5170_DEVICE_CONFIG_settings_t *new_settings)
 {
-  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
   
   uint8_t register_address = TMAG5170_DEVICE_CONFIG_REG;
   TMAG5170_return_code_t ret = TMAG5170_RET_OK;
@@ -47,20 +71,6 @@ TMAG5170_return_code_t TMAG5170_dev_conf_settings(TMAG5170_DEVICE_CONFIG_setting
   uint8_t register_data_8[2];
   register_data_8[0] = register_data >> 8;
   register_data_8[1] = register_data;
-  // zapisanie (rejestru, danych)
-
-  // uint32_t data = 0x01;
-  // data |= (register_address << 1u);
-  // data |= (register_address << 16u);
-
-  // data |=(register_data << 8u);
-  //data |= ((uint32_t));
-
-  // first bit 0b1 -- write
-  // next 7 bits register address
-  // next 16 bits register data
-  uint8_t FirstFrame = register_address;
-  FirstFrame |= 0b0 << 7;
 
   // last 8 bits:
   // 0b12345678
@@ -75,20 +85,13 @@ TMAG5170_return_code_t TMAG5170_dev_conf_settings(TMAG5170_DEVICE_CONFIG_setting
 
   uint8_t StatusCRC = 0b00111100;
 
-  // wysłanie
-
-  HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
-  HAL_SPI_Transmit(&hspi1, register_data_8, 2, HAL_MAX_DELAY);
-  HAL_SPI_Transmit(&hspi1, &StatusCRC, 1, HAL_MAX_DELAY);
-  
-  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+  TransmitData(register_address, register_data_8, StatusCRC);
   
   return ret;
 }
 
 TMAG5170_return_code_t TMAG5170_sens_conf_settings(TMAG5170_SENSOR_CONFIG_settings_t *new_settings)
 {
-  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
   
   register_address = TMAG5170_SENSOR_CONFIG_REG;
   TMAG5170_return_code_t ret = TMAG5170_RET_OK;
@@ -107,39 +110,15 @@ TMAG5170_return_code_t TMAG5170_sens_conf_settings(TMAG5170_SENSOR_CONFIG_settin
   uint8_t register_data_8[2];
   register_data_8[0] = register_data >> 8;
   register_data_8[1] = register_data;
-  
-  
-  // zapisanie (rejestru, danych)
-  uint8_t FirstFrame = register_address;
-  FirstFrame |= 0b0 << 7;
-
-  // last 8 bits:
-  // 0b12345678
-  // 3 and 4 bits are cmd status
-  // 3 bit: CMD1
-  // CMD1 = 0 --> Display SET_COUNT[2:0] in STAT[2:0] bits at SDO next frame
-  // CMD1 = 1 --> Display DATA_TYPE[2:0] in STAT[2:0] bits at SDO next frame
-  // 4 bit: CMD0
-  // CMD0 = 0 --> no conversion start through command bits
-  // CMD0 = 1 --> start of conversion at the CS going high
-  // last 4 bits are CRC
 
   uint8_t StatusCRC = 0b00111100;
-
-  // wysłanie
-
-  HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
-  HAL_SPI_Transmit(&hspi1, register_data_8, 2, HAL_MAX_DELAY);
-  HAL_SPI_Transmit(&hspi1, &StatusCRC, 1, HAL_MAX_DELAY);
-  
-  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+  TransmitData(register_address, register_data_8, StatusCRC);
   
   return ret;
 }
 
 TMAG5170_return_code_t TMAG5170_sys_conf_settings(TMAG5170_SYSTEM_CONFIG_settings_t *new_settings)
 {
-  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
   
   register_address = TMAG5170_SYSTEM_CONFIG_REG;
   TMAG5170_return_code_t ret = TMAG5170_RET_OK;
@@ -160,39 +139,16 @@ TMAG5170_return_code_t TMAG5170_sys_conf_settings(TMAG5170_SYSTEM_CONFIG_setting
   register_data_8[0] = register_data >> 8;
   register_data_8[1] = register_data;
   
-  
-  
-  // zapisanie (rejestru, danych)
-  uint8_t FirstFrame = register_address;
-  FirstFrame |= 0b0 << 7;
-
-  // last 8 bits:
-  // 0b12345678
-  // 3 and 4 bits are cmd status
-  // 3 bit: CMD1
-  // CMD1 = 0 --> Display SET_COUNT[2:0] in STAT[2:0] bits at SDO next frame
-  // CMD1 = 1 --> Display DATA_TYPE[2:0] in STAT[2:0] bits at SDO next frame
-  // 4 bit: CMD0
-  // CMD0 = 0 --> no conversion start through command bits
-  // CMD0 = 1 --> start of conversion at the CS going high
-  // last 4 bits are CRC
-
   uint8_t StatusCRC = 0b00111100;
 
   // wysłanie
-
-  HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
-  HAL_SPI_Transmit(&hspi1, register_data_8, 2, HAL_MAX_DELAY);
-  HAL_SPI_Transmit(&hspi1, &StatusCRC, 1, HAL_MAX_DELAY);
-  
-  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+  TransmitData(register_address, register_data_8, StatusCRC);
   
   return ret;
 }
 
 TMAG5170_return_code_t TMAG5170_al_conf_settings(TMAG5170_ALERT_CONFIG_settings_t *new_settings)
 {
-  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
   
   register_address = TMAG5170_ALERT_CONFIG_REG;
   TMAG5170_return_code_t ret = TMAG5170_RET_OK;
@@ -217,38 +173,15 @@ TMAG5170_return_code_t TMAG5170_al_conf_settings(TMAG5170_ALERT_CONFIG_settings_
   register_data_8[1] = register_data;
   
   
-  
-  // zapisanie (rejestru, danych)
-  uint8_t FirstFrame = register_address;
-  FirstFrame |= 0b0 << 7;
-
-  // last 8 bits:
-  // 0b12345678
-  // 3 and 4 bits are cmd status
-  // 3 bit: CMD1
-  // CMD1 = 0 --> Display SET_COUNT[2:0] in STAT[2:0] bits at SDO next frame
-  // CMD1 = 1 --> Display DATA_TYPE[2:0] in STAT[2:0] bits at SDO next frame
-  // 4 bit: CMD0
-  // CMD0 = 0 --> no conversion start through command bits
-  // CMD0 = 1 --> start of conversion at the CS going high
-  // last 4 bits are CRC
-
   uint8_t StatusCRC = 0b00111100;
 
-  // wysłanie
-
-  HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
-  HAL_SPI_Transmit(&hspi1, register_data_8, 2, HAL_MAX_DELAY);
-  HAL_SPI_Transmit(&hspi1, &StatusCRC, 1, HAL_MAX_DELAY);
-  
-  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+  TransmitData(register_address, register_data_8, StatusCRC);
   
   return ret;
 }
 
 void DisableCRC(void)
 {
-  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
 
   uint8_t DisCRC[4];
   DisCRC[0] = 0x0F;
@@ -397,18 +330,75 @@ void GetmT(void)
   HAL_UART_Transmit(&huart2, " mT", strlen(" mT"), HAL_MAX_DELAY);
 }
 
+uint16_t ReadData(uint8_t which_motor, uint8_t address)
+{
+  
+  uint16_t dataRx = 0;
+  
+
+  // decydujemy ktory czujnik bedzie aktywny(aktywacja nastepuje stanem niskim)
+  switch (which_motor)
+  {
+  case 1:
+    HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+    HAL_GPIO_WritePin(CS2_GPIO_Port, CS2_Pin, 1);
+    HAL_Delay(50);
+    break;
+  
+  case 2:
+    HAL_GPIO_WritePin(CS2_GPIO_Port, CS2_Pin, 0);
+    HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+    break;
+  default:
+    break;
+  }
+
+  //wysylamy adres 
+  HAL_SPI_Transmit(&hspi1, address, 1, HAL_MAX_DELAY);
+  // odbieramy 2 ramki danych
+  HAL_SPI_Receive(&hspi1, dataRx, 2, HAL_MAX_DELAY);
+
+
+
+  //po skonczonej transmisji  dezaktywujemy urzadzenia
+  HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
+  HAL_GPIO_WritePin(CS2_GPIO_Port, CS2_Pin, 1);
+
+  return dataRx;
+}
+
+
+// void GetAngle(uint8_t which_motor)
+// {
+
+//   uint8_t address = 0;
+//   uint16_t raw_angle = 0;
+
+//   // wysylamy na poczatek ramki czy chcemy odczytac czy zapisac oraz adres rejestru
+//   // 1 dla odczytu
+//   // 0 dla zapisu
+//   address = TMAG5170_ANGLE_RESULT_REG;
+//   address = address | 0b1 << 7;
+
+
+//   raw_angle = ReadData(which_motor, address);
+
+// }
+
+
+
 float GetAngle(void)
 {
-  uint8_t data[2];
-  uint16_t data_reg;
-  uint16_t data_reg_LSB;
-  uint16_t data_reg_MSB;
-
-  float LSB;
-  float MSB;
   
-  // Angle
-  // float Angle = 0.0;
+  uint8_t data[2] = { 0 };
+  uint16_t data_reg = 0;
+  uint16_t data_reg_LSB = 0;
+  uint16_t data_reg_MSB = 0;
+
+  
+  // Angle in degree
+  float Angle = 0.0;
+  
 
   //wysyłamy adres
   register_address = TMAG5170_ANGLE_RESULT_REG;
@@ -416,43 +406,45 @@ float GetAngle(void)
   uint8_t FirstFrame = register_address;
   FirstFrame |= 0b1 << 7;
 
+
   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 0);
+  HAL_GPIO_WritePin(CS2_GPIO_Port, CS2_Pin, 1);
   HAL_SPI_Transmit(&hspi1, &FirstFrame, 1, HAL_MAX_DELAY);
   HAL_SPI_Receive(&hspi1, data, 2, HAL_MAX_DELAY);
   HAL_GPIO_WritePin(CS1_GPIO_Port, CS1_Pin, 1);
-
+  HAL_GPIO_WritePin(CS2_GPIO_Port, CS2_Pin, 1);
     
   data_reg = data[0];
   data_reg = data_reg << 8;
   data_reg |= data[1];
 
 
-  data_reg_LSB = data_reg;
-  data_reg_LSB = data_reg_LSB & 0x000F;
-  LSB = (float)data_reg_LSB;
-  LSB = LSB/8;
+  data_reg_LSB = data[1];
+  //zostawimy tylko ostatnie 4 bity
+  data_reg_LSB = data_reg_LSB & 0x0F;
+  // LSB = (float)data_reg_LSB;
+  // LSB = LSB/8;
+  data_reg_LSB = data_reg_LSB * 100;
+  data_reg_LSB = data_reg_LSB/16;
   
+
 
   data_reg_MSB = data_reg & 0x1FF0;
   data_reg_MSB = data_reg >> 4;
-  MSB = (float)data_reg_MSB;
 
-  Angle = MSB + LSB;
+  Angle = data_reg_MSB + data_reg_LSB/(float)100;
 
-  HAL_UART_Transmit(&huart2, "Angle: ", strlen("Angle: "), HAL_MAX_DELAY);
-  char str1[8];
-  sprintf(str1, "%d", data_reg_MSB);
-  HAL_UART_Transmit(&huart2, str1, strlen(str1), HAL_MAX_DELAY);
-  HAL_UART_Transmit(&huart2, ".", strlen("."), HAL_MAX_DELAY);
-  char str2[8];
-  sprintf(str2, "%d", data_reg_LSB);
-  HAL_UART_Transmit(&huart2, str2, strlen(str2), HAL_MAX_DELAY);
+  // MSB = (float)data_reg_MSB;
+  // Angle_uint = (data_reg_MSB * 1000) + data_reg_LSB;
+  // Angle = Angle_uint/1000;
+
+  // Angle = MSB + LSB;
 
   return Angle;
 }
 
 
-void GetTemp(void)
+float GetTemp()
 {
   float temp = 0.0;
   uint8_t buff[2];
@@ -482,6 +474,7 @@ void GetTemp(void)
 
   temp = 25.0 + ((TADCt + 17522.0)/60.0);
 
+  return temp;
 
   
 

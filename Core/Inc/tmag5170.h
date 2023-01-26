@@ -10,6 +10,8 @@
 #ifndef _TMAG5170_H_
 #define _TMAG5170_H_
 
+#include <stdint.h>
+
 //-------------------------Register Address-------------------------
 
 typedef enum{
@@ -464,11 +466,13 @@ TMAG5170_return_code_t TMAG5170_dev_conf_settings(TMAG5170_DEVICE_CONFIG_setting
 TMAG5170_return_code_t TMAG5170_sens_conf_settings(TMAG5170_SENSOR_CONFIG_settings_t *new_settings);
 TMAG5170_return_code_t TMAG5170_sys_conf_settings(TMAG5170_SYSTEM_CONFIG_settings_t *new_settings);
 TMAG5170_return_code_t TMAG5170_al_conf_settings(TMAG5170_ALERT_CONFIG_settings_t *new_settings);
-void GetTemp(void);
+float GetTemp();
 void DisableCRC(void);
 void ReadRegister(void);
 void ReadRegister1(void);
 void GetmT(void);
 void GetMagnitude(void);
-float GetAngle();
-#endif 
+//void GetAngle(uint8_t which_motor);
+float GetAngle(void);
+//uint16_t ReadData(uint8_t which_motor, uint8_t address);
+#endif

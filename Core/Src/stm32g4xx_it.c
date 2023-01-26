@@ -55,6 +55,8 @@
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
+extern TIM_HandleTypeDef htim1;
+extern TIM_HandleTypeDef htim20;
 extern UART_HandleTypeDef huart2;
 /* USER CODE BEGIN EV */
 
@@ -199,6 +201,20 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
+  * @brief This function handles TIM1 trigger and commutation interrupts and TIM17 global interrupt.
+  */
+void TIM1_TRG_COM_TIM17_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM1_TRG_COM_TIM17_IRQn 0 */
+
+  /* USER CODE END TIM1_TRG_COM_TIM17_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim1);
+  /* USER CODE BEGIN TIM1_TRG_COM_TIM17_IRQn 1 */
+
+  /* USER CODE END TIM1_TRG_COM_TIM17_IRQn 1 */
+}
+
+/**
   * @brief This function handles USART2 global interrupt / USART2 wake-up interrupt through EXTI line 26.
   */
 void USART2_IRQHandler(void)
@@ -210,6 +226,20 @@ void USART2_IRQHandler(void)
   /* USER CODE BEGIN USART2_IRQn 1 */
 
   /* USER CODE END USART2_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM20 trigger and commutation interrupts.
+  */
+void TIM20_TRG_COM_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM20_TRG_COM_IRQn 0 */
+
+  /* USER CODE END TIM20_TRG_COM_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim20);
+  /* USER CODE BEGIN TIM20_TRG_COM_IRQn 1 */
+
+  /* USER CODE END TIM20_TRG_COM_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */

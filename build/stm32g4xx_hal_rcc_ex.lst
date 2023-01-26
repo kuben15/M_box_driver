@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
   27:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** /** @addtogroup STM32G4xx_HAL_Driver
   28:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   * @{
   29:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   */
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 2
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 2
 
 
   30:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
   84:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     (@) Important note: Care must be taken when HAL_RCCEx_PeriphCLKConfig() is used to
   85:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         select the RTC clock source; in this case the Backup domain will be reset in
   86:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         order to modify the RTC Clock source, as consequence RTC registers (including
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 3
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 3
 
 
   87:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         the backup registers) are set to their reset values.
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
   46 0004 0446     		mov	r4, r0
  125:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   uint32_t tmpregister;
   47              		.loc 1 125 3 is_stmt 1 view .LVU2
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 4
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 4
 
 
  126:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   uint32_t tickstart;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
   83 002a 019B     		ldr	r3, [sp, #4]
   84              	.LBE3:
   85              		.loc 1 144 7 view .LVU20
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 5
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 5
 
 
  145:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       pwrclkchanged = SET;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  126 0054 02E0     		b	.L5
  127              	.LVL9:
  128              	.L31:
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 6
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 6
 
 
  136:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  167              	.LVL15:
  172:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         /* RTC Clock selection can be changed only if the Backup Domain is reset */
  173:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         __HAL_RCC_BACKUPRESET_FORCE();
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 7
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 7
 
 
  168              		.loc 1 173 9 is_stmt 1 view .LVU52
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  196              	.L7:
  197              	.LVL17:
  200:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 8
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 8
 
 
  201:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       else
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  227 00d0 FFF7FEFF 		bl	HAL_GetTick
  228              	.LVL21:
  188:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****           {
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 9
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 9
 
 
  229              		.loc 1 188 29 view .LVU73
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  267              	.L12:
  228:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   }
  229:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 10
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 10
 
 
  230:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   /*-------------------------- USART2 clock source configuration -------------------*/
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  299              		.loc 1 252 21 is_stmt 0 view .LVU95
  300 013c 2368     		ldr	r3, [r4]
  301              		.loc 1 252 5 view .LVU96
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 11
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 11
 
 
  302 013e 13F0080F 		tst	r3, #8
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  331              		.loc 1 277 5 view .LVU106
  332 0172 13F0200F 		tst	r3, #32
  333 0176 08D0     		beq	.L17
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 12
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 12
 
 
  278:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  301:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
  302:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     /* Configure the I2C2 clock source */
  303:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     __HAL_RCC_I2C2_CONFIG(PeriphClkInit->I2c2ClockSelection);
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 13
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 13
 
 
  365              		.loc 1 303 5 view .LVU118
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  391              		.loc 1 331 5 view .LVU126
  392 01da 13F4007F 		tst	r3, #512
  393 01de 08D0     		beq	.L21
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 14
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 14
 
 
  332:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   {
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  356:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   /*-------------------------- I2S clock source configuration ---------------------*/
  357:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   if(((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_I2S) == RCC_PERIPHCLK_I2S)
  424              		.loc 1 357 3 is_stmt 1 view .LVU137
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 15
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 15
 
 
  425              		.loc 1 357 21 is_stmt 0 view .LVU138
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  456 0248 616B     		ldr	r1, [r4, #52]
  457 024a 0B43     		orrs	r3, r3, r1
  458 024c C2F88830 		str	r3, [r2, #136]
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 16
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 16
 
 
  381:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  407:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   /*-------------------------- RNG clock source configuration ----------------------*/
  408:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   if(((PeriphClkInit->PeriphClockSelection) & RCC_PERIPHCLK_RNG) == (RCC_PERIPHCLK_RNG))
  487              		.loc 1 408 3 is_stmt 1 view .LVU161
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 17
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 17
 
 
  488              		.loc 1 408 21 is_stmt 0 view .LVU162
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  429:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     if(PeriphClkInit->Adc12ClockSelection == RCC_ADC12CLKSOURCE_PLL)
  522              		.loc 1 429 5 view .LVU174
  523              		.loc 1 429 21 is_stmt 0 view .LVU175
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 18
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 18
 
 
  524 02b6 236C     		ldr	r3, [r4, #64]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  550              		.loc 1 457 3 is_stmt 1 view .LVU185
  551              		.loc 1 457 21 is_stmt 0 view .LVU186
  552 02e0 2368     		ldr	r3, [r4]
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 19
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 19
 
 
  553              		.loc 1 457 5 view .LVU187
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  588 0310 80E7     		b	.L22
  589              	.L38:
  368:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     }
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 20
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 20
 
 
  590              		.loc 1 368 7 view .LVU196
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  639              		.align	1
  640              		.global	HAL_RCCEx_GetPeriphCLKConfig
  641              		.syntax unified
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 21
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 21
 
 
  642              		.thumb
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  516:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****                                         RCC_PERIPHCLK_RNG     | RCC_PERIPHCLK_USB    | RCC_PERIPHCL
  517:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****                                         RCC_PERIPHCLK_QSPI    | \
  518:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****                                         RCC_PERIPHCLK_RTC;
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 22
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 22
 
 
  519:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  554:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** #if defined(UART4)
  555:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   /* Get the UART4 clock source ----------------------------------------------*/
  556:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   PeriphClkInit->Uart4ClockSelection   = __HAL_RCC_GET_UART4_SOURCE();
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 23
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 23
 
 
  676              		.loc 1 556 3 is_stmt 1 view .LVU215
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  575:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
  576:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** #if defined(I2C4)
  577:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   /* Get the I2C4 clock source -----------------------------------------------*/
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 24
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 24
 
 
  578:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   PeriphClkInit->I2c4ClockSelection    = __HAL_RCC_GET_I2C4_SOURCE();
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  742              		.loc 1 601 3 is_stmt 1 view .LVU248
  743              		.loc 1 601 40 is_stmt 0 view .LVU249
  744 0092 D3F88820 		ldr	r2, [r3, #136]
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 25
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 25
 
 
  745 0096 02F04062 		and	r2, r2, #201326592
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  782              		.section	.text.HAL_RCCEx_GetPeriphCLKFreq,"ax",%progbits
  783              		.align	1
  784              		.global	HAL_RCCEx_GetPeriphCLKFreq
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 26
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 26
 
 
  785              		.syntax unified
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  654:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   /* Check the parameters */
  655:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   assert_param(IS_RCC_PERIPHCLOCK(PeriphClk));
  806              		.loc 1 655 3 view .LVU269
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 27
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 27
 
 
  656:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  698:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     }
  699:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     else if(__HAL_RCC_GET_PLL_OSCSOURCE() == RCC_PLLSOURCE_HSE)   /* HSE ? */
  819              		.loc 1 699 10 is_stmt 1 view .LVU275
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 28
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 28
 
 
  820              		.loc 1 699 13 is_stmt 0 view .LVU276
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  855 004e DFE810F0 		tbh	[pc, r0, lsl #1]
  856              	.LVL32:
  857              	.L63:
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 29
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 29
 
 
  858 0052 FF00     		.2byte	(.L68-.L63)/2
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  905              		.loc 1 663 54 discriminator 1 view .LVU292
  906 00a6 B3F5807F 		cmp	r3, #256
  907 00aa 00F0F982 		beq	.L121
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 30
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 30
 
 
  908              	.L54:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  701:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       {
  948              		.loc 1 701 10 is_stmt 0 view .LVU307
  949 00e8 6A4B     		ldr	r3, .L204
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 31
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 31
 
 
  950 00ea 1A68     		ldr	r2, [r3]
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  757:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       {
  758:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         frequency = HAL_RCC_GetSysClockFreq();
  759:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 32
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 32
 
 
  760:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       else if((HAL_IS_BIT_SET(RCC->CR, RCC_CR_HSIRDY)) && (srcclk == RCC_USART2CLKSOURCE_HSI))
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  814:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
  815:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       else if((HAL_IS_BIT_SET(RCC->CR, RCC_CR_HSIRDY)) && (srcclk == RCC_UART4CLKSOURCE_HSI))
  816:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       {
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 33
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 33
 
 
  817:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         frequency = HSI_VALUE;
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  871:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
  872:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       else if((HAL_IS_BIT_SET(RCC->CR, RCC_CR_HSIRDY)) && (srcclk == RCC_LPUART1CLKSOURCE_HSI))
  873:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       {
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 34
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 34
 
 
  874:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         frequency = HSI_VALUE;
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  928:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       {
  929:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         /* nothing to do: frequency already initialized to 0 */
  930:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 35
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 35
 
 
  931:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       break;
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  889:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
  1001              		.loc 1 889 7 is_stmt 1 view .LVU326
  889:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 36
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 36
 
 
  1002              		.loc 1 889 16 is_stmt 0 view .LVU327
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  718:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     {
  1042              		.loc 1 718 5 view .LVU342
  1043 0166 B0F5804F 		cmp	r0, #16384
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 37
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 37
 
 
  1044 016a 00F02082 		beq	.L72
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  994:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
  995:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       else if((HAL_IS_BIT_SET(RCC->CR, RCC_CR_HSIRDY)) && (srcclk == RCC_LPTIM1CLKSOURCE_HSI))
  996:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       {
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 38
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 38
 
 
  997:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         frequency = HSI_VALUE;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1051:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       else if(srcclk == RCC_I2SCLKSOURCE_PLL)
 1052:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       {
 1053:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         if(__HAL_RCC_GET_PLLCLKOUT_CONFIG(RCC_PLL_48M1CLK) != 0U)
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 39
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 39
 
 
 1054:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         {
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1108:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     case RCC_PERIPHCLK_USB:
 1109:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       /* Get the current USB source */
 1110:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       srcclk = __HAL_RCC_GET_USB_SOURCE();
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 40
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 40
 
 
 1111:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1165:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****               pllp = 17U;
 1166:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****             }
 1167:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****             else
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 41
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 41
 
 
 1168:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****             {
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1222:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** #endif /* ADC345_COMMON */
 1223:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
 1224:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** #if defined(QUADSPI)
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 42
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 42
 
 
 1225:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1256:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
 1257:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   return(frequency);
  1072              		.loc 1 1257 3 is_stmt 1 view .LVU353
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 43
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 43
 
 
  1073              		.loc 1 1257 9 is_stmt 0 view .LVU354
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  1114 01e0 00F05E81 		beq	.L76
  1115 01e4 B0F5006F 		cmp	r0, #2048
  1116 01e8 1AD1     		bne	.L176
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 44
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 44
 
 
 1045:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  1155 0220 0020     		movs	r0, #0
  1156              	.LVL61:
  718:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     {
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 45
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 45
 
 
  1157              		.loc 1 718 5 view .LVU384
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  1197 024e 32E2     		b	.L52
  1198              	.LVL69:
  1199              	.L68:
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 46
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 46
 
 
  723:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  650:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   uint32_t srcclk;
  1238              		.loc 1 650 12 view .LVU415
  1239 0284 0020     		movs	r0, #0
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 47
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 47
 
 
  1240 0286 16E2     		b	.L52
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  760:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       {
  1280              		.loc 1 760 16 is_stmt 0 view .LVU430
  1281 02b0 AB4A     		ldr	r2, .L206
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 48
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 48
 
 
  760:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       {
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  1321              		.loc 1 777 7 is_stmt 1 view .LVU445
  777:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
  1322              		.loc 1 777 16 is_stmt 0 view .LVU446
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 49
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 49
 
 
  1323 02e4 9E4B     		ldr	r3, .L206
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  781:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
  1362              		.loc 1 781 9 is_stmt 1 view .LVU462
  781:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 50
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 50
 
 
  1363              		.loc 1 781 21 is_stmt 0 view .LVU463
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  1401              		.loc 1 815 56 discriminator 1 view .LVU479
  1402 0342 802B     		cmp	r3, #128
  1403 0344 00F0C781 		beq	.L133
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 51
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 51
 
 
  1404              	.L93:
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  1443              	.LVL96:
  836:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       {
  1444              		.loc 1 836 9 view .LVU495
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 52
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 52
 
 
  1445 0376 18D0     		beq	.L190
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  842:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
  1484              		.loc 1 842 9 is_stmt 1 view .LVU511
  842:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 53
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 53
 
 
  1485              		.loc 1 842 21 is_stmt 0 view .LVU512
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  1523              		.loc 1 876 14 view .LVU528
  1524 03e0 10F00200 		ands	r0, r0, #2
  1525 03e4 00F06781 		beq	.L52
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 54
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 54
 
 
  876:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       {
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  1565              		.loc 1 912 7 is_stmt 1 view .LVU543
  912:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
  1566              		.loc 1 912 16 is_stmt 0 view .LVU544
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 55
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 55
 
 
  1567 040c 544B     		ldr	r3, .L206
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  1606              	.L195:
  920:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
  1607              		.loc 1 920 9 is_stmt 1 view .LVU560
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 56
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 56
 
 
  920:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  1646 045a 414A     		ldr	r2, .L206
  991:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       {
  1647              		.loc 1 991 16 view .LVU577
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 57
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 57
 
 
  1648 045c D2F89420 		ldr	r2, [r2, #148]
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  1688 049e 0AE1     		b	.L52
  1689              	.LVL130:
  1690              	.L76:
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 58
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 58
 
 
 1012:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1016:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
  1729              		.loc 1 1016 21 is_stmt 0 view .LVU608
  1730 04d2 FFF7FEFF 		bl	HAL_RCC_GetSysClockFreq
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 59
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 59
 
 
  1731              	.LVL136:
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1024:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         }
  1770              		.loc 1 1024 21 view .LVU624
  1771 0500 B2FBF3F0 		udiv	r0, r2, r3
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 60
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 60
 
 
  1772              	.LVL145:
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  1811 052a CB68     		ldr	r3, [r1, #12]
  1812              	.LVL155:
 1057:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         }
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 61
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 61
 
 
  1813              		.loc 1 1057 85 view .LVU640
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1083:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
  1852              		.loc 1 1083 9 is_stmt 1 view .LVU656
 1083:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 62
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 62
 
 
  1853              		.loc 1 1083 21 is_stmt 0 view .LVU657
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1095:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         }
  1894              		.loc 1 1095 110 view .LVU671
  1895 0588 0133     		adds	r3, r3, #1
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 63
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 63
 
 
 1095:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         }
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  1934              		.loc 1 1132 16 is_stmt 0 view .LVU687
  1935 05ae 604A     		ldr	r2, .L208
  1936 05b0 D2F88820 		ldr	r2, [r2, #136]
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 64
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 64
 
 
 1132:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  1976              	.LVL185:
 1138:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
  1977              		.loc 1 1138 83 view .LVU703
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 65
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 65
 
 
  1978 05e2 C3F34153 		ubfx	r3, r3, #21, #2
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2016              	.LVL193:
 1161:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****           {
  2017              		.loc 1 1161 13 view .LVU720
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 66
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 66
 
 
  2018 060a 05D1     		bne	.L117
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2057              		.loc 1 1189 16 is_stmt 0 view .LVU735
  2058 062c 404A     		ldr	r2, .L208
  2059 062e D2F88820 		ldr	r2, [r2, #136]
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 67
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 67
 
 
 1189:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1198:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****           {
  2098              		.loc 1 1198 11 is_stmt 1 view .LVU752
 1198:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****           {
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 68
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 68
 
 
  2099              		.loc 1 1198 13 is_stmt 0 view .LVU753
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2139              	.LVL217:
  2140              	.L171:
 1233:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****         frequency = (pllvco * plln) / (((READ_BIT(RCC->PLLCFGR, RCC_PLLCFGR_PLLQ) >> RCC_PLLCFGR_PL
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 69
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 69
 
 
  2141              		.loc 1 1233 9 is_stmt 1 view .LVU768
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2180 06a0 4FF40040 		mov	r0, #32768
  2181              	.LVL227:
  665:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     }
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 70
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 70
 
 
  2182              		.loc 1 665 17 view .LVU784
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2225              	.L130:
  766:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
  2226              		.loc 1 766 19 view .LVU796
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 71
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 71
 
 
  2227 06c6 4FF40040 		mov	r0, #32768
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2270              		.loc 1 947 19 view .LVU807
  2271 06fc 0E48     		ldr	r0, .L208+8
  2272 06fe DAE7     		b	.L52
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 72
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 72
 
 
  2273              	.LVL236:
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2316              	.L149:
 1087:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       }
  2317              		.loc 1 1087 19 view .LVU819
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 73
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 73
 
 
  2318 0720 0748     		ldr	r0, .L208+16
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1269:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****                 ##### Extended clock management functions  #####
 1270:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****  ===============================================================================
 1271:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     [..]
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 74
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 74
 
 
 1272:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     This subsection provides a set of functions allowing to control the
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2389              		@ args = 0, pretend = 0, frame = 0
  2390              		@ frame_needed = 0, uses_anonymous_args = 0
  2391              		@ link register save eliminated.
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 75
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 75
 
 
 1298:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   CLEAR_BIT(RCC->BDCR, RCC_BDCR_LSECSSON) ;
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2430 000e 9A69     		ldr	r2, [r3, #24]
  2431 0010 42F40072 		orr	r2, r2, #512
  2432 0014 9A61     		str	r2, [r3, #24]
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 76
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 76
 
 
 1316:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2460              		.loc 1 1344 1 is_stmt 1 view -0
  2461              		.cfi_startproc
  2462              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 77
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 77
 
 
  2463              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2507 001a F7E7     		b	.L220
  2508              	.L225:
  2509              		.align	2
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 78
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 78
 
 
  2510              	.L224:
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2546              	.LBB5:
  2547              		.loc 1 1368 3 view .LVU855
  2548              		.loc 1 1368 3 view .LVU856
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 79
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 79
 
 
  2549 0006 244C     		ldr	r4, .L237
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2591              	.LBB6:
  2592              		.loc 1 1380 5 view .LVU874
  2593              		.loc 1 1380 5 view .LVU875
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 80
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 80
 
 
  2594 003c A26D     		ldr	r2, [r4, #88]
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1394:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   }
 1395:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   if(pwrclkchanged == SET)
  2634              		.loc 1 1395 3 is_stmt 1 view .LVU888
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 81
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 81
 
 
  2635              		.loc 1 1395 5 is_stmt 0 view .LVU889
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2678              	.L237:
  2679 0098 00100240 		.word	1073876992
  2680 009c 00700040 		.word	1073770496
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 82
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 82
 
 
  2681              		.cfi_endproc
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2723              		.loc 1 1413 5 view .LVU908
  2724 0018 9B6D     		ldr	r3, [r3, #88]
  2725 001a 03F08053 		and	r3, r3, #268435456
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 83
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 83
 
 
  2726 001e 0193     		str	r3, [sp, #4]
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2761              	.L239:
 1432:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   {
 1433:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     __HAL_RCC_PWR_CLK_DISABLE();
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 84
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 84
 
 
 1434:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   }
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2808              		.section	.text.HAL_RCCEx_CRSConfig,"ax",%progbits
  2809              		.align	1
  2810              		.global	HAL_RCCEx_CRSConfig
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 85
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 85
 
 
  2811              		.syntax unified
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1484:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****            Note: When the SYNC event is detected during the downcounting phase (before reaching the
 1485:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****            it means that the actual frequency is lower than the target (and so, that the TRIM value
 1486:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****            incremented), while when it is detected during the upcounting phase it means that the ac
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 86
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 86
 
 
 1487:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****            is higher (and that the TRIM value should be decremented).
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2830              		.loc 1 1528 3 view .LVU939
  2831 0000 104B     		ldr	r3, .L253
  2832 0002 9A6B     		ldr	r2, [r3, #56]
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 87
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 87
 
 
  2833 0004 42F48072 		orr	r2, r2, #256
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2872 0032 42EA0122 		orr	r2, r2, r1, lsl #8
  2873 0036 1A60     		str	r2, [r3]
  2874              	.LVL280:
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 88
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 88
 
 
 1544:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2917              		.section	.text.HAL_RCCEx_CRSGetSynchronizationInfo,"ax",%progbits
  2918              		.align	1
  2919              		.global	HAL_RCCEx_CRSGetSynchronizationInfo
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 89
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 89
 
 
  2920              		.syntax unified
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1580:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   pSynchroInfo->FreqErrorDirection = (READ_BIT(CRS->ISR, CRS_ISR_FEDIR));
  2954              		.loc 1 1580 3 is_stmt 1 view .LVU974
  2955              		.loc 1 1580 39 is_stmt 0 view .LVU975
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 90
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 90
 
 
  2956 0016 9B68     		ldr	r3, [r3, #8]
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  2992              		.loc 1 1600 3 is_stmt 1 view .LVU980
  2993              	.LVL283:
 1601:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   uint32_t tickstart;
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 91
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 91
 
 
  2994              		.loc 1 1601 3 view .LVU981
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1617:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     if(__HAL_RCC_CRS_GET_FLAG(RCC_CRS_FLAG_SYNCOK))
 1618:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     {
 1619:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       /* CRS SYNC event OK */
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 92
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 92
 
 
 1620:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       crsstatus |= RCC_CRS_SYNCOK;
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  3035 0022 214B     		ldr	r3, .L276
  3036 0024 0822     		movs	r2, #8
  3037 0026 DA60     		str	r2, [r3, #12]
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 93
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 93
 
 
  3038              	.L268:
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1627:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     {
  3076              		.loc 1 1627 7 discriminator 4 view .LVU1015
  3077 004a 13F0020F 		tst	r3, #2
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 94
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 94
 
 
  3078 004e 04D0     		beq	.L264
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  3114              		.loc 1 1647 7 discriminator 4 view .LVU1033
  3115 0072 13F4807F 		tst	r3, #256
  3116 0076 04D0     		beq	.L266
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 95
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 95
 
 
 1650:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  3153 009a 13F0080F 		tst	r3, #8
  3154 009e C3D0     		beq	.L268
 1667:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     {
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 96
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 96
 
 
  3155              		.loc 1 1667 7 discriminator 4 view .LVU1052
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1704:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****     HAL_RCCEx_CRS_SyncWarnCallback();
 1705:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   }
 1706:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   /* Check CRS Expected SYNC flag  */
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 97
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 97
 
 
 1707:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   else if(((itflags & RCC_CRS_FLAG_ESYNC) != 0U) && ((itsources & RCC_CRS_IT_ESYNC) != 0U))
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  3190              		.section	.text.HAL_RCCEx_CRS_SyncWarnCallback,"ax",%progbits
  3191              		.align	1
  3192              		.weak	HAL_RCCEx_CRS_SyncWarnCallback
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 98
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 98
 
 
  3193              		.syntax unified
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  3229              		.align	1
  3230              		.weak	HAL_RCCEx_CRS_ErrorCallback
  3231              		.syntax unified
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 99
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 99
 
 
  3232              		.thumb
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  3268              	.LVL301:
 1685:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   uint32_t itsources = READ_REG(CRS->CR);
  3269              		.loc 1 1685 3 view .LVU1067
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 100
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 100
 
 
 1685:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****   uint32_t itsources = READ_REG(CRS->CR);
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1720:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       {
  3309              		.loc 1 1720 7 is_stmt 1 view .LVU1083
 1720:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c ****       {
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 101
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 101
 
 
  3310              		.loc 1 1720 9 is_stmt 0 view .LVU1084
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
 1692:Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c **** 
  3350              		.loc 1 1692 5 is_stmt 1 view .LVU1099
  3351 0060 084B     		ldr	r3, .L295
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 102
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 102
 
 
  3352              	.LVL311:
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  3394              	.L295:
  3395 0084 00200040 		.word	1073750016
  3396              		.cfi_endproc
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 103
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 103
 
 
  3397              	.LFE146:
@@ -6134,74 +6134,74 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 1
  3408              		.file 9 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
  3409              		.file 10 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_pwr.h"
  3410              		.file 11 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h"
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 104
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 104
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32g4xx_hal_rcc_ex.c
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:20     .text.HAL_RCCEx_PeriphCLKConfig:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:26     .text.HAL_RCCEx_PeriphCLKConfig:00000000 HAL_RCCEx_PeriphCLKConfig
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:243    .text.HAL_RCCEx_PeriphCLKConfig:000000e4 $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:250    .text.HAL_RCCEx_PeriphCLKConfig:000000ec $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:634    .text.HAL_RCCEx_PeriphCLKConfig:00000358 $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:639    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:645    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 HAL_RCCEx_GetPeriphCLKConfig
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:777    .text.HAL_RCCEx_GetPeriphCLKConfig:000000c8 $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:783    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:789    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 HAL_RCCEx_GetPeriphCLKFreq
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:858    .text.HAL_RCCEx_GetPeriphCLKFreq:00000052 $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:890    .text.HAL_RCCEx_GetPeriphCLKFreq:00000092 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:1259   .text.HAL_RCCEx_GetPeriphCLKFreq:00000294 $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:1266   .text.HAL_RCCEx_GetPeriphCLKFreq:000002a0 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:1861   .text.HAL_RCCEx_GetPeriphCLKFreq:00000560 $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:1866   .text.HAL_RCCEx_GetPeriphCLKFreq:00000564 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2341   .text.HAL_RCCEx_GetPeriphCLKFreq:00000730 $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2351   .text.HAL_RCCEx_EnableLSECSS:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2357   .text.HAL_RCCEx_EnableLSECSS:00000000 HAL_RCCEx_EnableLSECSS
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2374   .text.HAL_RCCEx_EnableLSECSS:00000010 $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2379   .text.HAL_RCCEx_DisableLSECSS:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2385   .text.HAL_RCCEx_DisableLSECSS:00000000 HAL_RCCEx_DisableLSECSS
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2406   .text.HAL_RCCEx_DisableLSECSS:00000018 $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2411   .text.HAL_RCCEx_EnableLSECSS_IT:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2417   .text.HAL_RCCEx_EnableLSECSS_IT:00000000 HAL_RCCEx_EnableLSECSS_IT
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2447   .text.HAL_RCCEx_EnableLSECSS_IT:0000002c $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2452   .text.HAL_RCCEx_LSECSS_Callback:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2458   .text.HAL_RCCEx_LSECSS_Callback:00000000 HAL_RCCEx_LSECSS_Callback
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2471   .text.HAL_RCCEx_LSECSS_IRQHandler:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2477   .text.HAL_RCCEx_LSECSS_IRQHandler:00000000 HAL_RCCEx_LSECSS_IRQHandler
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2511   .text.HAL_RCCEx_LSECSS_IRQHandler:0000001c $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2516   .text.HAL_RCCEx_EnableLSCO:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2522   .text.HAL_RCCEx_EnableLSCO:00000000 HAL_RCCEx_EnableLSCO
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2679   .text.HAL_RCCEx_EnableLSCO:00000098 $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2685   .text.HAL_RCCEx_DisableLSCO:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2691   .text.HAL_RCCEx_DisableLSCO:00000000 HAL_RCCEx_DisableLSCO
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2803   .text.HAL_RCCEx_DisableLSCO:00000064 $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2809   .text.HAL_RCCEx_CRSConfig:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2815   .text.HAL_RCCEx_CRSConfig:00000000 HAL_RCCEx_CRSConfig
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2884   .text.HAL_RCCEx_CRSConfig:00000044 $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2890   .text.HAL_RCCEx_CRSSoftwareSynchronizationGenerate:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2896   .text.HAL_RCCEx_CRSSoftwareSynchronizationGenerate:00000000 HAL_RCCEx_CRSSoftwareSynchronizationGenerate
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2913   .text.HAL_RCCEx_CRSSoftwareSynchronizationGenerate:0000000c $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2918   .text.HAL_RCCEx_CRSGetSynchronizationInfo:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2924   .text.HAL_RCCEx_CRSGetSynchronizationInfo:00000000 HAL_RCCEx_CRSGetSynchronizationInfo
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2965   .text.HAL_RCCEx_CRSGetSynchronizationInfo:00000020 $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2970   .text.HAL_RCCEx_CRSWaitSynchronization:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:2976   .text.HAL_RCCEx_CRSWaitSynchronization:00000000 HAL_RCCEx_CRSWaitSynchronization
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:3167   .text.HAL_RCCEx_CRSWaitSynchronization:000000a8 $d
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:3172   .text.HAL_RCCEx_CRS_SyncOkCallback:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:3178   .text.HAL_RCCEx_CRS_SyncOkCallback:00000000 HAL_RCCEx_CRS_SyncOkCallback
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:3191   .text.HAL_RCCEx_CRS_SyncWarnCallback:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:3197   .text.HAL_RCCEx_CRS_SyncWarnCallback:00000000 HAL_RCCEx_CRS_SyncWarnCallback
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:3210   .text.HAL_RCCEx_CRS_ExpectedSyncCallback:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:3216   .text.HAL_RCCEx_CRS_ExpectedSyncCallback:00000000 HAL_RCCEx_CRS_ExpectedSyncCallback
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s 			page 105
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:20     .text.HAL_RCCEx_PeriphCLKConfig:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:26     .text.HAL_RCCEx_PeriphCLKConfig:00000000 HAL_RCCEx_PeriphCLKConfig
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:243    .text.HAL_RCCEx_PeriphCLKConfig:000000e4 $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:250    .text.HAL_RCCEx_PeriphCLKConfig:000000ec $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:634    .text.HAL_RCCEx_PeriphCLKConfig:00000358 $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:639    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:645    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 HAL_RCCEx_GetPeriphCLKConfig
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:777    .text.HAL_RCCEx_GetPeriphCLKConfig:000000c8 $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:783    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:789    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 HAL_RCCEx_GetPeriphCLKFreq
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:858    .text.HAL_RCCEx_GetPeriphCLKFreq:00000052 $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:890    .text.HAL_RCCEx_GetPeriphCLKFreq:00000092 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:1259   .text.HAL_RCCEx_GetPeriphCLKFreq:00000294 $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:1266   .text.HAL_RCCEx_GetPeriphCLKFreq:000002a0 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:1861   .text.HAL_RCCEx_GetPeriphCLKFreq:00000560 $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:1866   .text.HAL_RCCEx_GetPeriphCLKFreq:00000564 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2341   .text.HAL_RCCEx_GetPeriphCLKFreq:00000730 $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2351   .text.HAL_RCCEx_EnableLSECSS:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2357   .text.HAL_RCCEx_EnableLSECSS:00000000 HAL_RCCEx_EnableLSECSS
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2374   .text.HAL_RCCEx_EnableLSECSS:00000010 $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2379   .text.HAL_RCCEx_DisableLSECSS:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2385   .text.HAL_RCCEx_DisableLSECSS:00000000 HAL_RCCEx_DisableLSECSS
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2406   .text.HAL_RCCEx_DisableLSECSS:00000018 $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2411   .text.HAL_RCCEx_EnableLSECSS_IT:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2417   .text.HAL_RCCEx_EnableLSECSS_IT:00000000 HAL_RCCEx_EnableLSECSS_IT
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2447   .text.HAL_RCCEx_EnableLSECSS_IT:0000002c $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2452   .text.HAL_RCCEx_LSECSS_Callback:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2458   .text.HAL_RCCEx_LSECSS_Callback:00000000 HAL_RCCEx_LSECSS_Callback
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2471   .text.HAL_RCCEx_LSECSS_IRQHandler:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2477   .text.HAL_RCCEx_LSECSS_IRQHandler:00000000 HAL_RCCEx_LSECSS_IRQHandler
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2511   .text.HAL_RCCEx_LSECSS_IRQHandler:0000001c $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2516   .text.HAL_RCCEx_EnableLSCO:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2522   .text.HAL_RCCEx_EnableLSCO:00000000 HAL_RCCEx_EnableLSCO
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2679   .text.HAL_RCCEx_EnableLSCO:00000098 $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2685   .text.HAL_RCCEx_DisableLSCO:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2691   .text.HAL_RCCEx_DisableLSCO:00000000 HAL_RCCEx_DisableLSCO
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2803   .text.HAL_RCCEx_DisableLSCO:00000064 $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2809   .text.HAL_RCCEx_CRSConfig:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2815   .text.HAL_RCCEx_CRSConfig:00000000 HAL_RCCEx_CRSConfig
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2884   .text.HAL_RCCEx_CRSConfig:00000044 $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2890   .text.HAL_RCCEx_CRSSoftwareSynchronizationGenerate:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2896   .text.HAL_RCCEx_CRSSoftwareSynchronizationGenerate:00000000 HAL_RCCEx_CRSSoftwareSynchronizationGenerate
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2913   .text.HAL_RCCEx_CRSSoftwareSynchronizationGenerate:0000000c $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2918   .text.HAL_RCCEx_CRSGetSynchronizationInfo:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2924   .text.HAL_RCCEx_CRSGetSynchronizationInfo:00000000 HAL_RCCEx_CRSGetSynchronizationInfo
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2965   .text.HAL_RCCEx_CRSGetSynchronizationInfo:00000020 $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2970   .text.HAL_RCCEx_CRSWaitSynchronization:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:2976   .text.HAL_RCCEx_CRSWaitSynchronization:00000000 HAL_RCCEx_CRSWaitSynchronization
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:3167   .text.HAL_RCCEx_CRSWaitSynchronization:000000a8 $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:3172   .text.HAL_RCCEx_CRS_SyncOkCallback:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:3178   .text.HAL_RCCEx_CRS_SyncOkCallback:00000000 HAL_RCCEx_CRS_SyncOkCallback
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:3191   .text.HAL_RCCEx_CRS_SyncWarnCallback:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:3197   .text.HAL_RCCEx_CRS_SyncWarnCallback:00000000 HAL_RCCEx_CRS_SyncWarnCallback
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:3210   .text.HAL_RCCEx_CRS_ExpectedSyncCallback:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:3216   .text.HAL_RCCEx_CRS_ExpectedSyncCallback:00000000 HAL_RCCEx_CRS_ExpectedSyncCallback
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s 			page 105
 
 
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:3229   .text.HAL_RCCEx_CRS_ErrorCallback:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:3235   .text.HAL_RCCEx_CRS_ErrorCallback:00000000 HAL_RCCEx_CRS_ErrorCallback
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:3250   .text.HAL_RCCEx_CRS_IRQHandler:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:3256   .text.HAL_RCCEx_CRS_IRQHandler:00000000 HAL_RCCEx_CRS_IRQHandler
-C:\Users\jakub\AppData\Local\Temp\ccIF9RhS.s:3395   .text.HAL_RCCEx_CRS_IRQHandler:00000084 $d
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:3229   .text.HAL_RCCEx_CRS_ErrorCallback:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:3235   .text.HAL_RCCEx_CRS_ErrorCallback:00000000 HAL_RCCEx_CRS_ErrorCallback
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:3250   .text.HAL_RCCEx_CRS_IRQHandler:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:3256   .text.HAL_RCCEx_CRS_IRQHandler:00000000 HAL_RCCEx_CRS_IRQHandler
+C:\Users\jakub\AppData\Local\Temp\ccL5JAy5.s:3395   .text.HAL_RCCEx_CRS_IRQHandler:00000084 $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick
