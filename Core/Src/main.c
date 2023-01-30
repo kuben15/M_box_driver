@@ -57,26 +57,24 @@
 
 /* USER CODE BEGIN PV */
 
-uint16_t count = 2000;
 uint8_t data[6];
 //uint32_t ilosc_krokow = 1600;
 
-char silnik_CS[2] = {'C', 'S'};
-char silnik_CP[2] = {'C', 'P'};
+char motorCS[2] = {'C', 'S'};
+char motorCP[2] = {'C', 'P'};
 
 
 float AbsoluteAngleCS = 0;
 float AbsoluteAngleCP = 0;
 
 
+bool isInterrupt = false;
+bool wasInterrupt = false;
 
-bool czy_przerwanie = false;
-bool old_czy_przerwanie = false;
-
-uint8_t kierunek_obrotu = 0;
+uint8_t directionOfRotation = 0;
 char kat_obrotu[3]; 
 
-char silnik[2];
+char motor[2];
 
 float FirstAngle = 0.0;
 float SecondAngle = 0.0;
@@ -113,91 +111,97 @@ void PWM_steering_period(float kroki_funkcja)
   HAL_Delay(czas_delay);
 }
 
-float kat_to_steps(uint16_t kat)
+float angleToSteps(uint16_t angle)
 { 
-    float steps = 0;
+  //----------------------
+  // tutaj zwracana wartość powinna być całkowita
+  //----------------------
+  
+  float steps = 0;
  
   // TMC2209 is set to 8 microsteps
   // motor has 1.8 degree for 1 step
   // for 360 degree:
   // (360/1.8)*8 = 1600 steps
-  // 360/1600 = 0,225
+  // 360/1600 = 0,225 =>
   // each microstep is 0,225 degree
 
-  steps = (float)kat/0.225;
+  steps = (float)angle/0.225;
 
   return steps;
 } 
 
-void odczyt_kierunku(uint8_t dane[6])
+void directionRead(uint8_t data[6])
 {
   
-  char debug = (char)dane[2];
+  char direction = (char)data[2];
   
-  if(debug == 'L')
+  // Left
+  if(direction == 'L')
   {
-    kierunek_obrotu = 0;
+    directionOfRotation = 0;
   }
-  else if ((char*)dane[2] == 'R')
+  // Right
+  else if ((char*)data[2] == 'R')
   {
-    kierunek_obrotu = 1;
+    directionOfRotation = 1;
   }
 }
 
-void krecenie_silnikiem(char ktory_silnik[2], uint8_t kierunek, uint16_t kat)
+void motorRotation(char whichMotor[2], uint8_t direction, uint16_t angle)
 {
 
   uint16_t FirstAngle;
   uint16_t SecondAngle;
 
   
-  if(strncmp(ktory_silnik, silnik_CS, 2) == 0)
+  if(strncmp(whichMotor, motorCS, 2) == 0)
   {
-    HAL_GPIO_WritePin(DIR_TMC1_GPIO_Port, DIR_TMC1_Pin, kierunek);
+    HAL_GPIO_WritePin(DIR_TMC1_GPIO_Port, DIR_TMC1_Pin, direction);
     
     __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_2, 2500);
     
     HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
 
-    PWM_steering_period(kat_to_steps(kat));
+    PWM_steering_period(angleToSteps(angle));
 
     HAL_TIM_PWM_Stop(&htim1, TIM_CHANNEL_2);
 
   }
-  else if (strncmp(ktory_silnik, silnik_CP, 2) == 0)
+  else if (strncmp(whichMotor, motorCP, 2) == 0)
   {
-    if (kierunek == 0)
-    kierunek = 1;
+    if (direction == 0)
+    direction = 1;
     else
-    kierunek = 0;
+    direction = 0;
 
-    HAL_GPIO_WritePin(DIR_TMC2_GPIO_Port, DIR_TMC2_Pin, kierunek);
+    HAL_GPIO_WritePin(DIR_TMC2_GPIO_Port, DIR_TMC2_Pin, direction);
     
     __HAL_TIM_SET_COMPARE(&htim20, TIM_CHANNEL_1, 2500);
     
     HAL_TIM_PWM_Start(&htim20, TIM_CHANNEL_1);
   
-    PWM_steering_period(kat_to_steps(kat));
+    PWM_steering_period(angleToSteps(angle));
 
     HAL_TIM_PWM_Stop(&htim20, TIM_CHANNEL_1);
   }
   
 }
 
-float CheckAngle(float FirstAngle, float SecondAngle, uint16_t Angle, uint8_t Direction)
+float CheckAngle(float firstAngle, float secondAngle, uint16_t Angle, uint8_t direction)
 {
-  float angle_difference = 0;
-  if (Direction == 0)
+  float angleDifference = 0;
+  if (direction == 0)
   {
-    angle_difference = SecondAngle - FirstAngle;
+    angleDifference = secondAngle - firstAngle;
   }
-  else if (Direction == 1)
+  else if (direction == 1)
   {
-    angle_difference = FirstAngle - SecondAngle;
+    angleDifference = firstAngle - secondAngle;
   }
 
   HAL_Delay(50);
-  return angle_difference;
+  return angleDifference;
 
 }
 
@@ -206,7 +210,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
   uint8_t Data[40];
   uint16_t size = 0;
 
-  czy_przerwanie = !czy_przerwanie;
+  isInterrupt = !isInterrupt;
 
   // dalsze nasluchiwanie UART
   HAL_UART_Receive_IT(&huart2, data, 6);
@@ -281,14 +285,14 @@ void DisplayAngle(void)
 
 }
 
-void CheckAbsoluteAngle(uint16_t Angle, uint8_t Direction, char ktory_silnik[2])
+void CheckAbsoluteAngle(uint16_t Angle, uint8_t Direction, char motorSel[2])
 {
   uint16_t NewAngleCS = 0;
   uint16_t NewAngleCP = 0;
   
   
   // at the beginning absolute angle is set to 0 degree
-  if(strncmp(ktory_silnik, silnik_CS, 2) == 0)
+  if(strncmp(motorSel, motorCS, 2) == 0)
   {
     if(Direction == 0)
     {
@@ -311,7 +315,7 @@ void CheckAbsoluteAngle(uint16_t Angle, uint8_t Direction, char ktory_silnik[2])
       IsInRange = 0;
     }
   }
-  else if(strncmp(ktory_silnik, silnik_CP, 2) == 0)
+  else if(strncmp(motorSel, motorCP, 2) == 0)
   {
     
     if(Direction == 0)
@@ -387,8 +391,6 @@ int main(void)
   HAL_UART_Transmit(&huart2, (uint8_t*)"sterownik silnikami\r\n", strlen("sterownik silnikami\r\n"), 200);
   /* USER CODE END 2 */
 
-
-
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -398,30 +400,31 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
 
-  if(czy_przerwanie != old_czy_przerwanie)
+  
+  if(isInterrupt != wasInterrupt)
   {
 
     
-    old_czy_przerwanie = !old_czy_przerwanie;
-    odczyt_kierunku(data);
+    wasInterrupt = !wasInterrupt;
+    directionRead(data);
 
     
     // save to "silnik" from data 'CS' or 'CP'
-    strncpy(silnik, data, 2);
+    strncpy(motor, data, 2);
     // save to "kat_obrotu" from data 
     strncpy(kat_obrotu, data + 3, 3);
     uint16_t kat_obrotu_zmienna = (uint16_t)atoi(kat_obrotu);
 
-    CheckAbsoluteAngle(kat_obrotu_zmienna, kierunek_obrotu, silnik);
+    CheckAbsoluteAngle(kat_obrotu_zmienna, directionOfRotation, motor);
 
     if(IsInRange == 1)
-      krecenie_silnikiem(silnik, kierunek_obrotu, (uint16_t)kat_obrotu_zmienna);
+      motorRotation(motor, directionOfRotation, (uint16_t)kat_obrotu_zmienna);
     else
-      HAL_UART_Transmit(&huart2, (uint8_t*)"wrong angle\r\nrange has been exceeded\r\n", strlen("wrong angle\r\nrange has been exceeded\r\n"), 200);
+      HAL_UART_Transmit(&huart2, (uint8_t*)"\r\nwrong angle!!!\r\nrange has been exceeded\r\n", strlen("\r\nwrong angle!!!\r\nrange has been exceeded\r\n"), 200);
     
     
     
-    // AngleDifference = CheckAngle(FirstAngle, SecondAngle, kat_obrotu_zmienna, kierunek_obrotu);
+    // AngleDifference = CheckAngle(FirstAngle, SecondAngle, kat_obrotu_zmienna, directionOfRotation);
 
     // uint16_t kat_dupa = 0;
     // kat_dupa = (uint16_t)AngleDifference;

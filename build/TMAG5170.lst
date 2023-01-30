@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
   27:Core/Src/TMAG5170.c **** 
   28:Core/Src/TMAG5170.c **** 
   29:Core/Src/TMAG5170.c **** 
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 2
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 2
 
 
   30:Core/Src/TMAG5170.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
   70              		.loc 1 43 3 view .LVU8
   71 002c 4FF0FF33 		mov	r3, #-1
   72 0030 0222     		movs	r2, #2
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 3
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 3
 
 
   73 0032 2946     		mov	r1, r5
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  117              		.cfi_startproc
  118              		@ args = 0, pretend = 0, frame = 8
  119              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 4
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 4
 
 
  120              		.loc 1 55 1 is_stmt 0 view .LVU14
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  163              	.LVL17:
   67:Core/Src/TMAG5170.c ****   register_data |= ((uint16_t)(DeviceConfigSettings.TempChannelEnabled) << 3u);
  164              		.loc 1 67 3 is_stmt 1 view .LVU30
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 5
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 5
 
 
  165              		.loc 1 67 52 is_stmt 0 view .LVU31
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  196              		.loc 1 90 3 view .LVU45
   91:Core/Src/TMAG5170.c **** }
  197              		.loc 1 91 1 is_stmt 0 view .LVU46
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 6
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 6
 
 
  198 004a 0020     		movs	r0, #0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  245              		.loc 1 100 3 is_stmt 0 view .LVU53
  246 0014 1060     		str	r0, [r2]
  247 0016 9B88     		ldrh	r3, [r3, #4]	@ unaligned
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 7
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 7
 
 
  248              	.LVL26:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  109:Core/Src/TMAG5170.c **** 
  110:Core/Src/TMAG5170.c ****   uint8_t register_data_8[2];
  294              		.loc 1 110 3 is_stmt 1 view .LVU75
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 8
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 8
 
 
  111:Core/Src/TMAG5170.c ****   register_data_8[0] = register_data >> 8;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  340              		.loc 1 121 1 is_stmt 1 view -0
  341              		.cfi_startproc
  342              		@ args = 0, pretend = 0, frame = 8
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 9
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 9
 
 
  343              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  387              	.LVL45:
  132:Core/Src/TMAG5170.c ****   register_data |= (SystemConfigSettings.DataType << 6);
  388              		.loc 1 132 3 is_stmt 1 view .LVU101
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 10
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 10
 
 
  389              		.loc 1 132 41 is_stmt 0 view .LVU102
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  145:Core/Src/TMAG5170.c ****   TransmitData(register_address, register_data_8, StatusCRC);
  431              		.loc 1 145 3 view .LVU123
  432 0054 3C22     		movs	r2, #60
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 11
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 11
 
 
  433              	.LVL53:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  481              		.loc 1 153 20 is_stmt 0 view .LVU131
  482 0006 4FF0030C 		mov	ip, #3
  483 000a 1C4B     		ldr	r3, .L19
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 12
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 12
 
 
  484 000c 83F800C0 		strb	ip, [r3]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  528              		.loc 1 163 17 view .LVU149
  529 003e 1BB2     		sxth	r3, r3
  530              	.LVL65:
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 13
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 13
 
 
  164:Core/Src/TMAG5170.c ****   register_data |= (AlertConfigSettings.ThresholdCount << 4);
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  572              		.loc 1 176 3 is_stmt 1 view .LVU171
  573              	.LVL72:
  177:Core/Src/TMAG5170.c **** 
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 14
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 14
 
 
  178:Core/Src/TMAG5170.c ****   TransmitData(register_address, register_data_8, StatusCRC);
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  186:Core/Src/TMAG5170.c ****   uint8_t DisCRC[4];
  622              		.loc 1 186 3 view .LVU178
  187:Core/Src/TMAG5170.c ****   DisCRC[0] = 0x0F;
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 15
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 15
 
 
  623              		.loc 1 187 3 view .LVU179
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  669              		.cfi_endproc
  670              	.LFE140:
  672              		.section	.text.ReadRegister,"ax",%progbits
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 16
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 16
 
 
  673              		.align	1
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  708 0016 8DF80730 		strb	r3, [sp, #7]
  216:Core/Src/TMAG5170.c ****   FirstFrame |= 0b1 << 7;
  709              		.loc 1 216 3 is_stmt 1 view .LVU197
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 17
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 17
 
 
  710              		.loc 1 216 14 is_stmt 0 view .LVU198
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  750              		.cfi_endproc
  751              	.LFE141:
  753              		.section	.text.ReadRegister1,"ax",%progbits
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 18
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 18
 
 
  754              		.align	1
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  789 0016 8DF80730 		strb	r3, [sp, #7]
  251:Core/Src/TMAG5170.c ****   FirstFrame |= 0b1 << 7;
  790              		.loc 1 251 3 is_stmt 1 view .LVU211
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 19
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 19
 
 
  791              		.loc 1 251 14 is_stmt 0 view .LVU212
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  831              		.cfi_endproc
  832              	.LFE142:
  834              		.section	.rodata.GetmT.str1.4,"aMS",%progbits,1
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 20
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 20
 
 
  835              		.align	2
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  282:Core/Src/TMAG5170.c **** 
  283:Core/Src/TMAG5170.c ****   // Send address
  284:Core/Src/TMAG5170.c ****   register_address = TMAG5170_X_CH_RESULT_REG;
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 21
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 21
 
 
  874              		.loc 1 284 3 view .LVU225
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  914              		.loc 1 298 3 view .LVU235
  915              		.loc 1 298 12 is_stmt 0 view .LVU236
  916 004c 9DF81C30 		ldrb	r3, [sp, #28]	@ zero_extendqisi2
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 22
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 22
 
 
  917              	.LVL92:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  956              		.loc 1 307 3 is_stmt 0 discriminator 1 view .LVU255
  957 0070 0E2B     		cmp	r3, #14
  958 0072 F7DD     		ble	.L35
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 23
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 23
 
 
  959              	.LBE2:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  323:Core/Src/TMAG5170.c ****   sprintf(str1, "%d", (int8_t)B);
  1000              		.loc 1 323 3 view .LVU272
  1001 00c4 1D4D     		ldr	r5, .L37+24
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 24
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 24
 
 
  1002 00c6 2946     		mov	r1, r5
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  1049 0110 4FF0FF33 		mov	r3, #-1
  1050 0114 0322     		movs	r2, #3
  1051 0116 0C49     		ldr	r1, .L37+36
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 25
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 25
 
 
  1052 0118 2046     		mov	r0, r4
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  1102              		.loc 1 336 3 is_stmt 1 view .LVU288
  1103              	.LVL114:
  337:Core/Src/TMAG5170.c ****   
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 26
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 26
 
 
  338:Core/Src/TMAG5170.c **** 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  1131              	.LVL118:
  365:Core/Src/TMAG5170.c ****   HAL_GPIO_WritePin(CS2_GPIO_Port, CS2_Pin, 1);
  1132              		.loc 1 365 3 view .LVU293
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 27
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 27
 
 
  1133 0034 0122     		movs	r2, #1
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  1175              		.loc 1 349 5 view .LVU304
  1176 006a FFF7FEFF 		bl	HAL_GPIO_WritePin
  1177              	.LVL129:
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 28
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 28
 
 
  350:Core/Src/TMAG5170.c ****     break;
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  1209              	.LCFI28:
  1210              		.cfi_def_cfa_offset 16
  1211              		.cfi_offset 4, -16
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 29
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 29
 
 
  1212              		.cfi_offset 5, -12
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  1246 0024 224C     		ldr	r4, .L48+8
  1247 0026 0122     		movs	r2, #1
  1248 0028 4FF48071 		mov	r1, #256
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 30
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 30
 
 
  1249 002c 2046     		mov	r0, r4
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  424:Core/Src/TMAG5170.c ****   data_reg_LSB = data_reg_LSB & 0x0F;
  1291              		.loc 1 424 3 view .LVU333
  1292              		.loc 1 424 16 is_stmt 0 view .LVU334
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 31
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 31
 
 
  1293 0074 03F00F03 		and	r3, r3, #15
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  1327 00a2 02B0     		add	sp, sp, #8
  1328              	.LCFI30:
  1329              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 32
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 32
 
 
  1330              		@ sp needed
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  454:Core/Src/TMAG5170.c ****   // uint8_t UART_buff;
  455:Core/Src/TMAG5170.c ****   // uint16_t UART_buff_length;
  456:Core/Src/TMAG5170.c **** 
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 33
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 33
 
 
  457:Core/Src/TMAG5170.c ****   
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  1421 0050 2846     		mov	r0, r5
  1422 0052 FFF7FEFF 		bl	HAL_SPI_Receive
  1423              	.LVL152:
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 34
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 34
 
 
  467:Core/Src/TMAG5170.c **** 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  1469 0098 FFF7FEFF 		bl	__aeabi_d2f
  1470              	.LVL162:
  476:Core/Src/TMAG5170.c **** 
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 35
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 35
 
 
  477:Core/Src/TMAG5170.c ****   return temp;
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  1510              		.cfi_def_cfa_offset 12
  1511              		.cfi_offset 4, -12
  1512              		.cfi_offset 5, -8
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 36
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 36
 
 
  1513              		.cfi_offset 14, -4
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  1548 0032 4FF0FF33 		mov	r3, #-1
  1549 0036 0222     		movs	r2, #2
  1550 0038 03A9     		add	r1, sp, #12
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 37
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 37
 
 
  1551 003a 2846     		mov	r0, r5
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  1585 0064 FFF7FEFF 		bl	strlen
  1586              	.LVL172:
  1587              		.loc 1 532 3 view .LVU411
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 38
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 38
 
 
  1588 0068 4FF0FF33 		mov	r3, #-1
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  1647              		.file 2 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\
  1648              		.file 3 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\\
  1649              		.file 4 "Core/Inc/tmag5170.h"
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 39
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 39
 
 
  1650              		.file 5 "Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g491xx.h"
@@ -2292,67 +2292,67 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 1
  1658              		.file 13 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\
  1659              		.file 14 "c:\\program files (x86)\\gnu arm embedded toolchain\\10 2021.10\\arm-none-eabi\\include\
  1660              		.file 15 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 40
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 40
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 TMAG5170.c
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:20     .text.TransmitData:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:26     .text.TransmitData:00000000 TransmitData
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:101    .text.TransmitData:00000058 $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:107    .text.TMAG5170_dev_conf_settings:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:113    .text.TMAG5170_dev_conf_settings:00000000 TMAG5170_dev_conf_settings
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:207    .text.TMAG5170_dev_conf_settings:00000054 $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:212    .text.TMAG5170_sens_conf_settings:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:218    .text.TMAG5170_sens_conf_settings:00000000 TMAG5170_sens_conf_settings
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:325    .text.TMAG5170_sens_conf_settings:0000005c $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:331    .text.TMAG5170_sys_conf_settings:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:337    .text.TMAG5170_sys_conf_settings:00000000 TMAG5170_sys_conf_settings
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:452    .text.TMAG5170_sys_conf_settings:00000068 $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:458    .text.TMAG5170_al_conf_settings:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:464    .text.TMAG5170_al_conf_settings:00000000 TMAG5170_al_conf_settings
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:595    .text.TMAG5170_al_conf_settings:0000007c $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:601    .text.DisableCRC:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:607    .text.DisableCRC:00000000 DisableCRC
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:667    .text.DisableCRC:00000044 $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:673    .text.ReadRegister:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:679    .text.ReadRegister:00000000 ReadRegister
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:747    .text.ReadRegister:00000058 $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:754    .text.ReadRegister1:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:760    .text.ReadRegister1:00000000 ReadRegister1
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:828    .text.ReadRegister1:00000058 $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:835    .rodata.GetmT.str1.4:00000000 $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:845    .text.GetmT:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:851    .text.GetmT:00000000 GetmT
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1066   .text.GetmT:00000124 $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1080   .text.ReadData:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1086   .text.ReadData:00000000 ReadData
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1189   .text.ReadData:0000007c $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1196   .text.GetAngle:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1202   .text.GetAngle:00000000 GetAngle
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1337   .text.GetAngle:000000a8 $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1350   .text.GetTemp:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1356   .text.GetTemp:00000000 GetTemp
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1484   .text.GetTemp:000000a8 $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1496   .text.GetMagnitude:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1502   .text.GetMagnitude:00000000 GetMagnitude
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1603   .text.GetMagnitude:0000007c $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1612   .bss.AlertConfigSettings:00000000 $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1616   .bss.AlertConfigSettings:00000000 AlertConfigSettings
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1619   .bss.DeviceConfigSettings:00000000 $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1623   .bss.DeviceConfigSettings:00000000 DeviceConfigSettings
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1626   .bss.SensorConfigSettings:00000000 $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1630   .bss.SensorConfigSettings:00000000 SensorConfigSettings
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1633   .bss.SystemConfigSettings:00000000 $d
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1637   .bss.SystemConfigSettings:00000000 SystemConfigSettings
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1643   .bss.register_address:00000000 register_address
-C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s:1644   .bss.register_address:00000000 $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:20     .text.TransmitData:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:26     .text.TransmitData:00000000 TransmitData
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:101    .text.TransmitData:00000058 $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:107    .text.TMAG5170_dev_conf_settings:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:113    .text.TMAG5170_dev_conf_settings:00000000 TMAG5170_dev_conf_settings
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:207    .text.TMAG5170_dev_conf_settings:00000054 $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:212    .text.TMAG5170_sens_conf_settings:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:218    .text.TMAG5170_sens_conf_settings:00000000 TMAG5170_sens_conf_settings
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:325    .text.TMAG5170_sens_conf_settings:0000005c $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:331    .text.TMAG5170_sys_conf_settings:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:337    .text.TMAG5170_sys_conf_settings:00000000 TMAG5170_sys_conf_settings
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:452    .text.TMAG5170_sys_conf_settings:00000068 $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:458    .text.TMAG5170_al_conf_settings:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:464    .text.TMAG5170_al_conf_settings:00000000 TMAG5170_al_conf_settings
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:595    .text.TMAG5170_al_conf_settings:0000007c $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:601    .text.DisableCRC:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:607    .text.DisableCRC:00000000 DisableCRC
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:667    .text.DisableCRC:00000044 $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:673    .text.ReadRegister:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:679    .text.ReadRegister:00000000 ReadRegister
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:747    .text.ReadRegister:00000058 $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:754    .text.ReadRegister1:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:760    .text.ReadRegister1:00000000 ReadRegister1
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:828    .text.ReadRegister1:00000058 $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:835    .rodata.GetmT.str1.4:00000000 $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:845    .text.GetmT:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:851    .text.GetmT:00000000 GetmT
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1066   .text.GetmT:00000124 $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1080   .text.ReadData:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1086   .text.ReadData:00000000 ReadData
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1189   .text.ReadData:0000007c $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1196   .text.GetAngle:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1202   .text.GetAngle:00000000 GetAngle
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1337   .text.GetAngle:000000a8 $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1350   .text.GetTemp:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1356   .text.GetTemp:00000000 GetTemp
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1484   .text.GetTemp:000000a8 $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1496   .text.GetMagnitude:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1502   .text.GetMagnitude:00000000 GetMagnitude
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1603   .text.GetMagnitude:0000007c $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1612   .bss.AlertConfigSettings:00000000 $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1616   .bss.AlertConfigSettings:00000000 AlertConfigSettings
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1619   .bss.DeviceConfigSettings:00000000 $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1623   .bss.DeviceConfigSettings:00000000 DeviceConfigSettings
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1626   .bss.SensorConfigSettings:00000000 $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1630   .bss.SensorConfigSettings:00000000 SensorConfigSettings
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1633   .bss.SystemConfigSettings:00000000 $d
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1637   .bss.SystemConfigSettings:00000000 SystemConfigSettings
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1643   .bss.register_address:00000000 register_address
+C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s:1644   .bss.register_address:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin
 HAL_SPI_Transmit
 hspi1
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\cct1bJHG.s 			page 41
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccqUP3Ow.s 			page 41
 
 
 HAL_SPI_Receive

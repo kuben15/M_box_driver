@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 1
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 1
   28:Core/Src/stm32g4xx_it.c **** /* USER CODE BEGIN TD */
   29:Core/Src/stm32g4xx_it.c **** 
   30:Core/Src/stm32g4xx_it.c **** /* USER CODE END TD */
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 2
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s 			page 2
 
 
   31:Core/Src/stm32g4xx_it.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 1
   36              		.loc 1 77 3 discriminator 1 view .LVU1
   78:Core/Src/stm32g4xx_it.c ****   {
   79:Core/Src/stm32g4xx_it.c ****   }
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 3
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s 			page 3
 
 
   37              		.loc 1 79 3 discriminator 1 view .LVU2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 1
   98:Core/Src/stm32g4xx_it.c **** /**
   99:Core/Src/stm32g4xx_it.c ****   * @brief This function handles Memory management fault.
  100:Core/Src/stm32g4xx_it.c ****   */
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 4
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s 			page 4
 
 
  101:Core/Src/stm32g4xx_it.c **** void MemManage_Handler(void)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 1
  125:Core/Src/stm32g4xx_it.c ****   }
  106              		.loc 1 125 3 discriminator 1 view .LVU14
  121:Core/Src/stm32g4xx_it.c ****   {
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 5
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s 			page 5
 
 
  107              		.loc 1 121 9 discriminator 1 view .LVU15
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 1
  146:Core/Src/stm32g4xx_it.c **** void SVC_Handler(void)
  147:Core/Src/stm32g4xx_it.c **** {
  144              		.loc 1 147 1 view -0
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 6
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s 			page 6
 
 
  145              		.cfi_startproc
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 1
  169:Core/Src/stm32g4xx_it.c **** /**
  170:Core/Src/stm32g4xx_it.c ****   * @brief This function handles Pendable request for system service.
  171:Core/Src/stm32g4xx_it.c ****   */
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 7
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s 			page 7
 
 
  172:Core/Src/stm32g4xx_it.c **** void PendSV_Handler(void)
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 1
  215              		.cfi_endproc
  216              	.LFE140:
  218              		.section	.text.TIM1_TRG_COM_TIM17_IRQHandler,"ax",%progbits
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 8
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s 			page 8
 
 
  219              		.align	1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 1
  254              		.thumb_func
  256              	USART2_IRQHandler:
  257              	.LFB142:
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 9
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s 			page 9
 
 
  216:Core/Src/stm32g4xx_it.c **** 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 1
  294              	.LCFI3:
  295              		.cfi_def_cfa_offset 8
  296              		.cfi_offset 3, -8
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 10
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s 			page 10
 
 
  297              		.cfi_offset 14, -4
@@ -572,38 +572,38 @@ ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 1
  318              		.file 7 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim.h"
  319              		.file 8 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h"
  320              		.file 9 "Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h"
-ARM GAS  C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s 			page 11
+ARM GAS  C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s 			page 11
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32g4xx_it.c
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:20     .text.NMI_Handler:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:26     .text.NMI_Handler:00000000 NMI_Handler
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:44     .text.HardFault_Handler:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:67     .text.MemManage_Handler:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:90     .text.BusFault_Handler:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:113    .text.UsageFault_Handler:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:136    .text.SVC_Handler:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:142    .text.SVC_Handler:00000000 SVC_Handler
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:155    .text.DebugMon_Handler:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:161    .text.DebugMon_Handler:00000000 DebugMon_Handler
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:174    .text.PendSV_Handler:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:180    .text.PendSV_Handler:00000000 PendSV_Handler
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:193    .text.SysTick_Handler:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:199    .text.SysTick_Handler:00000000 SysTick_Handler
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:219    .text.TIM1_TRG_COM_TIM17_IRQHandler:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:225    .text.TIM1_TRG_COM_TIM17_IRQHandler:00000000 TIM1_TRG_COM_TIM17_IRQHandler
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:245    .text.TIM1_TRG_COM_TIM17_IRQHandler:0000000c $d
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:250    .text.USART2_IRQHandler:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:256    .text.USART2_IRQHandler:00000000 USART2_IRQHandler
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:276    .text.USART2_IRQHandler:0000000c $d
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:281    .text.TIM20_TRG_COM_IRQHandler:00000000 $t
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:287    .text.TIM20_TRG_COM_IRQHandler:00000000 TIM20_TRG_COM_IRQHandler
-C:\Users\jakub\AppData\Local\Temp\ccdl6fDO.s:307    .text.TIM20_TRG_COM_IRQHandler:0000000c $d
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:20     .text.NMI_Handler:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:26     .text.NMI_Handler:00000000 NMI_Handler
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:44     .text.HardFault_Handler:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:67     .text.MemManage_Handler:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:90     .text.BusFault_Handler:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:113    .text.UsageFault_Handler:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:136    .text.SVC_Handler:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:142    .text.SVC_Handler:00000000 SVC_Handler
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:155    .text.DebugMon_Handler:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:161    .text.DebugMon_Handler:00000000 DebugMon_Handler
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:174    .text.PendSV_Handler:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:180    .text.PendSV_Handler:00000000 PendSV_Handler
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:193    .text.SysTick_Handler:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:199    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:219    .text.TIM1_TRG_COM_TIM17_IRQHandler:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:225    .text.TIM1_TRG_COM_TIM17_IRQHandler:00000000 TIM1_TRG_COM_TIM17_IRQHandler
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:245    .text.TIM1_TRG_COM_TIM17_IRQHandler:0000000c $d
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:250    .text.USART2_IRQHandler:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:256    .text.USART2_IRQHandler:00000000 USART2_IRQHandler
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:276    .text.USART2_IRQHandler:0000000c $d
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:281    .text.TIM20_TRG_COM_IRQHandler:00000000 $t
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:287    .text.TIM20_TRG_COM_IRQHandler:00000000 TIM20_TRG_COM_IRQHandler
+C:\Users\jakub\AppData\Local\Temp\cckDdxYI.s:307    .text.TIM20_TRG_COM_IRQHandler:0000000c $d
 
 UNDEFINED SYMBOLS
 HAL_IncTick
